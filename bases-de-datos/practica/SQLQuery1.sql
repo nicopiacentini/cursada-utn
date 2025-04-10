@@ -1,0 +1,3 @@
+-- ejercicio 1
+--SELECT clie_codigo as CODIGOCLIENTE, clie_razon_social as razonSocial from Cliente 
+--where clie_limite_credito > 1000 ORDER BY clie_codigo
