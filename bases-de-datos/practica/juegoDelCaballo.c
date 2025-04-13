@@ -1,164 +1,101 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int tablero[8][8] = {0}; // 0 = vacio, 1 = caballo
+#define N 8
 
+int tablero[N][N] = {0}; // 0 = vacío, otro número = paso del caballo
+
+// Estructura del nodo para backtracking (no es necesaria estrictamente, pero ayuda si querés reconstruir caminos)
 typedef struct Nodo {
     int x;
     int y;
     int movimiento[2]; // Movimiento del caballo
-    struct Nodo* padre; // Nodo padre
-    struct Nodo* hijos[8]; // Máximo 8 movimientos posibles
+    struct Nodo* padre;
 } Nodo;
-
-typedef struct NodoStack{
-    NodoStack * siguiente;
-    Nodo* nodo;
-} NodoStack;
-
-
-NodoStack* pila = (NodoStack*)malloc(sizeof(NodoStack));
-void apilar(NodoStack** pila, int movimiento[2]) {
-    NodoStack* nuevoNodo = (NodoStack*)malloc(sizeof(NodoStack));
-    nuevoNodo->movimiento[0] = movimiento[0];
-    nuevoNodo->movimiento[1] = movimiento[1];
-    nuevoNodo->siguiente = *pila;
-    *pila = nuevoNodo;
-}
-
-int* desapilar(NodoStack** pila) {
-    if (*pila == NULL) {
-        return NULL; // Pila vacía
-    }
-    NodoStack* nodoAEliminar = *pila;
-    int* movimiento = (int*)malloc(2 * sizeof(int));
-    movimiento[0] = nodoAEliminar->movimiento[0];
-    movimiento[1] = nodoAEliminar->movimiento[1];
-    *pila = nodoAEliminar->siguiente;
-    free(nodoAEliminar);
-    return movimiento;
-}
-Nodo* raiz = (Nodo*)malloc(sizeof(Nodo));
-
-void inicializarNodo (Nodo* nodo, int i, Nodo* padre){
-    if(movimientoValido(padre->x + movimientos[i][0], padre->y + movimientos[i][1])){
-        nodo = (Nodo*)malloc(sizeof(Nodo));
-        nodo->x = padre->x + movimientos[i][0];
-        nodo->y = padre->y + movimientos[i][1];
-        nodo->movimiento[0] = movimientos[i][0];
-        nodo->movimiento[1] = movimientos[i][1];
-        nodo->padre = padre;
-    }
-    else{
-        nodo = NULL; // Movimiento ilegal
-    }
-}
 
 int movimientos[8][2] = {
     {2, 1}, {1, 2}, {-1, 2}, {-2, 1},
     {-2, -1}, {-1, -2}, {1, -2}, {2, -1}
-}; 
+};
 
-int movimientoIlegal(int x, int y){
-    return x < 0 || x > 7 || y < 0 || y > 7; 
+int movimientoIlegal(int x, int y) {
+    return x < 0 || x >= N || y < 0 || y >= N;
 }
 
-int movimientoValido(int x, int y){
-    return tablero[x][y] == 0 && !movimientoIlegal(x, y); 
+int movimientoValido(int x, int y) {
+    return !movimientoIlegal(x, y) && tablero[x][y] == 0;
 }
 
-int tableroIncompleto(){
-    for(int i = 0; i < 8; i++){
-        for(int j = 0; j < 8; j++){
-            if(tablero[i][j] == 0)
-                return 1; // Hay al menos una casilla vacía
-        }
+int tableroCompleto() {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            if (tablero[i][j] == 0)
+                return 0;
+    return 1;
+}
+
+void imprimirTablero() {
+    printf("\n");
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++)
+            printf("%2d ", tablero[i][j]);
+        printf("\n");
     }
-    return 0; // Todas las casillas están ocupadas
 }
 
-void llenarTablero(int x, int y){
-
-}
-
-int verificarRama(Nodo* nodo, int movimiento) {
-    if (nodo == NULL) {
-        return 0; // Nodo inválido
-    }
-
-    // Marcar la posición actual como visitada con el número del movimiento
-    tablero[nodo->x][nodo->y] = movimiento;
-
-    // Si el tablero está completo, hemos encontrado una solución
-    if (!tableroIncompleto()) {
+int resolver(Nodo* nodo, int paso) {
+    // Si completamos el tablero, éxito
+    if (tableroCompleto())
         return 1;
-    }
 
-    // Intentar generar y verificar los hijos
     for (int i = 0; i < 8; i++) {
-        Nodo* hijo = NULL;
-        inicializarNodo(hijo, i, nodo);
+        int nx = nodo->x + movimientos[i][0];
+        int ny = nodo->y + movimientos[i][1];
 
-        if (hijo != NULL) {
-            if (verificarRama(hijo, movimiento + 1)) {
-                return 1; // Si una rama lleva a una solución, retornar éxito
-            }
+        if (movimientoValido(nx, ny)) {
+            tablero[nx][ny] = paso;
 
-            // Limpiar el tablero de todos los movimientos generados por el hijo
-            limpiarTableroDesde(hijo);
+            Nodo siguiente;
+            siguiente.x = nx;
+            siguiente.y = ny;
+            siguiente.movimiento[0] = movimientos[i][0];
+            siguiente.movimiento[1] = movimientos[i][1];
+            siguiente.padre = nodo;
 
-            free(hijo); // Liberar memoria si no lleva a una solución
+            if (resolver(&siguiente, paso + 1))
+                return 1;
+
+            // Backtrack
+            tablero[nx][ny] = 0;
         }
     }
 
-    // Desmarcar la posición actual antes de retroceder
-    tablero[nodo->x][nodo->y] = 0;
-
-    return 0; // No se encontró solución en esta rama
+    return 0;
 }
 
-void limpiarTableroDesde(Nodo* nodo) {
-    if (nodo == NULL) {
-        return;
-    }
-
-    // Desmarcar la posición actual
-    tablero[nodo->x][nodo->y] = 0;
-
-    // Limpiar recursivamente los hijos
-    for (int i = 0; i < 8; i++) {
-        if (nodo->hijos[i] != NULL) {
-            limpiarTableroDesde(nodo->hijos[i]);
-        }
-    }
-}
-
-int main(){
+int main() {
     int x, y;
     do {
-        printf("Introduce la posicion del caballo (x y): ");
-        scanf("%d %d", &x, &y); 
-
+        printf("Introduce la posicion del caballo (x y entre 0 y 7): ");
+        scanf("%d %d", &x, &y);
         if (movimientoIlegal(x, y))
-            printf("Posicion invalida\n");
+            printf("Posicion invalida. Intente de nuevo.\n");
     } while (movimientoIlegal(x, y));
 
-    if (raiz != NULL) {
-        raiz->x = x;
-        raiz->y = y;
-        raiz->movimiento[0] = 0;
-        raiz->movimiento[1] = 0;
-        raiz->padre = NULL;
-        for (int i = 0; i < 8; i++) {
-            inicializarNodo(raiz->hijos[i], i, raiz);
-        }
-    }
+    Nodo raiz;
+    raiz.x = x;
+    raiz.y = y;
+    raiz.movimiento[0] = 0;
+    raiz.movimiento[1] = 0;
+    raiz.padre = NULL;
 
-    tablero[x][y] = 1; // Colocar el caballo en la posición inicial
+    tablero[x][y] = 1;
 
-    if (verificarRama(raiz)) {
-        printf("Es posible completar el tablero.\n");
+    if (resolver(&raiz, 2)) {
+        printf("¡Se encontró una solución!\n");
+        imprimirTablero();
     } else {
-        printf("No es posible completar el tablero.\n");
+        printf("No se encontró una solución.\n");
     }
 
     return 0;
