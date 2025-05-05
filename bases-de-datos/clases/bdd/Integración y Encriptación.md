@@ -82,4 +82,17 @@ Tomo una raiz que este en el intervalo (0;1)
 Control de redundancia ciclica. Utiliza el crc pero busca el *divide and conquer*. Parte el archivo en pedazos para hacer los polinomios y que me facilite la busqueda de la raiz y no me quede un megapolinomio.
 Controla una redundancia por ciclos, siendo una redundancia porque me guardo la suma en la compresion mas alla de que el archivo no lo use. Es ciclico porque cada n bits me hago el polinomio y hago este chequeo.
 
+## Encriptacion
+Busco ocultar la informacion contenida en un archivo para que no pueda ser legible. No modifico ni el tamaño ni espacio ocupado por mi archivo. Hay muchas formas de hacer esto. Existen metodos con retorno (puedo volver al archivo inicial) o sin retorno (no puedo volver al archivo original).  En realidad, yo tengo un programa que se abre con clave y esta esta encriptada. Para acceder al programa, este la encripta y compara con la que tiene.
 
+### Procesos de encriptacion
+- Desplazamiento -> desplazo los caracteres de mi archivo segun una funcion
+	Cambia de lugar los bits de mi archivo, por que es mas facil que cambiar caracteres de lugar.
+- Reemplazo -> reemplazo algunos caracteres de mi archivo segun un patron donde el reemplazo es fijo o variable.
+	- Reemplazo fijo -> reemplaza el algoritmo sin intervencion del usuario. Toma lo que tiene que encriptar (como un string), y reemplaza determinados caracteres siguiendo un patron
+	- Reemplazo variable -> el usuario nos da una clave para encriptar y se copia al contenido del archivo o valor a encriptar.
+- Mixto -> uso un poco de **desplazamiento** y de **reemplazo**
+
+##### Header
+Esta al comienzo del archivo y me describe lo que viene atras. Los archivos de texto no tienen header. Cuando encripto un zip, encripto su header.
+Apertura de archivos -> si mi archivo tiene un formato conocido por el operativo como .xsxl, no me pregunta que programa quiero usar.

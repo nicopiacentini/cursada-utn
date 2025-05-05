@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TSQL.md",
+                "file": "Untitled 1/Canales de Comunicaciones.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TSQL"
+              "title": "Canales de Comunicaciones"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,12 +170,14 @@
   },
   "active": "f9a2b18b2f23c0b2",
   "lastOpenFiles": [
+    "Integración y Encriptación.md",
+    "Untitled 1/Canales de Comunicaciones.md",
+    "Untitled 1",
     "TSQL.md",
     "Multiplexacion de señales.md",
     "Untitled.md",
     "Pasted image 20250428111546.png",
     "Pasted image 20250428104427.png",
-    "Integración y Encriptación.md",
     "Untitled",
     "Welcome.md"
   ]
