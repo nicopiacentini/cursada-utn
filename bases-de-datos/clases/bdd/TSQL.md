@@ -174,3 +174,126 @@ CREATE TRIGGER nombre   ON table | view  
         
        AS       sql_statement [ ...n ]
 ```
+
+#### Declaracion de variables
+T-SQL es un lenguaje tipado y tengo que declarar las variables.
+```sql
+DECLARE @miVariable int -- DECLARE @mi_variable tipoDeDato
+print @mivariable
+```
+ Manejo del print
+ ```sql
+ PRINT msg_str | PRINT @variable | PRINT expresion_string
+```
+
+#### Separadores de bloques de codigo
+```sql
+BEGIN
+---bloque_codigo | statement_sql
+END 
+```
+son como los ```{}``` de cualquier otro lenguaje.
+
+#### If y else
+```sql
+IF boolean_expresion
+	sql_statement | statement_block
+ELSE
+	sql_statement | statement_block
+```
+
+si quiero que en el if ejecute 2 comandos, tengo que meterlos en un begin y end. Si no lo hago, el primer comando se ejecuta si el if es verdadero y el segundo se ejecuta *siempre*.
+
+#### Return
+corta la ejecucion del procedimiento o funcion. Si hay error, retorna 0. Si no, toma el valor que me tira la funcion.
+
+#### Waitfor
+Comando de espera que pausa. Espera hasta que se de determinada condicion
+```sql
+waitfor {DELAY 'time' | TIME 'time'}
+```
+
+#### Bucle while
+Como no existe el comando for, hay que usar este.
+```sql
+while expresion_booleana
+	{sql_statement | statement_block}
+[BREAK]
+{sql_statement | statement_block}
+[CONTINUE]
+```
+
+### Cursores
+Es una variable que permite recibir el resultado de un select. Es parecido a una variable de tipo tabla (variable que recibe el resultado de un select y me permite manejarla como tabla por estar en memoria). Esta en memoria y sirve para poder iterar el select. Con esto me refiero a que si en mi conjunto me trae n elementos, los cursores *permiten recorrer la tabla que contiene*. Lo puedo trabajar de forma mas procedural.
+Entonces, cuando hago un SELECT, me devuelve un **cursor** y lo puedo recorrer y examinarlo. Sirve cuando debo tratar de forma distinta a cada uno de los elementos del cursor.
+Analogicamente, si un cursor es una clase, cada instancia de el son las filas. 
+
+##### Proceso de ejecucion de cursor
+- Declarar el cursor definiendo su select -> aca se me crea en memoria un puntero de C, porque el tamaño no esta definido
+- Ejecuto su select y le defino su valor -> aca ya se cuanto mide el resultado y el puntero apunta a ese espacio (uso malloc)
+- Recorro el cursor
+- Cierro el cursor
+- Libero la memoria ocupada (hago free)
+
+##### Declaracion de cursor (aca no se ejecuta nada)
+```sql
+declare cursor_name CURSOR [LOCAL | GLOBAL] --si es conocido por todos o no
+[FORWARD_ONLY | SCROLL] [STATIC | DYNAMIC]
+FOR select_statement
+```
+
+Caracteristicas
+- Visibilidad
+	- LOCAL -> solo lo puedo acceder dentro de la ejecucion donde fue creado
+	- GLOBAL -> lo puedo ver en cualquier lado
+- Scrolling
+	- FORWARD_ONLY -> solo puede avanzar
+	- SCROLL -> puede avanzar y retroceder
+- Cambio
+	- STATIC -> el select asociado no se actualiza, la informacion que hay es la que tengo
+	- DYNAMIC -> el select se actualiza cuando me muevo en el cursor.
+##### Apertura de cursor
+Ejecuta el select asociado para abrir y empezar a usar el cursor
+```transact-sql
+open [GLOBAL] cursor_name
+```
+
+##### Cerrar el cursor
+No permite mas operaciones sobre el cursor, NO libera memoria
+```
+close [GLOBAL] cursor_name
+```
+
+##### Liberacion de memoria
+Libera el espacio ocupado en ram
+```
+dealocate [GLOBAL] cursor_name
+```
+
+##### Recorrido de cursor
+Fetch -> obtiene una linea especifica de mi cursor
+```sql
+FETCH [NEXT | PRIOR | FIRST | LAST]
+FROM [GLOBAL] cursor_name
+[into @variable [,...n]]
+```
+En el caso @variable, si hay alguna columna del cursor que tiene ese mismo nombre, guarda el valor de esa fila/columna en esta variable.
+
+#### Variables del sistema
+Son aquellas que maneja el motor y no puedo modificar. Empiezan con @@
+
+###### @@FETCH_STATUS
+Es el valor del ultimo FETCH realizado, no importa de cual cursor.
+-  0 -> FETCH se ejecuto correctamente
+-  -1 -> FETCH finalizo con error o la lista esta mas alla del conjunto de resultados (me pase de la cantidad de posiciones)
+- -2 -> Falta una fila recuperada
+
+###### @@CURSOR_ROWS
+Devuelve la cantidad de filas que resulto de la ejecucion de la ultima apertura de CURSOR
+-  -m -> el cursor se llena de informacion de forma asincronica
+-  -1 -> cursor dinamico
+-  0  -> no se abrieron cursores
+-  n -> cursor completamente lleno
+
+###### CURSOR_STATUS
+Me devuelve el estado de un cursor
