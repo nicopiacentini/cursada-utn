@@ -1,41 +1,56 @@
 {
   "main": {
-    "id": "c0a359bba7a4d276",
+    "id": "32ae4c302ff8eff2",
     "type": "split",
     "children": [
       {
-        "id": "4a1ed947781599f2",
+        "id": "dca56eb2db3b0cb8",
         "type": "tabs",
         "children": [
           {
-            "id": "9462cf34bac5856f",
+            "id": "9ec65465b58a5ee2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled 2.md",
+                "file": "Canales de Comunicaciones.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled 2"
+              "title": "Canales de Comunicaciones"
+            }
+          },
+          {
+            "id": "410b4e360c091b2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Medios de comunicaciones Guiados.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Medios de comunicaciones Guiados"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "77c58d6ee401c76e",
+    "id": "895e84e6bf50bcf7",
     "type": "split",
     "children": [
       {
-        "id": "a016633527f913a5",
+        "id": "607c832b8bd14b22",
         "type": "tabs",
         "children": [
           {
-            "id": "8c3471dd63e5125a",
+            "id": "e8769e8b58f96182",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +63,7 @@
             }
           },
           {
-            "id": "b11b12decb6fa901",
+            "id": "33e0303bca5b7624",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +80,7 @@
             }
           },
           {
-            "id": "5158569a925d3a92",
+            "id": "fbad3b0ffc936bde",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +96,20 @@
     "width": 300
   },
   "right": {
-    "id": "bb3863b57fd8584b",
+    "id": "3ff38fa081cd773f",
     "type": "split",
     "children": [
       {
-        "id": "a4e6d09f26e8949c",
+        "id": "552ee0f3323f334b",
         "type": "tabs",
         "children": [
           {
-            "id": "e91bb40b816688a6",
+            "id": "6033a6a599c56d2e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Integración y Encriptación.md",
+                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +119,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Integración y Encriptación"
+              "title": "Backlinks for Welcome"
             }
           },
           {
-            "id": "908de794ba426d92",
+            "id": "7783f56212b2cd35",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Integración y Encriptación.md",
+                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Integración y Encriptación"
+              "title": "Outgoing links from Welcome"
             }
           },
           {
-            "id": "55e291de34e21a42",
+            "id": "b25a65f2ff133b8c",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,18 +152,18 @@
             }
           },
           {
-            "id": "c1e29c455c70d1f9",
+            "id": "206893a506560861",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Integración y Encriptación.md",
+                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Integración y Encriptación"
+              "title": "Outline of Welcome"
             }
           }
         ]
@@ -168,22 +183,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9462cf34bac5856f",
+  "active": "410b4e360c091b2a",
   "lastOpenFiles": [
-    "Untitled 1.md",
-    "Welcome.md",
-    "Untitled.canvas",
-    "Estructura de un Data Base Management System.md",
-    "Untitled 2.md",
-    "TP 8 comunicaciones.md",
-    "TSQL.md",
-    "Integración y Encriptación.md",
-    "Untitled 1/Canales de Comunicaciones.md",
-    "Untitled 1",
-    "Multiplexacion de señales.md",
-    "Untitled.md",
-    "Pasted image 20250428111546.png",
-    "Pasted image 20250428104427.png",
-    "Untitled"
+    "Canales de Comunicaciones.md",
+    "Medios de comunicaciones Guiados.md",
+    "Welcome.md"
   ]
 }
