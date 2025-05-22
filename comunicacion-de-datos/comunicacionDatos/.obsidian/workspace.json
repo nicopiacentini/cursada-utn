@@ -11,10 +11,14 @@
             "id": "a660f2ca93fbbe56",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Errores.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Errores"
             }
           }
         ]
@@ -166,6 +170,7 @@
   },
   "active": "a660f2ca93fbbe56",
   "lastOpenFiles": [
+    "Errores.md",
     "Redes + OSI.md",
     "Modulacion.md",
     "Banda base + Unidades de medicion.md",
