@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "4a1ed947781599f2",
+        "id": "374dea885b19b4b4",
         "type": "tabs",
         "children": [
           {
-            "id": "9462cf34bac5856f",
+            "id": "dcc2d20f3ec86a11",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled 2.md",
+                "file": "Indices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled 2"
+              "title": "Indices"
+            }
+          },
+          {
+            "id": "228af020d6afdca2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Metodos de clasificacion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Metodos de clasificacion"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,20 +183,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9462cf34bac5856f",
+  "active": "228af020d6afdca2",
   "lastOpenFiles": [
+    "Metodos de clasificacion.md",
+    "Indices.md",
+    "SQL - parte 1.md",
+    "SQL - parte 2.md",
+    "Estructuras de datos Grafos.md",
+    "Modelo relacional.md",
+    "Arboles.md",
+    "Algoritmos de Compresion.md",
+    "TSQL - parte 1.md",
+    "TSQL - parte 2.md",
     "Untitled 1.md",
     "Welcome.md",
     "Untitled.canvas",
     "Estructura de un Data Base Management System.md",
     "Untitled 2.md",
     "TP 8 comunicaciones.md",
-    "TSQL.md",
     "Integración y Encriptación.md",
     "Untitled 1/Canales de Comunicaciones.md",
     "Untitled 1",
     "Multiplexacion de señales.md",
-    "Untitled.md",
     "Pasted image 20250428111546.png",
     "Pasted image 20250428104427.png",
     "Untitled"

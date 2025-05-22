@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "32ae4c302ff8eff2",
+    "id": "f0c348bc87a7be21",
     "type": "split",
     "children": [
       {
-        "id": "fb9d0eafb883a2e3",
+        "id": "aa014e85673c8f0e",
         "type": "tabs",
         "children": [
           {
-            "id": "a660f2ca93fbbe56",
+            "id": "d426f976e4829384",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "895e84e6bf50bcf7",
+    "id": "8784f0a2606981ed",
     "type": "split",
     "children": [
       {
-        "id": "607c832b8bd14b22",
+        "id": "3e1c244e74ada821",
         "type": "tabs",
         "children": [
           {
-            "id": "e8769e8b58f96182",
+            "id": "65f45f9e143e1189",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "33e0303bca5b7624",
+            "id": "5f71054432fc53b3",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "fbad3b0ffc936bde",
+            "id": "77a808e9be9e0f73",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,20 +77,19 @@
     "width": 300
   },
   "right": {
-    "id": "3ff38fa081cd773f",
+    "id": "8e691134abf76311",
     "type": "split",
     "children": [
       {
-        "id": "552ee0f3323f334b",
+        "id": "d012536d7ddaae2c",
         "type": "tabs",
         "children": [
           {
-            "id": "6033a6a599c56d2e",
+            "id": "90d3b0847c98ad29",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "7783f56212b2cd35",
+            "id": "a1d1e6b4c60d2e27",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "b25a65f2ff133b8c",
+            "id": "6e4987e73955f6d8",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,18 +131,17 @@
             }
           },
           {
-            "id": "206893a506560861",
+            "id": "bc9618a12a6ae8f0",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline"
             }
           }
         ]
@@ -164,17 +161,8 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a660f2ca93fbbe56",
+  "active": "d426f976e4829384",
   "lastOpenFiles": [
-    "Redes + OSI.md",
-    "Modulacion.md",
-    "Banda base + Unidades de medicion.md",
-    "Redes de telecomunicaciones.md",
-    "Multiplexacion de señales.md",
-    "Intro a telecomunicaciones - clase 1.md",
-    "Pasted image 20250519181235.png",
-    "Canales de Comunicaciones.md",
-    "Welcome.md",
-    "Medios de comunicaciones Guiados.md"
+    "Welcome.md"
   ]
 }
