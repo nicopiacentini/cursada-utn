@@ -77,3 +77,100 @@ Administracion Fisica de la informacion persistida en la DBMS. Administra su dis
 - acceso a la informacion fisica
 - comunicacion con el SO para acceder al disco
 
+
+## Técnicas de Administración de Memoria
+
+- **Segmentación**: Divide la memoria en _segmentos_ de longitud variable.
+    
+- **Paginación**: Divide la memoria en _páginas_ de longitud fija.
+    
+
+---
+
+## Paginación
+No necesariamente se reduce a RAM, puede usarse tambien en disco. El tamaño de las paginas es parecido a el tamaño del cluster del disco.
+
+### Estructura de una Página
+
+- **ID Page**: Identificador único de la página (numeradas y contiguas).
+    
+- **Body Page**: Área principal donde se almacenan los registros (como renglones).
+	- *Renglon* - Unidad minima de grabacion de la pagina
+    
+- **Footer Offset**: Registro de la posición relativa de cada fila en la página. Es el indice de la pagina donde cada entrada se corresponde con un *renglon* de la pagina. Me ayuda a encontrad un renglon sin necesidad de leer toda la pagina
+    
+
+### Funcionamiento
+
+- Los datos ingresan en el `body page`.
+    
+- En el `footer offset` se guarda la posición relativa de cada fila.
+Sirve para realizar un acceso directo a los renglones.
+
+![[Pasted image 20250526082135.png]]
+
+- Puede haber _fragmentación_
+
+
+#### Fragmentación
+Depende del tamaño que le asigne a mi renglon
+- **Externa**: Página menor al tamaño del cluster, sobrando espacio en disco.
+    
+- **Interna**: Fila más pequeña que el tamaño del renglón.
+    
+- Si una fila es más grande que un renglón, se almacenará en múltiples renglones. De la forma siguiente:
+![[Pasted image 20250526083519.png]]
+
+---
+
+## Lógica de Almacenamiento
+Es como distribuyo al espacio que tengo disponible.
+### Clustering
+
+Técnica para agrupar objetos por algún criterio:
+
+- **Intra File**: Agrupa objetos dentro de un mismo conjunto (ej. filas de una misma tabla en una sola página).
+    
+- **Inter File**: Agrupa objetos relacionados de conjuntos diferentes (ej. índices y claves primarias asociadas a claves foráneas).
+Tanto inter como intra pueden ser aplicados a paginacion. El dbms usa intra file para cada tabla, es decir, en una pagina hay una sola tabla. Ahora, se usa inter file para guardar pks, constraints y fks. Cuando guardo inter file, en el arbol b tengo un puntero a hash para relacionar pks con fks. Esto pasa en las hojas cuando por ejemplo, quiero las materias de tal alumno.
+---
+
+## Almacenamiento de Archivos
+
+- El sistema operativo maneja archivos como conjuntos de caracteres ASCII.
+    
+- Se requiere identificar el contenido mediante un:
+    
+
+### Header
+
+- Encabezado con caracteres que definen el contenido del archivo. Es de tamaño constante. Es una estructura fija y maneja la variabilidad de lo que viene despues.
+    
+
+---
+
+## Tipos de Archivos
+
+- La **extensión** indica su tipo y aplicación asociada.
+    
+- El **DBMS** utiliza headers para identificar diferentes tipos de archivos, por ejemplo, para distinguir tablas.
+    
+
+---
+
+## Header de Tablas (Ejemplo)
+
+Consulta:
+
+```sql
+
+
+SELECT nombre, saldo FROM tabla WHERE saldo > 15;
+```
+![[Pasted image 20250526095150.png]]
+El DBMS crea structs de esta forma para cada tabla. El struct table es el header que es de tamaño constante. El struct columna define un vector donde cada posicion es una de las columnas de la tabla. Si table tiene 3 columnas
+
+- El DBMS recupera los datos y construye un string por fila, por ejemplo:
+    ![[Pasted image 20250526095541.png]]
+    
+- Utiliza el header para parsear el string y obtener los valores relevantes.
