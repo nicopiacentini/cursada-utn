@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "69edb1f632634ea5",
+        "id": "8e17c610d10a970a",
         "type": "tabs",
         "children": [
           {
-            "id": "b6256d28a20410e3",
+            "id": "7b60b5acc104393f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Introduccion a tipado y checkeo estatico de tipos.md",
+                "file": "Resolucion Pokemones - PARTE 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduccion a tipado y checkeo estatico de tipos"
-            }
-          },
-          {
-            "id": "8b4c0eda01c340b9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clase tipado.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Clase tipado"
+              "title": "Resolucion Pokemones - PARTE 2"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -183,10 +168,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8b4c0eda01c340b9",
+  "active": "7b60b5acc104393f",
   "lastOpenFiles": [
-    "Introduccion a tipado y checkeo estatico de tipos.md",
     "Clase tipado.md",
+    "Resolucion Pokemones - PARTE 2.md",
+    "Introduccion a tipado y checkeo estatico de tipos.md",
     "Ejercicio Prototipado.md",
     "Pasted image 20250509115616.png",
     "Welcome.md",
