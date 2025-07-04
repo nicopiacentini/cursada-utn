@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Diagrama de secuencia y componentes.md",
+                "file": "dds/Introduccion a la arquitectura.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Diagrama de secuencia y componentes"
+              "title": "Introduccion a la arquitectura"
+            }
+          },
+          {
+            "id": "12105a4953ebd7ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Arquitectura Parte 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Arquitectura Parte 2"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,9 +183,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b469918218ecca6b",
+  "active": "12105a4953ebd7ea",
   "lastOpenFiles": [
-    "dds/APIs Rest en Java.md",
-    "Diagrama de secuencia y componentes.md"
+    "Pasted image 20250704091518.png",
+    "dds/Patrones De diseño.md",
+    "dds/Introduccion a la arquitectura.md",
+    "Arquitectura Parte 2.md",
+    "Diagrama de secuencia y componentes.md",
+    "dds/APIs Rest en Java.md"
   ]
 }
