@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "2888d41a35710b6c",
+        "id": "17370ac9ca97a961",
         "type": "tabs",
         "children": [
           {
-            "id": "02c15a199b35b22a",
+            "id": "1cda9e935562f89a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Manejo de errores en TSQL.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Manejo de errores en TSQL"
+              "title": "New tab"
             }
           }
         ]
@@ -40,7 +36,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -168,16 +164,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "02c15a199b35b22a",
+  "active": "8c3471dd63e5125a",
   "lastOpenFiles": [
+    "Indices.md",
+    "Algoritmos de Compresion.md",
+    "Integración y Encriptación.md",
+    "Arboles.md",
+    "Estructura de un Data Base Management System.md",
+    "Estructuras de datos Grafos.md",
     "Manejo de errores en TSQL.md",
     "TSQL - parte 2.md",
     "TSQL - parte 1.md",
     "Inteligencia de Negocios.md",
-    "Indices.md",
     "SQL - parte 1.md",
     "Modelo relacional.md",
-    "Estructura de un Data Base Management System.md",
     "Pasted image 20250526095541.png",
     "Pasted image 20250526095150.png",
     "Pasted image 20250526083519.png",
@@ -185,15 +185,11 @@
     "Pasted image 20250526082043.png",
     "Metodos de clasificacion.md",
     "SQL - parte 2.md",
-    "Estructuras de datos Grafos.md",
-    "Arboles.md",
-    "Algoritmos de Compresion.md",
     "Untitled 1.md",
     "Welcome.md",
     "Untitled.canvas",
     "Untitled 2.md",
     "TP 8 comunicaciones.md",
-    "Integración y Encriptación.md",
     "Untitled 1/Canales de Comunicaciones.md",
     "Untitled 1",
     "Multiplexacion de señales.md",
