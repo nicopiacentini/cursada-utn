@@ -1,10 +1,16 @@
-# Resumen de "Introducción a arquitectura.docx"
 
-Este documento presenta una introducción a la arquitectura de software, abordando su definición, las cuestiones clave que resuelve, los criterios para tomar decisiones arquitectónicas y una breve visión de los patrones.
+Prof : Bulgarelli
+Jueves 8:30-12:30 aula 5
+Sabado 9:15 - 12:30 virtual excepto parciales y recuperatorios -> Seminario para 
+cliente-servidor web, cliente pesado.
+Parcial -> teorico practico escrito, 1 solo.
+Mail -> flbulgareli@frba.utn.edu.ar
+Trabajamos con JavaScript y su Ecosistema y mongoDB 
+JavaScript -> node JS(*instalar la version 22* para el servidor), React para el lado del cliente, Docker, MongoDB. Es el stack de MERN
 
 ---
 
-### 1 ¿Qué es una Arquitectura de Software?
+### ¿Qué es una Arquitectura de Software?
 
 La arquitectura de software se define como el diseño de más alto nivel de un sistema. Es el conjunto de decisiones que estructuran el resto del diseño, las cuales son difíciles de modificar y deben tomarse con gran cuidado desde el principio. Una de sus funciones principales es posibilitar o garantizar el cumplimiento de los requerimientos no funcionales. En este contexto, la arquitectura se considera una parte del diseño.
 
@@ -143,3 +149,72 @@ Los grandes problemas de arquitectura son recurrentes:
 - **Comunicación**: Controlar la comunicación entre componentes, minimizar la complejidad, manejar errores y ser expresivo.
     
 - **Duplicaciones**: A veces es necesario introducir duplicación de datos o lógica por cuestiones de eficiencia, seguridad o compatibilidad entre tecnologías.
+
+
+## Cliente-Servidor
+El cliente hace peticiones al servidor y el servidor responde y actua en pos de las mismas. Los roles pueden cambiar -> el cliente puede pasar a ser servidor en determinadas situaciones.
+
+##### WebHooks
+Es una reinvension del cliente servidor donde el cliente tambien puede ser servidor y el servidor tambien puede ser cliente.
+
+#### Bases de datos no relacionales
+Como mongoDB no tiene tablas, filas, fks o pks.
+
+
+##### SW Gubernamental VS SW Comercial
+Tiene caracteristicas a la parte comercial. Los datos con los que se trabajan y el tipo de funcionalidades son distintos.
+Por ejemplo el sw comercial es mas iterativo incremental en cambio, lo que es gubernamental suele redondar sobre el mismo tipo de problemas y no requiere el tipo iterativo incremental y no necesita ser rapido, como si necesita lo comercial que debe ser rapido.
+
+
+
+### Procesos
+Son programas en ejecucion, que ocupan ram, usan el fs, etc. Estos pueden tener vida larga o vida corta. Dentro de vida larga, existen los que no terminan nunca como un repl (interprete), programas de red que esperan interaccion con la red o paquete que entrara o saldra.
+En esta materia vamos a ver los de vida larga, mayoritariamente los de red.
+Los procesos pueden ser centralizados o distribuidos:
+- Centralizado -> en una maquina
+- Distribuido -> corre en varios procesos, uno por maquina. Es como un proceso *virtual*
+
+### Arquitectura
+Diseño en el alto nivel. No hay correlacion directa con el hardware. 
+#### Arquitectura Logica
+Como se organizan los componentes software, quien interactua con quien y a partir de que
+#### Arquitectura Fisica
+Como se despliegan los componentes logicos a lo largo del hardware/nodos
+- Monolitica -> el *proceso* corre en una sola maquina. No hay red.
+- Distribuida -> Existe una red, que una maquina se conecta con otra persona, cosa, computadora, etc
+Red -> conexion entre 2 cosas, sean personas, computadoras, etc. La conexion puede darse por cable, red, http (cliente servidor forzado), https, etc.
+
+##### Arquitecturas distribuidas (fisicas)
+- Con jerarquia -> cliente-servidor (comercial, rapido)
+- Sin jerarquia -> P2P: son eficientes, no rapidos
+
+#### Protocolos Web
+Sistema de protocolos que se manejan con cliente-servidor. Es uno de los servicios que corre en internet. Es la idea de consumision de servicios, apretar botones, interfaz grafica. Se debe utilizar un buscador como google.
+Los protocolos mas comunes son:
+- Http -> intercambio cliente servidor basado en texto plano (html). Ojo no es binario. Utiliza verbos indicando la operacion que voy a hacer (GET, POST, PUT, PATCH, DELETE). El navegador es un cliente del cliente-servidor. Las url se les hacen los verbos.
+- Rest
+- Html -> Lenguaje de marcado, texto plano, respuestas de http.
+- CSS -> protocolo para darle estilo al html
+- JavaScript (ECMAScript) -> Hace que la pagina no sea estatica, es decir, poderle dar funciones, estructura, etc.
+	- ECMAScript -> el *standard* que debe seguir javascript.
+
+Los clientes http (navegadores) deben bancar JavaScript.
+
+#### Cliente liviano 
+El cliente o navegador no ejecuta nada, solo hace peticiones http por cada boton/accion y el servidor devuelve un html, es decir, el contenido ordenado y mostrado
+
+#### Cliente Pesado
+Aca ante cada peticion, el servidor quizas en vez de mandar un html, manda un archivo mas liviano, como un json/xml/etc. Ahora el javascript que corre desde el lado del cliente, recibe el json y genera el html.
+- Frontend -> realiza validacion, y exposicion de objetos, html, css, etc. Muestra videos, fotos y **dibuja la interfaz grafica**. Registra las interacciones y se ejecuta en el cliente
+- Backend -> Se ejecuta en el servidor. Tiene que ver con la seguridad, optimizacion, implementacion de logica de dominio. Es decir, todo menos el front como dibujar o hacer validaciones.
+
+
+## Redefinicion de Monolitico VS Distribuido
+Monolitico puede tener conexion o red con el cliente y con la base de datos. Entonces queda:
+- Monolitico -> El Backend corre en una computadora, que se conecta con una base de datos y envia cosas al cliente. Las unicas 2 conexiones son obvias y por eso entra en monoliticoAca ante cada peticion, el servidor quizas en vez de mandar un html, manda un archivo mas liviano, como un json/xml/etc. Ahora el javascript que corre desde el lado del cliente, recibe el json y genera el html.
+- Frontend -> realiza validacion, y exposicion de objetos, html, css, etc. Muestra videos, fotos y ￼￼dibuja la interfaz grafica￼￼. Registra las interacciones y se ejecuta en el cliente
+- Backend -> Se ejecuta en el servidor. Tiene que ver con la seguridad, optimizacion, implementacion de logica de dominio. Es decir, todo meno
+- Distribuido -> El Backend corre en mas de un Servidor/Computadora. La conexion con la base de datos y con el cliente se toman como dadas por hecho, no cuentan.
+
+##### El servidor
+Es el componente de sw que se ejecuta en una maquina, responde a peticiones. Ahora el nodo donde corre este sw tambien se le puede llamar nodo servidor.

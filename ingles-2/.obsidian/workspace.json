@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "ff437e102a6f4bd0",
+    "id": "94b07e1d1a117ad0",
     "type": "split",
     "children": [
       {
-        "id": "3a0954056e14ddd5",
+        "id": "1e2bdae464468a99",
         "type": "tabs",
         "children": [
           {
-            "id": "4fcab98bc33a64a6",
+            "id": "8b8cfeb12b9a8509",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clase 1 - Introduccion.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Clase 1 - Introduccion"
+              "title": "New tab"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "a717c5f628aba218",
+    "id": "8c96a480bcc166a6",
     "type": "split",
     "children": [
       {
-        "id": "360e54cca35f2b88",
+        "id": "e4e00899761b6e5f",
         "type": "tabs",
         "children": [
           {
-            "id": "5c3cd07eca4fac3d",
+            "id": "e863210bd497911f",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +44,7 @@
             }
           },
           {
-            "id": "c65bb9e8d0e58275",
+            "id": "0a21a58a340269ed",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +61,7 @@
             }
           },
           {
-            "id": "7c144dc8987f7792",
+            "id": "d8735368886f9072",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +77,19 @@
     "width": 300
   },
   "right": {
-    "id": "8e1ef0cc582b7f09",
+    "id": "9670925fd74019ed",
     "type": "split",
     "children": [
       {
-        "id": "d9b4af339ac0a1d9",
+        "id": "e19f9630fd24e4ab",
         "type": "tabs",
         "children": [
           {
-            "id": "895f241f36bab840",
+            "id": "66264df82144e3b7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Clase 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Clase 1"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "6d6435b83d6b514a",
+            "id": "cfbe9cc01a0e54f0",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Clase 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Clase 1"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "2072ab4ec1e21f0e",
+            "id": "b090d796da6913b2",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,18 +131,17 @@
             }
           },
           {
-            "id": "a3e39895c91ab593",
+            "id": "1bf50dc37da4f0ba",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Clase 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Clase 1"
+              "title": "Outline"
             }
           }
         ]
@@ -168,8 +161,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4fcab98bc33a64a6",
-  "lastOpenFiles": [
-    "Clase 1 - Introduccion.md"
-  ]
+  "active": "8b8cfeb12b9a8509",
+  "lastOpenFiles": []
 }
