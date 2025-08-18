@@ -4,7 +4,7 @@ function aumentarPrecioDiario(alojamientos, aumento){
     });
 }
 
-function alojamietoMasCaro(alojamientos){
+function alojamientoMasCaro(alojamientos){
     const precios = alojamientos.map(alojamiento => {return alojamiento.precioPorNoche});
     const precioMaximo = Math.max(...precios) // desarmar la lista en conjunto de objetos como parametro
 
@@ -13,7 +13,17 @@ function alojamietoMasCaro(alojamientos){
     return alojamiento;
 }
 
+function alojamientosMasBaratosQue(alojamientos, monto){
+    return alojamientos.filter(alojamiento => {return alojamiento.precioPorNoche < monto});
+}
+
+function obtenerTotalReservas(reservas){
+    return reservas.reduce((previo,reserva) => {return previo + reserva.precioFinal()}, 0);
+
+}
 module.exports = {
     aumentarPrecioDiario,
-    alojamietoMasCaro
+    alojamientoMasCaro,
+    alojamientosMasBaratosQue,
+    obtenerTotalReservas
 }
