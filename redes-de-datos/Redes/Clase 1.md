@@ -69,14 +69,18 @@ Interconexion de  sistemas abiertos. Es una norma ISO.
 Es basicamente la forma en la que se unificaron las soluciones de los fabricantes de productos/soluciones de red/dispositivos. Existen 7 capas que se comunican las que estan al lado.
 
 ### La capa
-La entidad de la capa N consume los servicios de la capa inferior y brinda servicios a la capa superior. Cada capa *dialoga* con su capa par en el otro lado de la comunicacion. Cada capa sabe que servicios consumir, como los consume y que servicios expone
+La entidad de la capa N consume los servicios de la capa inferior y brinda servicios a la capa superior. Cada capa *dialoga* con su capa par en el otro lado de la comunicacion. Cada capa sabe que servicios expone, como se consumen y la especificacion de protocolo -> **IMPORTANTE: Cada implementacion de capa se lleva a cabo mediante un protocolo determinado implementado por el hardware que corresponda**
 
 ![[Pasted image 20250814200250.png]]
 
 Cuando conecto 2 computadoras por ejemplo, el usuario A tiene su pila de protocolos y B lo mismo. A habla con su capa de aplicacion que va consumiendo servicios hasta la fisica que manda datos hacia la otra capa fisica (cables). Luego en B los datos van subiendo capa por capa hasta llegar a aplicacion para que B pueda ver lo que le llego. 
 
 Cada capa tiene un PDU (lo que le llega de la capa que consume sus servicios) y un agregado de informacion que agrega esta capa. Del otro lado, la misma capa pero de la otra computadora debe sacar la informacion extra para procesar los datos que le llegaron y quedarse solo con el PDU. La informacion extra/redundante es necesaria para este proceso. Esta informacion extra se llama **cabezera** y es agregada por el **protocolo de capa**.
-La cabezera es necesaria por que cada capa *transforma* la informacion que le llega y su capa par de la otra maquina debe *destransformar* lo que le llega segun el header de su capa.
+La cabezera es necesaria por que cada capa *transforma* la informacion que le llega y su capa par de la otra maquina debe *destransformar* lo que le llega segun el header de su capa. Esto es el encapsulamiento
+
+### Implementacion en internet
+Cuando me conecto por wifi a un router desde una computadora, ambos debemos compartir el stack de protocolos OSI (cada capa mia debe tener el mismo protocolo que el router). Ahora el router debe comunicarse por cable, por ejemplo, con otro nodo. Ahi cambia el protocolo de la capa fisica (pasamos de wireless a cable). Entonces entre mi router y el otro nodo se maneja **otro stack de protocolos OSI**
+# Las Capas
 ### Fisica
 Es la capa mas baja de todas. Es la forma *fisica* en la que se conectan los dispositivos que se comunican. Puede usar cables como el UTP con rj-45, o fibra optica o inalambrica. Es todo aquello que se dio en comunicaciones. La **interfaz física** entre dispositivos y las **reglas de transmisión de bits** se definen a través de cuatro aspectos clave.
 
@@ -86,15 +90,15 @@ Las propiedades **mecánicas** se refieren a las características físicas, como
 Es un cable de 8 hilos 4 pares. Usa entradas y fichas *rj-45*.
 
 ### Enlace
-La **capa de enlace de datos** busca crear un enlace seguro y cuenta con mecanismos para activarlo, mantenerlo y desactivarlo. Para ello, agrupa los bits en **tramas** para delimitar el flujo de datos. A través de la **detección y corrección de errores**, asegura que la información llegue correctamente, solicitando retransmisiones si es necesario. El **control de flujo** evita que un emisor rápido sobrecargue a un receptor lento, y se encarga de la **recuperación de datos** perdidos, duplicados o erróneos para garantizar la integridad de la comunicación.
+La **capa de enlace de datos** busca crear un enlace seguro y cuenta con mecanismos para activarlo, mantenerlo y desactivarlo. Para ello, agrupa los bits en **tramas** para delimitar el flujo de datos (indica los bits que son mensaje, lo demas son headers o trailers). A través de la **detección y corrección de errores**, asegura que la información llegue correctamente, solicitando retransmisiones si es necesario. El **control de flujo** evita que un emisor rápido sobrecargue a un receptor lento, y se encarga de la **recuperación de datos** perdidos, duplicados o erróneos para garantizar la integridad de la comunicación.
 
 ### Red
-Permite la interconexion entre dispositivos, es decir, que un dispositivo hable con otros 2 en simultaneo. Esto sirve para hablar con dispositivos fuera de la red local/LAN. Da identificacion a el emisor y al receptor del mensaje. Busca la ubicacion y como llegar al receptor. Sirve para comunicarse con dispositivos fuera de mi red. Aca se empieza a hablar de direcciones IP.
+Permite la interconexion entre dispositivos, es decir, que un dispositivo hable con un tercero a partir de un intermediario. Esto sirve para hablar con dispositivos fuera de la red local/LAN. Da identificacion a el emisor y al receptor del mensaje. Busca la ubicacion y como llegar al receptor. Sirve para comunicarse con dispositivos fuera de mi red. Aca se empieza a hablar de direcciones IP.
 - Encaminamiento -> como llego del emisor al receptor y como vuelvo del mismo.
 - Direccionamiento -> determina quien habla con quien.
-
+Entre 2 dispositivos se comparten protocolos de capa fisica y de enlace. Para llegar al tercero no hace falta que tambien tenga los mismos protocolos en fisica y en enlace. Solo hace falta que compartan el protocolo de red, para poder hacer el **direccionamiento** y el **encaminamiento**.
 ### Transporte
-Permite la comunicacion extremo a extremo. Esto implica que cuando pasa por la red nadie lo *abre* hasta no llegar a su receptor. De red para atras, cada repetidor/cablemodem/nodo que sea intermediario de la red se comunica con su determinado stack de Fisica/Enlace/Red. En esta capa se rehace el control de errores. Es el control de errores extremo a extremo.
+Permite la comunicacion extremo a extremo. Esto implica que cuando pasa por la red/internet nadie lo *abre* hasta no llegar a su receptor. Esto significa que nadie toca lo que esta en esta capa exeptuando el emisor original y el receptor final, poreso *extremo a extremo*. En esta capa se rehace el control de errores. Es el control de errores extremo a extremo.
 
 ##### Sniffer
 Muestra/intercepta todos los paquetes que entran y salen por una interfaz de red. Solo intercepta paquetes de la capa fisica

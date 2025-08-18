@@ -75,3 +75,93 @@ Busca vulnerabilidades y desarrolla ataques a la criptografia
 
 ##### Criptografia
 Estudia el diseño y propiedades de algoritmos criptograficos y mecanismos de confidencialidad e integridad.
+
+## Modelo matemático de un criptosistema
+
+Un criptosistema puede definirse como el conjunto:
+
+**(M, K, C, Ee, Dd)**
+
+- **M**: conjunto de mensajes en claro (plaintext).
+    
+- **K**: conjunto de claves.
+    
+- **C**: conjunto de textos cifrados.
+    
+- **Ee**: función de cifrado.
+    
+- **Dd**: función de descifrado.
+    
+
+Existen dos grandes categorías:
+
+- **Sistemas simétricos**: la misma clave se utiliza para cifrar y descifrar.
+    
+- **Sistemas asimétricos**: se emplea un par de claves (pública y privada).
+    
+
+---
+
+## Criptografía clásica
+
+La criptografía clásica es principalmente **simétrica**. La clave debe permanecer en secreto y ser compartida entre emisor y receptor. Si se roba, copia o pierde, la seguridad se compromete.
+
+El modelo se compara con una cerradura: la misma llave abre y cierra, y cada cerradura requiere su propia llave.
+
+### Técnicas clásicas
+
+1. **Transposición**: reorganizar las letras del mensaje según un patrón predefinido (ejemplo: Escítala espartana, siglo V a.C.).
+    
+2. **Sustitución**: reemplazar cada carácter por otro siguiendo una regla (ejemplo: el Cifrado César, usado en la Guerra de las Galias).
+    
+3. **Cifrado de Vigenère**: combinación de sustituciones polialfabéticas que se consideró durante siglos “indescifrable”.
+    
+
+Con el tiempo, se desarrollaron métodos de **criptoanálisis** como el análisis de frecuencias, que permiten romper muchos de estos sistemas.
+
+---
+
+## Códigos y cifras
+
+Es importante diferenciar:
+
+- **Cifrado**: sustituye letras o símbolos de acuerdo a un algoritmo.
+    
+- **Código**: sustituye palabras o conceptos completos por otros equivalentes (ejemplo: el **Código Navajo** durante la Segunda Guerra Mundial).
+    
+
+---
+
+## Hitos históricos
+
+- **Disco de Alberti (1467)**: pionero en la construcción de mecanismos de cifrado.
+    
+- **San Martín**: durante su formación en España, adquirió conocimientos de criptografía y esteganografía, llegando a emplear “tintas invisibles” en sus comunicaciones.
+    
+- **Cifrado Francmasón (PigPen)**: empleado en el siglo XVIII, aún visible en inscripciones.
+    
+- **Máquina Enigma (1918–1945)**: usada por las fuerzas alemanas en la Segunda Guerra Mundial. Fue quebrada en Bletchley Park por criptógrafos y matemáticos, entre ellos Alan Turing.
+    
+- **Cifrados sin resolver**: entre los más famosos se encuentran el **Manuscrito Voynich** y los mensajes del **Asesino del Zodiaco**.
+    
+
+---
+
+## Esteganografía
+
+La esteganografía busca **ocultar la existencia misma del mensaje**.
+
+### Ejemplos históricos
+
+- **Heródoto (siglo V a.C.)**: un mensaje fue tatuado en la cabeza afeitada de un mensajero, oculto hasta que el cabello volvió a crecer.
+    
+- **Tablillas enceradas**: los griegos escribían mensajes ocultos bajo una capa de cera.
+    
+- **Tintas invisibles**: jugo de limón o naranja, y en tiempos modernos, tintas ultravioletas.
+    
+- **Micropuntos (Segunda Guerra Mundial)**: textos reducidos al tamaño de un punto imperceptible pegados en cartas.
+    
+
+### Esteganografía moderna
+
+Hoy, la técnica se aplica en entornos digitales. Es posible esconder archivos completos (como capítulos de un libro) dentro de imágenes, audios o videos. Esto se utiliza tanto para fines legítimos como para actividades ilícitas.

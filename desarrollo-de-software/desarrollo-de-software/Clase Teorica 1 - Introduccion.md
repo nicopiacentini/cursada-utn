@@ -119,26 +119,12 @@ Se advierte que la arquitectura en capas, donde las capas se organizan jerárqui
 - Capas "físicas" (máquinas o tiers).
     
 
-#### 4.3 Otras taxonomías
-
-Existen otras categorizaciones de patrones arquitecturales para problemas lógicos, como el modelado de presentación (MVC, MVVM) y la comunicación entre componentes. También se mencionan patrones sobre la integración del diseño y la arquitectura, como los EAP de Martin Fowler y el patrón Home/DAO.
 
 ---
 
 ### 5 Consideraciones generales
 
 El documento enfatiza que, aunque el diseño evolutivo es posible a través de refactoring, una noción general de la arquitectura es necesaria desde el principio, ya que cambiarla sobre la marcha es extremadamente costoso.
-
-Se citan ejemplos de cambios arquitectónicos complejos:
-
-- Cambiar un motor de persistencia.
-    
-- Introducir una cola de mensajes a mitad de proyecto.
-    
-- Cambiar de un procesamiento online a por lotes.
-    
-- Migrar de un lenguaje a otro en una aplicación avanzada.
-    
 
 Además, se recalca que una arquitectura no es solo un diagrama, sino que requiere un conocimiento profundo de las tecnologías subyacentes, protocolos de red y detalles de implementación. Los arquitectos deben tener un perfil tan técnico como el de un programador.
 
@@ -211,8 +197,8 @@ Aca ante cada peticion, el servidor quizas en vez de mandar un html, manda un ar
 
 ## Redefinicion de Monolitico VS Distribuido
 Monolitico puede tener conexion o red con el cliente y con la base de datos. Entonces queda:
-- Monolitico -> El Backend corre en una computadora, que se conecta con una base de datos y envia cosas al cliente. Las unicas 2 conexiones son obvias y por eso entra en monoliticoAca ante cada peticion, el servidor quizas en vez de mandar un html, manda un archivo mas liviano, como un json/xml/etc. Ahora el javascript que corre desde el lado del cliente, recibe el json y genera el html.
-- Frontend -> realiza validacion, y exposicion de objetos, html, css, etc. Muestra videos, fotos y ￼￼dibuja la interfaz grafica￼￼. Registra las interacciones y se ejecuta en el cliente
+- Monolitico -> El Backend corre en una computadora, que se conecta con una base de datos y envia cosas al cliente. Las unicas 2 conexiones son obvias y por eso entra en monolitico. Aca ante cada peticion, el servidor quizas en vez de mandar un html, manda un archivo mas liviano, como un json/xml/etc. Ahora el javascript que corre desde el lado del cliente, recibe el json y genera el html.
+- Frontend -> realiza validacion, y exposicion de objetos, html, css, etc. Muestra videos, fotos y dibuja la interfaz grafica. Registra las interacciones y se ejecuta en el cliente
 - Backend -> Se ejecuta en el servidor. Tiene que ver con la seguridad, optimizacion, implementacion de logica de dominio. Es decir, todo meno
 - Distribuido -> El Backend corre en mas de un Servidor/Computadora. La conexion con la base de datos y con el cliente se toman como dadas por hecho, no cuentan.
 
