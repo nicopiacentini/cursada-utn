@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "7da985e874312f66",
@@ -160,6 +161,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,6 +172,11 @@
   },
   "active": "424d7de9e11a5812",
   "lastOpenFiles": [
+    "Pasted image 20250818204102.png",
+    "Pasted image 20250818201553.png",
+    "Pasted image 20250818201333.png",
+    "Pasted image 20250818200744.png",
+    "Pasted image 20250818200054.png",
     "Welcome.md",
     "Clase 1 Economia.md"
   ]
