@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,6 +171,7 @@
   },
   "active": "90abe9a628bddfd3",
   "lastOpenFiles": [
+    "Pasted image 20250820215828.png",
     "Clase 2.md",
     "Clase 1.md"
   ]

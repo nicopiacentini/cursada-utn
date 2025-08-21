@@ -8,7 +8,7 @@ Lo que la gente cree -> no necesariamente digital o con computadoras. Tiene el p
 #### Proceso de comunicacion
 
 - Emisor
-- Canal
+- Canal (debe ser fisico, no necesariamente tangible)
 - Mensaje
 - Receptor
 
@@ -18,34 +18,34 @@ Entonces la criptografia busca dar seguridad al *canal* para que no se *modifiqu
 
 El canal puede sufrir de ruido
 #### Infraestructura de red
-El equipo del emisor envia un mensaje a una *red de datos* (basicamente una red de repetidores conectados por cable donde el mensaje rebota entre estos) que luego envia el mensaje al equipo del receptor. Existen rutas de routers para rebotar los mensajes hasta cualquier lado.
+El equipo del emisor envia un mensaje a una *red de datos* (basicamente una red de *routers* conectados por cable donde el mensaje rebota entre estos) que luego envia el mensaje al equipo del receptor. Existen rutas de routers para rebotar los mensajes hasta cualquier lado.
 
 - El mensaje del emisor se parte en *paquetes* que son enviados por la red de datos. 
 - Los *sistemas autonomos* pueden enviar o recibir mensajes
 
+
 ### Seguridad de la informacion
 Compuesta por estas tres cosas (segun ISO):
+
+#### El canal
+Medio fisico por donde viaja el mensaje. Puede ser un cable, ondas, etc. Se presume inseguro por definicion y es suceptible a ataques, interrupciones, lecturas, modificaciones, etc.
 ##### Confidencialidad
 Que nadie que no deba acceda a la informacion. Depende de legalidades y acceso a la informacion. **La informacion solo puede sser leida por entidades autorizadas**. Ojo pueden pincharme la informacion pero no van a poder abrirlo/ leerlo
 
 ##### Integridad
 Que si guardo algo de una forma se mantenga de esa forma. Que se mantenga integro. **La informacion solo puede ser modificada por las personas autorizadas**. Es poder detectar que se cambio algo.
 
-##### Disponibilidad
+##### Disponibilidad (de seguridad de informacion)
 Que las cosas que yo guarde o persista realmente se persistan y esten disponibles para ser usadas en un futuro. **La informacion debe estar disponible cuando sea requerida**. Es poder recuperar la informacion que tenia guardada incluso si se rompe un servidor.
-
-### Criptografia
-Ofrece/permite lo siguiente
-- Confidencialidad
-- Integridad
-- Autenticacion -> Mecanismo que permite comprobar la identidad de una entidad. Es la certeza de que quien este del otro lado sea quien debe ser.
-- No repudio -> si se usa autenticacion, se asume la imposibilidad de la suplantacion de la identidad
-
-La disponibilidad en este caso esta dada por las redes de datos, computadoras, etc. La criptografia **no da** disponibilidad.
-
 
 ### Proteccion de la informacion
 A la informacion le aplicamos criptografia para protegerla. En teoria, la criptografia hace imposible romper la informacion cuando se usa correctamente.
+#### La criptografia garantiza
+- Confidencialidad -> si interceptan el mensaje no lo pueden leer
+- Integridad -> detectar un cambio en el mensaje
+- Autenticacion -> Comprueba la identidad de una entidad y hace que el mensaje llegue integro
+- No repudio -> Hay registros de los cambios realizados para informar de lo que paso. Queda un *log*.
+
 Entonces la informacion puede estar en:
 
 ##### Reposo
@@ -64,10 +64,8 @@ Para proteger a la informacion puedo:
 
 ##### Proceso
 La informacion se esta creando.
-
-Criptografia homomofrica -> cifrar informacion y poder manipularla sin descifrarla.
-
-
+#### Criptografia homomofrica 
+Cifrar informacion y poder manipularla sin descifrarla.
 ### Criptografia vs Criptoanalisis
 
 ##### Criptoanalisis
@@ -85,32 +83,63 @@ Un criptosistema puede definirse como el conjunto:
 - **M**: conjunto de mensajes en claro (plaintext).
     
 - **K**: conjunto de claves.
+Existen dos grandes categorías:
+
+	- **Sistemas simétricos**: la misma clave se utiliza para cifrar y descifrar.
+    
+	- **Sistemas asimétricos**: se emplea un par de claves (pública y privada).
     
 - **C**: conjunto de textos cifrados.
     
-- **Ee**: función de cifrado.
+- **Ee**: función de cifrado. Es rompible luego de muchos intentos (fuerza bruta)
     
 - **Dd**: función de descifrado.
-    
 
-Existen dos grandes categorías:
+#### Garantia de las propiedades criptograficas en el modelo matematico
 
-- **Sistemas simétricos**: la misma clave se utiliza para cifrar y descifrar.
-    
-- **Sistemas asimétricos**: se emplea un par de claves (pública y privada).
-    
+##### Ciclo de criptografia
+Cuando hago criptografia SIEMPRE se siguen los siguientes pasos
+- Prevencion
+- Deteccion
+- Correccion
+###### Confidencialidad
+Emisor puede: C(m,k) = c
+Receptor hace: D(c,k) = m
+Ahora el que pincha el canal no puede hacer D(c,k) = m porque no tiene la *k*
+
+###### Integridad (detectivo)
+Por el canal entra el mensaje *m* pero sale el mensaje *m\`* donde estos mensajes son distintos y llega mal el mensaje. Esto puede pasar por ataques o interferencias
+La criptografia lo que hace para frenar esto es usar distintas estrategias para informar que m cambio. Se utiliza la **deteccion de cambios**.
+
+###### Autenticacion
+Me sirve cuando se estan comunicando 2 entidades y sale un tercero a meterse y enviar mensajes sin autorizacion. Para saber de quien viene el mensaje para evitarlo aplico **autenticacion**.
+
+###### No repudio
+Informa acerca de quien hizo que. Crea un registro de las transacciones realizadas para no poder rechazar las acciones/transacciones realizadas.
+
+## Importancia de la criptografia
+El gobierno puede poner leyes pero una vez que se vulneran los datos ya es demasiado tarde, porque luego puedo no recuperar lo que perdi. Entonces siempre es mas recomendable protegerse con matematica/criptografia.
 
 ---
-
-## Criptografía clásica
+# Algoritmos criptograficos y su historia
+## Criptografía clásica (hasta los 70)
 
 La criptografía clásica es principalmente **simétrica**. La clave debe permanecer en secreto y ser compartida entre emisor y receptor. Si se roba, copia o pierde, la seguridad se compromete.
 
-El modelo se compara con una cerradura: la misma llave abre y cierra, y cada cerradura requiere su propia llave.
+### Cifrado simetrico
+El modelo se compara con una cerradura: la misma llave abre y cierra, y cada cerradura requiere su propia llave. Se necesitan tantas llaves como personas a usar la cerradura. 
+###### Problema del simetrico
+Con tantas llaves es mas probable que sea robada. La solucion es compartimentar las claves, donde reparto las mismas para distintas comunicaciones. Ahora el sistema debe ser capaz de aguantar muchas claves. De esta forma si se pierde una llave no pasa nada pero si la persona pierde TODAS las llaves hay un serio problema de vulnerabilidad (revocacion).
 
-### Técnicas clásicas
+#### Idea del algoritmo
+TextoPlano -> AlgoritmoSimetrico(TextoPlano, ClaveUnica) -> DocumentoCifrado
+DocumentoCifrado -> AlgoritmoSimetrico(DocumentoCifrado, ClaveUnica) -> TextoPlano 
+
+Se le llama **Clave privada** porque solo la deben conocer el emisor y el receptor.
+#### Técnicas clásicas
 
 1. **Transposición**: reorganizar las letras del mensaje según un patrón predefinido (ejemplo: Escítala espartana, siglo V a.C.).
+![[Pasted image 20250820215828.png]]
     
 2. **Sustitución**: reemplazar cada carácter por otro siguiendo una regla (ejemplo: el Cifrado César, usado en la Guerra de las Galias).
     
@@ -118,6 +147,12 @@ El modelo se compara con una cerradura: la misma llave abre y cierra, y cada cer
     
 
 Con el tiempo, se desarrollaron métodos de **criptoanálisis** como el análisis de frecuencias, que permiten romper muchos de estos sistemas.
+
+
+### Clasificacion de la criptografia
+- Stream Cipher -> cada letra/bit se cifra por separado
+- Block cipher -> se cifran un conjunto de bits/letras en conjunto. Solo se pueden descifrar juntas
+- Cuantica -> Usa tecnologias y propiedades de la fisica cuantica en el proceso del envio del mensaje.
 
 ---
 
