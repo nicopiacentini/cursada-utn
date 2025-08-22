@@ -43,7 +43,7 @@ En una LAN se usa conmutacion de paquetes y en una WAN puede usar conmutacion de
 ##### Conmutacion de circuitos (Reales)
 Es un circuito hecho por varios repetidores en el medio de la nube. La red es digital pero mando cosas analogicas. Manda 64kbps. **El circuito es de uso exclusivo -> circuito real**
 ##### Conmutacion de paquetes (Virtuales)
-Hay una red de conmutadores que manda paquetes(grupo de bits) entre si hasta llegar al destino. Es un circuito virtual compartido por demas conexiones. Cada repetidor tiene una regla sobre donde mandar cada cosa en caso de que le llegue un paquete que quiere ir a determinado lugar.
+Hay una red de conmutadores que manda paquetes(grupo de bits) entre si hasta llegar al destino. Es un circuito virtual compartido por demas conexiones. Cada router tiene una regla sobre donde mandar cada cosa en caso de que le llegue un paquete que quiere ir a determinado lugar.
 
 
 ## Topologias

@@ -108,31 +108,44 @@ El proceso de _switching_ puede operar en diferentes modos:
 - **Store-and-Forward:** El _switch_ recibe la trama completa antes de reenviarla. Luego revisa el CRC antes de pasar la trama. Es mas lento.
     
 
-**Bridging Loops y Spanning Tree Protocol (STP)**
+### Spanning tree protocol
+Opera sobre las redes LAN para resolver un problema. Si se cae el  bridge(unico punto de fallo) se cae la conexion. Ahora si agrego otro bridge soluciono este problema. Pero surge otro problema. Cuando uno de los bridges cruza de un lado al otro una trama, el otro bridge lo recibe y piensa que el emisor esta del otro lado, cosa que rome con su buffer de direcciones de cada lado.
+Otro problema es que si sale un broadcast de un lado ambos bridges lo reciben y tratan de retransmitir por el otro lado y viceversa. Esto lleva a un **bridging loop** ya que la transimision se repite por los bridges indefinidamente y deja inoperable a la red. Esto mismo puede pasar al hacer una conexion (uplink -> conexion entre switches, tiene su rj45 especial) entre 3 switches, formando un triangulo.
 
-Los bucles de
+El spanning tree protocol resuelve los bridging loop. Lo que hace es recorrer los bridges de la red. Lo que hace es descubrir loops y desactivar los bridges redundantes. Busca romper el bucle con un arbol. Entonces lo que hace es elegir un switch raiz y elegir ramas individuales activas y desactivar otras para llegar a todos lados. 
+Luego cada 2 segundos cada bridge envia un BPDU (bridging protocol data unit -> indica quien es el rootID y su propio bridge id. Todo switch se cree root hasta que llega un switch con bridge id mas bajo) para indicar la existencia del bridge que son recibidos por los demas bridges. Entre ellos eligen la raiz segun el bridge ID (compuesto por 8 bytes de prioridad y MAC adress) mas bajo. Los demas bridges deben elegir 1 solo puerto de todos los que tenga disponibles que lleven hacia el root para evitar bucles. Los demas puertos son desactivados logicamente para evitar que circule trafico. En el momento que la raiz deja de funcionar por la razon que fuera, los demas bridges dejan de recibir su BPDU y se reelije el root.
 
-_bridging_ se producen cuando los _bridges_ en una red no tienen conocimiento de la existencia de otros _bridges_. El protocolo 802.1d Spanning Tree (STP) fue creado para solucionar este problema.
+#### Estados de los puertos
+Cuando cambia la topologia los bridges deben recalcular el root y escuchar bpdus.
+- Blocking -> bloqueo el puerto para evitar bucles
+- Listening -> Escuchar tramas para armar el spanning treee
+- Learning ->  Entender las tramas para saber si el que envia la trama es bridge o final
+- Forwarding -> enviar tramas
 
-- **Función de STP:** Descubre los bucles de red y desactiva los enlaces redundantes. Si un enlace se desconecta, el STA (Spanning Tree Algorithm) se dispara de nuevo para reactivar el enlace que fue desactivado por el STP.
-    
-- **Proceso de elección:** Todos los _bridges_ (o _switches_) en la red participan en la elección de un _root_. Se envían BPDU (Bridge Protocol Data Units) cada 2 segundos. Cada
-    
-    _switch_ tiene un Bridge ID de 8 bytes, compuesto por la prioridad del _bridge_ y su dirección MAC. La prioridad más baja designa al
-    
-    _root_.
-    
-- **Estados de los puertos:** Los puertos de un _switch_ pueden pasar por los estados de BLOCKING, LISTENING, LEARNING, y FORWARDING. Si el estado de un puerto cambia, se envían notificaciones de cambio de topología (TCN) y se reinicia el cálculo del árbol.
-    
+## Vlan
+Son creadas dentro del mismo switch. Es como un simil a maquina virtual para computadoras pero con un switch, es decir, crear un switch dentro de un switch. Lo que hace es separar x puertos de un switch para armar una red aparte. Entonces, **entre esos x puertos armo un nuevo dominio de broadcast**. 
+Para conectar ambas VLAN, (switch con switch virtual) necesito un router(capa 3) porque estoy saliendo de mi red hacia otra, basicamente lo que hacen los protocolos de capa 3.
+Cada vez que conecto un switch nuevo existe una vlan por defecto con todos los puertos a su disposicion. Este puede sufrir de sniffing.
+Si asigno todos los puertos a diferentes VLAN y ocupo todos los puertos necesito comprarme otro switch para crecer. Pero si en este nuevo switch necesito conectar puertos con otros del switch anterior para pertenecer a la misma VLAN  tengo un problema. 
+- Una solucion es usar un puerto de cada switch para conectar las 2 partes de la VLAN. Esto tiene un serio problema de escalabilidad
+- Otra solucion es usar el protocolo 802.1Q -> funcionalidad que debe soportar el switch para hacer **VLAN tagging**.
+##### VLAN tagging 802.1Q
+Defino 1 puerto de cada switch para hacer **trunk** y dejan de pertenecer a su VLAN. Cuando los conecto, a traves de esos puertos aparecen etiquietas (TAG) para extender las VLAN de un switch al otro.  Para realizar esto se modifica la trama ethernet enviada en dicha VLAN cuando pasa por el trunk para que ambos puertos sepan a que VLAN pertenece. Luego el puerto de llegada quita esta etiquieta. La nueva trama Ethernet ahora tiene un TAG que contiene:
+![[Pasted image 20250822201415.png]]
+Esta etiqueta modifica el EtherType y un VLAN-ID para identificar a los VLAN. Esto implica el recalculo del FCS.
+El VLAN tagging tambien puede ser utilizado entre switch-Dispositivo con VMS/puertos.
 
-**Virtual LANs (VLANs)**
+##### 802.1P Prioridad
+Los 3 bits de prioridad sirven para clasificar el trafico. Indican si una trama tiene mas prioridad que otra y por consiguiente debe ser transportada de forma distinta que otra.
 
-Las VLANs son redes virtuales creadas dentro de un mismo
+##### PoE
+Es la capacidad de un switch/dispositivo de alimentarse electricamente por un utp. Por ejemplo, sirve para una camara o un telefono IP para la red LAN.
 
-_switch_ que cuenta con esta funcionalidad. Las VLANs dividen los dominios de
+###### STP
+Adaptadores de un medio a otro segun la distancia entre switches.
+#### Routers
+Se manejan de igual forma con VLAN tagging y pueden permitir conectar VLANs dentro de un mismo switch.
+##### VLAN por MAC address
+Necesito conseguir la mac address de los dispositivos que pertenecerian a esta VLAN y solo se pueden mandar mensajes entre esas direcciones MAC. Esto logra la independencia de las VLAN de los puertos. Este no puede sufrir de sniffing. Es mas trabajoso pero mas seguro.
 
-_broadcast_ y aíslan las redes. Para interconectarlas, se necesita un dispositivo de capa 3. El estándar 802.1Q utiliza un
 
-_tag_ de 4 bytes que se inserta en la trama Ethernet original. El
-
-_tag_ 802.1Q contiene el valor Ethertype `0x8100`, un campo de prioridad (PRI) de 3 bits y un VLAN-ID de 12 bits, que permite hasta 4096 VLANs.
