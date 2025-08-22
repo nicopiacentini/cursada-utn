@@ -8,63 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b469918218ecca6b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "dds/Introduccion a la arquitectura.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Introduccion a la arquitectura"
-            }
-          },
-          {
-            "id": "12105a4953ebd7ea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Arquitectura Parte 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Arquitectura Parte 2"
-            }
-          },
-          {
-            "id": "69f4fcdc735b09c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Metaprogramacion en GODOT.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Metaprogramacion en GODOT"
-            }
-          },
-          {
             "id": "25a5e3feda8e00fa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "dds/Persistencia Y ORM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Persistencia Y ORM"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -121,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "c6b2408a9890df58",
@@ -203,6 +161,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -213,6 +172,9 @@
   },
   "active": "25a5e3feda8e00fa",
   "lastOpenFiles": [
+    "Pasted image 20250822112520.png",
+    "Pasted image 20250822112221.png",
+    "Pasted image 20250822112201.png",
     "Untitled.md",
     "Metaprogramacion en GODOT.md",
     "Arquitectura Parte 2.md",
