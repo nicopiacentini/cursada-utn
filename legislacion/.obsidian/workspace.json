@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "b9af9164cc47abf7",
+    "id": "4588bb0112a8fb36",
     "type": "split",
     "children": [
       {
-        "id": "cac222c152ca93c2",
+        "id": "fa355e252a8e9f3a",
         "type": "tabs",
         "children": [
           {
-            "id": "25a5e3feda8e00fa",
+            "id": "1b5de3140c489e99",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dds/Persistencia Y ORM.md",
+                "file": "legislacion/Clase 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Persistencia Y ORM"
+              "title": "Clase 2"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d01ce3d81e83ea2c",
+    "id": "cde47daedd5def45",
     "type": "split",
     "children": [
       {
-        "id": "45974747163465d9",
+        "id": "fc58498709db6159",
         "type": "tabs",
         "children": [
           {
-            "id": "653a44e85581301c",
+            "id": "e3ef3dff3ba4c064",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "c6739380eae2c28c",
+            "id": "c0572040f80f9991",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "c8d962d93ba3d0ac",
+            "id": "1c84386c94c9aaf0",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +81,20 @@
     "width": 200
   },
   "right": {
-    "id": "c6b2408a9890df58",
+    "id": "3bee39cf3f3761cc",
     "type": "split",
     "children": [
       {
-        "id": "e122b99576cab9a1",
+        "id": "06408dbd82cb458b",
         "type": "tabs",
         "children": [
           {
-            "id": "53bc84a6a05e96b4",
+            "id": "c79e157da5628b60",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Diagrama de secuencia y componentes.md",
+                "file": "legislacion/Clase 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Diagrama de secuencia y componentes"
+              "title": "Backlinks for Clase 2"
             }
           },
           {
-            "id": "5c0dd29cdcaad9dd",
+            "id": "8d9a2a9e52f3997b",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Diagrama de secuencia y componentes.md",
+                "file": "legislacion/Clase 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Diagrama de secuencia y componentes"
+              "title": "Outgoing links from Clase 2"
             }
           },
           {
-            "id": "192278f1c760b29a",
+            "id": "5529ae28b4fb6744",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,18 +137,18 @@
             }
           },
           {
-            "id": "86e4c3cd722f62a9",
+            "id": "23b2d9b9fd52ac5a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Diagrama de secuencia y componentes.md",
+                "file": "legislacion/Clase 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Diagrama de secuencia y componentes"
+              "title": "Outline of Clase 2"
             }
           }
         ]
@@ -160,27 +160,18 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "25a5e3feda8e00fa",
+  "active": "1b5de3140c489e99",
   "lastOpenFiles": [
-    "Pasted image 20250822112520.png",
-    "Pasted image 20250822112221.png",
-    "Pasted image 20250822112201.png",
-    "Untitled.md",
-    "Metaprogramacion en GODOT.md",
-    "Arquitectura Parte 2.md",
-    "Pasted image 20250704091518.png",
-    "dds/Patrones De diseño.md",
-    "dds/Introduccion a la arquitectura.md",
-    "Diagrama de secuencia y componentes.md",
-    "dds/APIs Rest en Java.md"
+    "legislacion/Clase 1.md",
+    "legislacion/Clase 2.md"
   ]
 }
