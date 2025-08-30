@@ -1,3 +1,4 @@
+import { Alojamiento } from "./domain.js";
 function aumentarPrecioDiario(alojamientos, aumento) {
   alojamientos.forEach((a) => {
     a.precioPorNoche = a.precioPorNoche + aumento;
@@ -33,10 +34,10 @@ function obtenerAlojamientosPorCaracteristica(alojamientos, caracteristica){
     return alojamientos.filter((alojamiento) => alojamiento.tieneCaracteristica(caracteristica))
 }
 
-module.exports = {
-  aumentarPrecioDiario,
-  alojamientoMasCaro,
-  filtrarPorPrecio,
-  obtenerTotalReservas,
-  obtenerAlojamientosPorCaracteristica
-};
+export function precioMenorQue(alojamientos, precioMaximo) {
+  return alojamientos.filter((a) => a.precioPorNoche < precioMaximo);
+}
+
+export function alojamientoConId(alojamientos, id){
+  return alojamientos.find((a) => a.id == id);
+}

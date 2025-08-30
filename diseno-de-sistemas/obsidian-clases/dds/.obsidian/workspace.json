@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Persistencia Y ORM.md",
+                "file": "Practica-ORM-Hybernate-Java.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Persistencia Y ORM"
+              "title": "Practica-ORM-Hybernate-Java"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "8e691134abf76311",
@@ -168,14 +168,14 @@
   },
   "active": "5239f08d919143d1",
   "lastOpenFiles": [
-    "Untitled 1.md",
+    "Persistencia Y ORM.md",
+    "Practica-ORM-Hybernate-Java.md",
     "Introduccion a la arquitectura.md",
     "Untitled",
     "APIs Rest en Java parte 1 - consumision.md",
     "APIs Rest en Java Parte2 - Exposicion.md",
     "Patrones De diseño.md",
     "Welcome.md",
-    "Persistencia Y ORM.md",
     "Pasted image 20250606115136.png",
     "Pasted image 20250606114845.png",
     "Pasted image 20250606113029.png",

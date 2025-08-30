@@ -1,39 +1,124 @@
-//aca se acostumbra a poner el main de la aplicacion
+import express from 'express';
+import { Alojamiento } from './domain.js';
+import { precioMenorQue, alojamientoConId } from './funciones.js';
+import {z} from 'zod';
+const app = express();
 
-const { Alojamiento, Reserva, Categoria,DescuentoFijo,DescuentoPorcentaje, DescuentoPorNoches, Caracteristica } = require ('./domain.js');
-const { aumentarPrecioDiario, alojamientoMasCaro, obtenerAlojamientosPorCaracteristica } = require('./funciones.js');
+app.get('/health', (req, res) => {
+   res.send("ok")
+})
 
-const alojamiento1 = new Alojamiento("Hotel Sol", 120, Categoria.HOTEL);
-console.log(alojamiento1.getDescripcion());
+app.use(express.json()); // toda request que me llega las acepto y formateo como json
 
-const reserva = new Reserva(alojamiento1, new Date("2023-10-01"), new Date("2023-10-05"));
-reserva.agregarDescuento(new DescuentoFijo(20));
-reserva.agregarDescuento(new DescuentoFijo(60));
-reserva.agregarDescuento(new DescuentoPorcentaje(10));
-reserva.agregarDescuento(new DescuentoPorNoches(2, 15));
-//console.log(`Cantidad de noches: ${reserva.cantidadNoches()}`);
-//console.log(`Precio base: $${reserva.precioBase()}`);
-//console.log(`Precio final: $${reserva.precioFinal()}`);
+app.get('/api/v1/alojamientos', (req, res) => {
+  const max_price = req.query.max_price;
+  if(!max_price){
+    res.json(alojamientosADTO(alojamientos))
+  }
+  else{
+    const filtrados = precioMenorQue(alojamientos, max_price);
+    res.json(alojamientosADTO(filtrados))
+  }
+})
 
+app.get('/api/v1/alojamientos/:id', (req, res) => {
+  const resultId = Number(req.params.id);
+  if (isNaN(resultId)) {
+    return res.status(400).json({ error: "El id debe ser un número" });
+  }
+  const alojamiento = alojamientoConId(alojamientos, resultId);
+  if (!alojamiento) {
+    return res.status(404).json({ error: "Alojamiento no encontrado" });
+  }
+  res.json(alojamientoADTO(alojamiento))
+})
 
-// implementacion de funciones
+app.post('/api/v1/alojamientos', (req, res) => {
+  const body = req.body;
+  const resultBody = alojamientoSchema.safeParse(body);
+  if (resultBody.error) {
+    res.status(400).json(resultBody.error.issues);
+    return;
+  }
 
-let alojamientos = [alojamiento1, new Alojamiento("Cabaña Luna", 80, Categoria.CABAÑA), new Alojamiento("Hostel Estrella", 50, Categoria.HOSTEL)];
-//console.log("antes aumento:", alojamientos);
-aumentarPrecioDiario(alojamientos, 10);
-//console.log("despues aumento:", alojamientos);
-//const alojamientoCaro = alojamientoMasCaro(alojamientos)
-//console.log("el mas caro: ",  alojamientoCaro)
+  const nuevoAlojamientoDTO = resultBody.data
+  const nuevoAlojamiento = new Alojamiento(nuevoAlojamientoDTO.nombre, nuevoAlojamientoDTO.precioPorNoche, nuevoAlojamientoDTO.categoria) 
+  agregarElemento(nuevoAlojamiento)
 
-//const reservaQueDeberiaFallar = new Reserva(alojamiento1, new Date("2023-10-02"), new Date("2023-10-04"))
+  res.status(201).json(alojamientoADTO(nuevoAlojamiento)) // le digo lo creado al cliente, entre ellos el id
 
+})
 
-const otrosAlojamientos = [
-  new Alojamiento("Hotel Sol", 120, Categoria.HOTEL, [Caracteristica.WIFI, Caracteristica.DESAYUNO]),
-  new Alojamiento("Cabaña Luna", 80, Categoria.CABANA, [Caracteristica.MASCOTAS, Caracteristica.PILETA]),
-  new Alojamiento("Hostel Estrella", 50, Categoria.HOTEL, [Caracteristica.WIFI]),
-  new Alojamiento("Apart Verde", 90, Categoria.APART, []),
-];
+app.delete('/api/v1/alojamientos/:id', (req, res) => {
+  const resultId = Number(req.params.id);
+  if (isNaN(resultId)) {
+    return res.status(400).json({ error: "El id debe ser un número" });
+  }
+  const alojamiento = alojamientoConId(alojamientos, resultId); // <-- agregar esta línea
+  if (!alojamiento) {
+    return res.status(404).json({ error: "Alojamiento no encontrado" });
+  }
+  borrarElemento(alojamiento);
+  res.status(204).send();
+})
 
-const conDesayuno = obtenerAlojamientosPorCaracteristica(otrosAlojamientos, Caracteristica.DESAYUNO);
-console.log("con desayuno", conDesayuno);
+app.put('/api/v1/alojamientos/:id', (req, res) => {
+  const resultId = Number(req.params.id);
+  if (isNaN(resultId)) {
+    return res.status(400).json({ error: "El id debe ser un número" });
+  }
+  const alojamientoExistente = alojamientoConId(alojamientos, resultId); // <-- agregar esta línea
+  if (!alojamientoExistente) {
+    return res.status(404).json({ error: "Alojamiento no encontrado" });
+  }
+  const resultBody = alojamientoSchema.safeParse(req.body);
+  if (resultBody.error) {
+    res.status(400).json(resultBody.error.issues);
+    return;
+  }
+  const nuevoAlojamientoDTO = resultBody.data
+  alojamientoExistente.nombre = nuevoAlojamientoDTO.nombre;
+  alojamientoExistente.precioPorNoche = nuevoAlojamientoDTO.precioPorNoche;
+  alojamientoExistente.categoria = nuevoAlojamientoDTO.categoria; 
+  
+  res.status(200).json(alojamientoADTO(alojamientoExistente)) // le digo lo creado al cliente, entre ellos el id
+
+})
+
+app.listen(3000, () => {
+  console.log("mi servidor re piola esta escuchando en 3000");//exposicion del servidor en el puerto 3000
+});
+
+const alojamientos = [];
+function agregarElemento(elemento){
+  elemento.id = alojamientos.length + 1;
+  alojamientos.push(elemento);
+}
+
+agregarElemento(new Alojamiento("Hotel 1", 1000, "hotel", ["pileta","wifi"]));
+agregarElemento(new Alojamiento("Hotel 2", 2000, "hotel", ["desayuno","wifi"]));
+agregarElemento(new Alojamiento("Hotel 3", 1500, "hotel", ["pileta","desayuno"]));
+
+function alojamientoADTO(alojamiento){
+  return{
+    id : alojamiento.id,
+    nombre : alojamiento.nombre,
+    precioPorNoche : alojamiento.precioPorNoche,
+    categoria : alojamiento.categoria,
+    caracteristicas : alojamiento.caracteristicas
+  }
+}
+
+function alojamientosADTO(alojamientos){
+  return alojamientos.map(alojamientoADTO);
+}
+
+const alojamientoSchema = z.object({
+  nombre: z.string().min(3).max(100),
+  precioPorNoche: z.number().min(0),
+  categoria: z.string().min(3).max(100)
+});
+function borrarElemento(elemento){
+  const indice = alojamientos.indexOf(elemento);
+  alojamientos.splice(indice, 1);
+}

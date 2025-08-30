@@ -10,7 +10,6 @@ Datos persistidos de la aplicacion
 Informacion relativa a los datos
 ##### Mecanismos varios
 Para alterar la base de datos y para recuperar informacion de la misma (motor)
-
 ### Relacional
 ##### PK
 - No nula
@@ -27,7 +26,6 @@ Normalmente cuando estas en objetos podes usar una base de datos orientada a obj
 Generalmente hay una entidad por clase exeptuando clases de comportamiento, clases transitorias.
 ### Impedance Mismatch
 Consiste en el problema o falta de concordancia objeto-relacional, esto consiste en un grupo de dificultades y problemas técnicoconceptuales a los que se enfrentan los diseñadores de bases de datos y los programadores. Estos problemas son generalmente la incompatibilidad entre los tipos de datos de las bases de datos y los tipos de datos del lenguaje de programación.
-
 ### ORMs
 Es el software que soluciona el Impedance Mismatch. Puede ser hecho a mano o resuelto con motores comerciales como Hybernate. Deben tener en cuenta:
 - Identidad
@@ -39,7 +37,6 @@ Las resuelve el ORM automaticamente sin necesidad de crear una clase intermedia.
 ##### Identidad
 En objetos cada objeto sabe quien es, se manejan con referencias para identificarlos y si no lo conocemos no se le puede pedir nada.
 A nivel relacional existe la necesidad de que una clave identifique univocamente a cada registro de la tabla (fk). No esta necesariamente presente en el modelo de clases.
-
 ##### Cuando crear pk a mano y no atributo de dominio
 Siempre conviene mas usar un id autoincremental como pk.
 ##### Herencia
@@ -75,7 +72,6 @@ Es la implementación de JPA más usada. Hay otras como Eclipselink o Toplink.
 Las entidades son clases **POJO** (sólo atributos con getters y setters). Al crear una instancia, Hibernate no la conoce y se dice que está en estado Transient. Cuando la persistimos o la obtenemos con el EntityManager, pasa a estar administrada por Hibernate. ¿Qué significa administrada? Que mantiene una relación entre el objeto en memoria y el registro en la BD. Cada vez que lo modifiquemos se va a disparar una query.
 #### JBDC
 Es el conector entre una aplicación Java y un motor de BD particular (MySQL, Oracle, SqlServer, etc). Hibernate genera las queries por nosotros y se comunica con el driver JDBC (una librería), que recibe queries como String y las traslada a la BD.
-
 #### Base de datos embebida
 Es un motor de base de datos embebida dentro de un archivo compilado. Sirve para correr la aplicacion y el motor de base de datos en una sola commputadora. No requiero de un servidor para consultar datos.
 ## Persistencia NO Relacional (NOSQL)
@@ -94,8 +90,6 @@ Son otra forma de persistir datos no relacional. Pueden ser textos `.txt`  o `.j
 - Configuraciones generales de la aplicacion.
 - Escalabilidad horizontal
 - Rigidez relacionada a la integridad referencial.
-
-
 ### Bases de datos no relacionales
 Solucionan problemas de la persistencia relacional, como la escalabilidad horizontal (es poder distribuir una base de datos en 2 computadoras distintas). Ademas son mas flexibles ya que rompen la integridad referencial. Tambien son buenas para escalabilidad vertical(agregar mas disco)
 Los tipos son:
@@ -108,8 +102,6 @@ Solo se pueden almacenar clave-Valor. Para recuperar un valor debo conocer la cl
 **Conviene usar para accesos rapidos directos, como cache**
 ##### De Grafos
 Representan las entidades como nodos con datos y aristas que son relaciones (directas)entre nodos y su explicacion. Permite usar propiedades de grafos como calcular pasos, caminos, etc. Generalmente no hay indices en todos los nodos entonces el acceso directo a nodos esta basado en los valores de los atributos no es posible. **Es recomendable para dominios con muchas relaciones, porque estas son directas**. Esta todo contentido en un mismo archivo entonces es complicado escalar horizontalmente.
-
-
 ##### Escalabilidad
 Como hacer que mi sistema pueda consumir mas recursos a nivel RAM, CPU y almacenamiento
 - Vertical -> agrego mas RAM, otra CPU en paralelo o mas almacenamiento a mi computadora original
@@ -125,9 +117,6 @@ El artículo propone un estándar visual para modelar bases de datos documentale
 Las referencias permiten que un documento contenga un enlace hacia otro, dejando que la aplicación resuelva esa asociación cuando sea necesario.
 #### Documentos embebidos
 En este caso, los datos relacionados se almacenan juntos dentro de un solo documento —usualmente en un campo o arreglo— lo que favorece transacciones más eficientes y consistentes.
-
-
-
 ## Desiciones para elegir la base de datos
 
 ##### Volumen de datos

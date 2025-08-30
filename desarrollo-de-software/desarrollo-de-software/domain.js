@@ -15,7 +15,7 @@ const Caracteristica = Object.freeze({
 });
 
 
-class Alojamiento {
+export class Alojamiento {
   constructor(nombre, precioPorNoche, categoria, caracteristicas = []) {
     this.nombre = nombre;
     this.precioPorNoche = precioPorNoche;
@@ -23,7 +23,9 @@ class Alojamiento {
     this.reservas = [];
     this.caracteristicas = caracteristicas;
   }
-
+  setID(id){
+    this.id = id
+  }
   ocuparDias(reserva){
     this.reservas.push(reserva)
   }
@@ -127,12 +129,3 @@ class DescuentoPorNoches {
   }
 }
 
-module.exports = {
-  Alojamiento,
-  Reserva,
-  Categoria,
-  DescuentoFijo,
-  DescuentoPorcentaje,
-  DescuentoPorNoches,
-  Caracteristica,
-};
