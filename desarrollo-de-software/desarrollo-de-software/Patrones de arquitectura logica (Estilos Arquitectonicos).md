@@ -1,0 +1,1 @@
+Definen al sistema como organizacion estructural ce componentes y conectores.
