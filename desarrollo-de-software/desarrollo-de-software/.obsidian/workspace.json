@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
+                "file": "Patrones de integracion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Patrones de arquitectura logica (Estilos Arquitectonicos)"
+              "title": "Patrones de integracion"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "8e1ef0cc582b7f09",
@@ -172,8 +171,10 @@
   },
   "active": "605b406e5ae29049",
   "lastOpenFiles": [
-    "Arquitectura - Introduccion.md",
+    "Patrones Arquitectonicos fisicos.md",
+    "Patrones de integracion.md",
     "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
+    "Arquitectura - Introduccion.md",
     "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
     "node_modules/cookie/index.js",
     "node_modules/cookie/package.json",
@@ -206,8 +207,6 @@
     "node_modules/side-channel-map/README.md",
     "node_modules/side-channel-map/CHANGELOG.md",
     "node_modules/iconv-lite/README.md",
-    "node_modules/iconv-lite/Changelog.md",
-    "node_modules/es-define-property/README.md",
     "Pasted image 20250826135504.png",
     "Pasted image 20250823093012.png",
     "Pasted image 20250823092039.png"
