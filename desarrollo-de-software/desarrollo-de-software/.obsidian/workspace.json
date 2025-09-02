@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fc29d005e2aed318",
+        "id": "d03e8731a868d6ad",
         "type": "tabs",
         "children": [
           {
-            "id": "a8209a314470b2cf",
+            "id": "abd5ad028504dc1b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "New tab"
             }
           }
         ]
@@ -78,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "8e1ef0cc582b7f09",
@@ -170,10 +165,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a8209a314470b2cf",
+  "active": "abd5ad028504dc1b",
   "lastOpenFiles": [
-    "Biblioteca VS Framework.md",
     "Untitled.md",
+    "Biblioteca VS Framework.md",
     "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
     "Patrones de integracion.md",
     "Patrones Arquitectonicos fisicos.md",
