@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d03e8731a868d6ad",
+        "id": "32ce154c5b26ab42",
         "type": "tabs",
         "children": [
           {
-            "id": "abd5ad028504dc1b",
+            "id": "3af671e40fe03e4e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "MVC Web con Expressjs.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "MVC Web con Expressjs"
             }
           }
         ]
@@ -165,10 +169,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "abd5ad028504dc1b",
+  "active": "5c3cd07eca4fac3d",
   "lastOpenFiles": [
-    "Untitled.md",
     "Biblioteca VS Framework.md",
+    "MVC Web con Expressjs.md",
+    "Curl - tutorial.md",
     "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
     "Patrones de integracion.md",
     "Patrones Arquitectonicos fisicos.md",
@@ -202,7 +207,6 @@
     "node_modules/side-channel/README.md",
     "node_modules/side-channel/CHANGELOG.md",
     "node_modules/media-typer/README.md",
-    "node_modules/side-channel-map/README.md",
     "Pasted image 20250826135504.png",
     "Pasted image 20250823093012.png",
     "Pasted image 20250823092039.png"

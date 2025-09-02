@@ -16,3 +16,9 @@ En cambio con frameworks se definen codigo y logica a partir de una estructura d
 - En las bibliotecas el programador define como y cuando se llaman/utilizan los componentes. En el framework el codigo es estructurado por este y el programador debe seguir dicha estructura
 - Las desiciones de diseño no suelen impactar al diseño del codigo a utilizar con bibliotecas. En los framework las decisiones de diseño suelen condicionar fuertemente el diseño de codigo cliente
 - Biblioteca usa control directo y framework usa control inverso
+
+
+##### Framework pesado
+Resuelven muchos problemas asociados a aplicaciones web. Toman mas decisiones por el programador y son mas rigidos en ese sentido (hay que seguir mucho su forma de trabajo). Suelen resolver muchos concerns por si solos y forzar al programador por ese lado.
+##### Framework liviano
+Solo resuelven algunas cuestiones minimas de algun concern de mi sistema pero no lo guian por completo. Suelen permitir mas flexibilidad pero requieren mas configuracion por parte del sistema puesto que no controlan todo.
