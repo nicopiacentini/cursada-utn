@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clase 1.md",
+                "file": "Clase 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clase 1"
+              "title": "Clase 3"
             }
           }
         ]
@@ -171,6 +171,7 @@
   },
   "active": "6af4fb938f69a61d",
   "lastOpenFiles": [
-    "Clase 1.md"
+    "Clase 1.md",
+    "Clase 3.md"
   ]
 }
