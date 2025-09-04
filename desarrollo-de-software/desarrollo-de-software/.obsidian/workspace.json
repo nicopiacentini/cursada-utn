@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b72df4ea9c85eac1",
+        "id": "7f81c38985c18fc3",
         "type": "tabs",
         "children": [
           {
-            "id": "f3bf17595211d425",
+            "id": "2c4add5781c6eae6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Intro al desarrollo.md",
+                "file": "MongoDB.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Intro al desarrollo"
+              "title": "MongoDB"
             }
           }
         ]
@@ -170,10 +170,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f3bf17595211d425",
+  "active": "2c4add5781c6eae6",
   "lastOpenFiles": [
-    "Cualidades de diseño.md",
     "Intro al desarrollo.md",
+    "MongoDB.md",
+    "Cualidades de diseño.md",
     "Arquitectura - Introduccion.md",
     "Patrones de integracion.md",
     "Patrones Arquitectonicos fisicos.md",
@@ -207,7 +208,6 @@
     "node_modules/side-channel-list/CHANGELOG.md",
     "node_modules/side-channel-weakmap/README.md",
     "node_modules/side-channel-weakmap/CHANGELOG.md",
-    "node_modules/side-channel/README.md",
     "Pasted image 20250826135504.png",
     "Pasted image 20250823093012.png",
     "Pasted image 20250823092039.png"
