@@ -141,10 +141,14 @@ Se le llama **Clave privada** porque solo la deben conocer el emisor y el recept
 1. **Transposición**: reorganizar las letras del mensaje según un patrón predefinido (ejemplo: Escítala espartana, siglo V a.C.).
 ![[Pasted image 20250820215828.png]]
     
-2. **Sustitución**: reemplazar cada carácter por otro siguiendo una regla (ejemplo: el Cifrado César, usado en la Guerra de las Galias).
+2. **Sustitución**: reemplazar cada carácter por otro siguiendo una regla (ejemplo: el Cifrado César, usado en la Guerra de las Galias). Suele hacerse un alfabeto aparte indicando la regla/corrido. Es lo mismo que correr el alfabeto.
+	![[Pasted image 20250903203623.png]]
+	- Criptoanalisis: Fuerza bruta puede descifrarlo. Tambien se puede desifrar estadisticamente, observando la frecuencia de aparicion de cada letra.
     
-3. **Cifrado de Vigenère**: combinación de sustituciones polialfabéticas que se consideró durante siglos “indescifrable”.
-    
+3. **Cifrado de Vigenère**: combinación de sustituciones polialfabéticas que se consideró durante siglos “indescifrable”. Lo que hace es tener varios alfabetos relacionados a una palabra clave. Se itera por cada uno de ellos aplicado sobre cada una de las letras hasta terminar la palabra.
+![[Pasted image 20250903212346.png]]
+- No tiene problema estadistico que si tiene la sustitucion.
+
 
 Con el tiempo, se desarrollaron métodos de **criptoanálisis** como el análisis de frecuencias, que permiten romper muchos de estos sistemas.
 
@@ -172,6 +176,7 @@ Es importante diferenciar:
 - **Disco de Alberti (1467)**: pionero en la construcción de mecanismos de cifrado.
     
 - **San Martín**: durante su formación en España, adquirió conocimientos de criptografía y esteganografía, llegando a emplear “tintas invisibles” en sus comunicaciones.
+- Esteganografia -> un mensaje oculto en otro
     
 - **Cifrado Francmasón (PigPen)**: empleado en el siglo XVIII, aún visible en inscripciones.
     
