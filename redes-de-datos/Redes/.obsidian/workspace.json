@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Wireless LAN.md",
+                "file": "TCP-IP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Wireless LAN"
+              "title": "TCP-IP"
             }
           }
         ]
@@ -171,20 +171,21 @@
   },
   "active": "89f653b0febdb652",
   "lastOpenFiles": [
+    "Pasted image 20250905205958.png",
+    "Pasted image 20250905201904.png",
+    "Pasted image 20250905194659.png",
+    "Redes LAN.md",
+    "Implementacion en internet.md",
+    "Clase 1.md",
+    "Pasted image 20250814200250.png",
+    "Wireless LAN.md",
+    "TCP-IP.md",
+    "Pasted image 20250905192842.png",
     "Pasted image 20250829200539.png",
     "Pasted image 20250829195901.png",
     "Pasted image 20250829194450.png",
     "Pasted image 20250829194020.png",
     "Pasted image 20250829193044.png",
-    "Pasted image 20250829191751.png",
-    "Pasted image 20250829191329.png",
-    "Pasted image 20250829191027.png",
-    "Pasted image 20250829190849.png",
-    "Redes LAN.md",
-    "Wireless LAN.md",
-    "Clase 1.md",
-    "Pasted image 20250822201415.png",
-    "Implementacion en internet.md",
-    "Pasted image 20250814200250.png"
+    "Pasted image 20250829191751.png"
   ]
 }
