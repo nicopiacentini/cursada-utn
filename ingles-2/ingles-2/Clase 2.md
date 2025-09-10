@@ -9,6 +9,7 @@ Articulo de investigacion. Conyeva un arbitraje o *peer review* para ver que aqu
 - Metodologia -> Criterios de selección y exclusión de los objetos/sujetos de estudio, objetos/sujetos de estudio, procedimientos(generalmente son verbos como seleccionamos, dividimos, cortamos, etc.), instrumentos (entrevistas, cuestionarios, etc.).
 - Resultados -> resultados concretos (numeros, crudos) y objetivos (sin opinion).
 - Discusion -> Se interpretan los resultados importantes y contrastan con estudios anteriores
+	- Buscar marcadores de la subjetividad (it is evident, therefore, it is only logical, ...)
 	- Conclusion -> se retoman ideas anteriores y se agrega interpretacion y analisis de los resultados. Termina con sugerencias y lineas de investigacion.
 #### Arbitraje
 Es una comprobacion de la validez del paper. Incluye la fecha de *recepcion* y la fecha de *aceptacion*.

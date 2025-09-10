@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCP-IP.md",
+                "file": "Redes LAN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TCP-IP"
+              "title": "Redes LAN"
             }
           }
         ]
@@ -171,6 +171,8 @@
   },
   "active": "89f653b0febdb652",
   "lastOpenFiles": [
+    "Pasted image 20250909135526.png",
+    "TCP-IP.md",
     "Pasted image 20250905205958.png",
     "Pasted image 20250905201904.png",
     "Pasted image 20250905194659.png",
@@ -179,13 +181,11 @@
     "Clase 1.md",
     "Pasted image 20250814200250.png",
     "Wireless LAN.md",
-    "TCP-IP.md",
     "Pasted image 20250905192842.png",
     "Pasted image 20250829200539.png",
     "Pasted image 20250829195901.png",
     "Pasted image 20250829194450.png",
     "Pasted image 20250829194020.png",
-    "Pasted image 20250829193044.png",
-    "Pasted image 20250829191751.png"
+    "Pasted image 20250829193044.png"
   ]
 }
