@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Redes LAN.md",
+                "file": "Wireless LAN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Redes LAN"
+              "title": "Wireless LAN"
             }
           }
         ]
@@ -169,14 +169,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "89f653b0febdb652",
+  "active": "b612e9d6018d5586",
   "lastOpenFiles": [
+    "Redes LAN.md",
     "Pasted image 20250909135526.png",
     "TCP-IP.md",
     "Pasted image 20250905205958.png",
     "Pasted image 20250905201904.png",
     "Pasted image 20250905194659.png",
-    "Redes LAN.md",
     "Implementacion en internet.md",
     "Clase 1.md",
     "Pasted image 20250814200250.png",
@@ -185,7 +185,6 @@
     "Pasted image 20250829200539.png",
     "Pasted image 20250829195901.png",
     "Pasted image 20250829194450.png",
-    "Pasted image 20250829194020.png",
-    "Pasted image 20250829193044.png"
+    "Pasted image 20250829194020.png"
   ]
 }
