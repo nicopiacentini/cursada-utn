@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1de814ff1d2069f0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MongoDB.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "MongoDB"
-            }
-          },
-          {
             "id": "769c4837181f3dbc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MongoDB.md",
+                "file": "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MongoDB"
+              "title": "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,11 +171,12 @@
   },
   "active": "769c4837181f3dbc",
   "lastOpenFiles": [
-    "Docker.md",
-    "MongoDB.md",
-    "Orquestacion de casos de uso.md",
     "MVC Web con Expressjs.md",
+    "MongoDB.md",
     "Intro al desarrollo.md",
+    "Clase practica 2 - npm y GitHub avanzado.md",
+    "Docker.md",
+    "Orquestacion de casos de uso.md",
     "Cualidades de diseño.md",
     "Pasted image 20250906102510.png",
     "Pasted image 20250826135504.png",
@@ -224,7 +210,6 @@
     "practica/node_modules/side-channel-weakmap/CHANGELOG.md",
     "practica/node_modules/side-channel-list/README.md",
     "practica/node_modules/side-channel-list/CHANGELOG.md",
-    "practica/node_modules/side-channel-map/README.md",
-    "practica/node_modules/side-channel-map/CHANGELOG.md"
+    "practica/node_modules/side-channel-map/README.md"
   ]
 }

@@ -18,6 +18,15 @@ Existen distintos tipos de merge
 - Clasico -> se genera un nuevo commit donde se juntan ambas ramas
 - Squash -> todos los cambios de la otra rama se ponen en un commit solo de la rama en la que estoy 
 - Rebase -> Se mueven todos los commit de la rama que se mergea como commits separados en mi rama actual.
+##### Local Vs Remoto
+Normalmente desde el remoto solo se trae la branch *head*. Para traer otra hay que hacerle checkout con:
+```bash
+git checkout otraRama
+```
+Para ver demas ramas remotas se hace
+```bash
+git branch -r
+```
 ##### Branch protection
 Es una forma de proteger una rama poniendo restricciones antes de que me hagan merges.
 ### Git Flow
@@ -37,7 +46,7 @@ Versiones de codigo ya oficializdo
 ### Issue
 Es un comentario/texto asignable a un usuario para desarrollar algo. Todas las features, branches deben empezar en un issue.
 ### Github Flow
-Es una forma de trabajar donde cada merge se hace con un pull request.
+Es una forma de trabajar donde cada merge se hace con un **pull request**.
 ##### Main
 Versiones de codigo ya disponibles y subibles
 ##### Change
@@ -49,6 +58,32 @@ Es basicamente una formalidad para revisar los merges. Se agrega un texto y un r
 
 #### Merge conflict
 Pasa cuando mergeo y los cambios pisarian/cambiarian cosas de la branch donde mergeo. Para resolverlo lo que se suele hacer es primero traer y mergear la rama principal a mi rama local y mergear ahi y luego de resolver los cambios mergeo la principal con la mia.
+```bash
+git branch
+#main
+#*ramaConCambios
+```
+Paso a paso:
+1. Pulleo ultimos cambios del main
+2. voy a la branch donde estan los cambios
+```bash
+git switch ramaConCambios
+```
+3. Mergeo con main en esa rama para resolver conflictos
+```bash
+git merge main
+```
+4. Aca salta el merge conflict que debe resolverse desde el editor, una vez resuelto ***github interpreta que los cambios de main ya forman parte de ramaConCambios, incluso si en el merge no se cambio nada de esta ultima***.
+5. Agrego los cambios a un commit en la ramaConCambios
+```bash
+git add .
+git commit -m"rama preparada para mergear con main"
+git push
+```
+6. Ahora al no haber merge conflict (porque github interpreta que los cambios de main ya pasaron por *ramaConCambios*) puedo hacer desde _main_
+```bash
+git merge ramaConCambios
+```
 
 ##### .gitignore
 Un archivo para indicar que archivos/directorios no deben subirse al repo
@@ -86,10 +121,17 @@ Crea un package-lock.json que indica versiones de dependencias y mi proyecto par
 npm install <nombrePaquete>@<version>
 ```
 
-
-
+##### Save-Dev
+Son dependencias que se instalan SOLO para el desarrollo
+```bash
+npm install prettier --save-dev
+```
+Esto sirve para cuando queremos instalar dependencias para despliegue sea mas liviano
+```bash
+npm install --production
+```
 ### Import 
-Es otra forma de manejarse con proyectos. Dentro de un modulo, los archivos se *exportan* funciones, logica,etc.
+Es otra forma de manejarse con proyectos. Dentro de un modulo, los archivos se *exportan* funciones, logica,etc. 
 ```js
 import algo from "./fidget"
 
@@ -110,3 +152,6 @@ Scripts : {
 	saludar: "echo hola"
 }
 ```
+##### Lint
+Es un pseudo interprete que revisa el codigo para ver errores
+- Extension de visual

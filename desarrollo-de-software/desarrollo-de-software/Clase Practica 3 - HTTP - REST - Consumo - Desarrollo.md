@@ -49,49 +49,109 @@ Tiene 3 partes y son los endpoint a los que les aplico los verbos http.
 
 ## Backend con Express, HTTP, JSON y Validación
 
+### Levantar el servidor
+Tenemos que indicar en que puerto esperamos las cosas
+```js
+import express from "express"
+app.listen(3000, () => {
+	console.log("app funcionando y escuchando en 3000")
+})
+```
+
 ### Express y manejo de rutas
 
 Se utiliza **Express** para crear el servidor y definir rutas (endpoints) que responden a distintos verbos HTTP.  
 Por ejemplo, para obtener todos los alojamientos:
 
-- 
-- 
-- 
-- 
+```javaScript
+import express from "express"
+const app = express();
+app.get("/alojamientos", (req, res) => {
+	res.json(alojamientos);
+})
+```
 
-### Verbos HTTP
+#### QueryParams
+```js
+app.get("/api/v1/alojamientos", (req,res) => {
+	const valorDeQueryParam = req.query.unQueryParam
+	if(!valorDeQueryParam){
+		res.send(alojamientosADTO(alojamientos))
+		return
+	}else{
+		const alojamientosADevolver = 
+		alojamientosADTO(alojamientos.filter(a => a.precio < 5))
+		res.json(alojamientosADevolver)
+		return 
+	}
+})
+```
+Donde dice `unQueryParam` tiene que ir el nombre del queryParam en la *URI*.
+#### RequestParams
+```js
+app.get("/api/v1/alojamientos:id", (req,res) => {
+	const valorDeRequestParam = req.params.unQueryParam
+	const alojamientosADevolver = 
+	alojamientosADTO(alojamientos.filter(a => a.id = valorDeRequestParam))
+	res.json(alojamientosADevolver)
+	return 
+})
+```
+##### Interpretacion de bodies
+Puedo hacer que la app siempre interprete el body que llegue de una forma u otra. Por ejemplo:
+```js
+import express from "express"
+const app = express()
+app.use(express.json())
+```
+### Zod – Validación y tipado en JavaScript
 
-- **GET**: Obtiene recursos.
-- **POST**: Crea nuevos recursos.
-- **PUT**: Modifica recursos existentes.
-- **DELETE**: Elimina recursos.
+Zod es una librería para **definir esquemas** y **validar datos** en JavaScript/TypeScript.  
+Se usa mucho cuando recibís información de un **formulario**, una **API**, o cualquier fuente externa,  
+y querés asegurarte de que cumple con la forma esperada.
 
-Ejemplo de POST para crear un alojamiento:
+---
 
-- 
-- 
-- 
-- 
+### Instalación
 
-### Manejo de JSON
+```bash
+npm install zod
+```
+Definir un esquema básico
+```js
 
-Express permite recibir y enviar datos en formato **JSON** fácilmente:
+import { z } from "zod";
 
-- 
-- 
-- 
-- 
+const userSchema = z.object({
+  name: z.string(),
+  age: z.number().int().positive(),
+});
+```
+En este ejemplo:
+- name debe ser un string.
+- age debe ser un número entero y positivo.
 
-Las respuestas también se envían en JSON usando [res.json()](vscode-file://vscode-app/c:/Users/nicol/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-browser/workbench/workbench.html).
+Validar datos
+```js
+// Dato válido
+userSchema.parse({ name: "Ana", age: 25 }); // ✅ OK
 
-### Validación con Zod
+// Dato inválido
+userSchema.parse({ name: "Ana", age: -5 }); // ❌ Error
+//.parse(data) → devuelve los datos válidos o lanza un error.
 
-Se usa **Zod** para validar los datos recibidos en el cuerpo de la solicitud:
+//.safeParse(data) → devuelve { success: true, data } o { success: false, error }.
+```
+##### Funcionalidades útiles
+.`optional()` → campo opcional.
 
-- 
-- 
-- 
-- 
+`.nullable()` → permite null.
+
+`.array(schema`) → valida arrays.
+
+`.enum([...])` → restringe valores a un conjunto.
+
+`.min(n) / .max(n)` → restricciones en strings y arrays.
 
 ### Manejo de errores y respuestas
 
@@ -101,22 +161,6 @@ El servidor responde con códigos HTTP apropiados y mensajes claros:
 - **404 Not Found**: Cuando el recurso no existe.
 - **201 Created**: Cuando se crea un recurso.
 - **204 No Content**: Cuando se elimina un recurso.
-
-Ejemplo de manejo de error:
-
-- 
-- 
-- 
-- 
-
-### DTOs y estructura de datos
-
-Se usan funciones para transformar los objetos internos en **DTOs** (Data Transfer Objects) antes de enviarlos al cliente:
-
-- 
-- 
-- 
-- 
 
 ---
 
