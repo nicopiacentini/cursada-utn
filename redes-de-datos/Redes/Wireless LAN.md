@@ -138,3 +138,29 @@ Traffic information matrix. Informa a las ET asociadas si tiene guardadas tramas
 - SSID
 Se encuentra dentro del TIM es el nombre del AP
 - Velocidades soportadas -> se dan en condiciones optimas(estan en el beacon/version del 802.11). Son escalonadas! Al depender de la modulacion, transmito a la velocidad maxima posible y si el enlace se debilita, cambio la modulacion por una mas robusta pero mas lenta. Ergo las velocidades de transmision discretas.
+
+
+
+
+
+# Notas TL2
+
+LACP protocolo para agrupar cables y tratarlos como uno solo
+Para hacerlo hay que meterlos en un channel-group
+para un switch balanceo source si tiene muchos origenes y dst si tiene muchos destinos
+
+REDES wlan -> routers
+
+WRT300 (AP) -> puede ir en modo bridge o en modo router
+- Bridge -> trabaja en capa 2 -> conecta dispositivos de la misma RED o LAN. Se usan los puertos en amarillo
+	Es como un switch pero inalambrico
+- router -> trabaja en capa 3 -> conecta entre si 2 redes LAN. Usa el puerto azul
+
+Direccion de gateway -> puerta de salida hacia otra red. Es la direccion IP del router para salir.
+Es la que hay que setearle a un dispositivo que quiera salir de la red para indicarle por donde salir. Es la que tiene el router dentro de esa lan.
+
+tracert -> protocolo de capa 3 para ver saltos para llegar hasta otra red. MUESTRA ROUTERS DE CAPA 3 QUE MUEVEN MI PAQUETE.
+
+IP del router -> sirve de fabrica para primer coneccion
+
+SSID broadcast -> sirve para que exponga beacons a todos lados y todos conozcan el ssid
