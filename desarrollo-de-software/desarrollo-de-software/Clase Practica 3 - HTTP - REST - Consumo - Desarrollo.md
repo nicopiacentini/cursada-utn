@@ -13,7 +13,8 @@ HTTP con confidencialidad utilizando TSL/SSL como tecnica de cifrado de datos.
 - Cookies
 - Host
 - autorizacion
-- Acept
+- Accept -> es lo que estoy dispuesto a recibir como cliente. La api puede o no devolver lo que pid
+- Content-Type -> indica que es lo que se esta mandando (html, json)
 ###### Cuerpo
 Lo que se envia en la solicitud http
 #### Los Verbos
@@ -32,7 +33,7 @@ Lo que se envia en la solicitud http
 # API REST
 Se basa en http y son una serie de buenas practicas para que tenga sentido a nivel industrial. Es una *interfaz de programacion de aplicaciones*. El servidor expone la interfaz y el cliente la consume. La idea esta en que el cliente desconoce la funcion interior de la interfaz solo lo que hace.
 La parte REST implica la manipulacion de objetos mediante URI (identificador uniforme de recursos) y los verbos HTTP.
-El formato de los archivos es json y xml.
+*El formato de los archivos que devuelve es json y xml*.
 ### Recursos Web
 Como se acceden a los recursos del servidor segun REST. Ejemplo con usuarios
 - `Get /users` -> obtiene todos los usuarios
