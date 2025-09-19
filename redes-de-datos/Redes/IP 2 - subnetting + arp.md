@@ -25,7 +25,7 @@ Ahora tengo un uso mas eficiente de las direcciones.
 A alto nivel se trabaja solo con IP. Desde mi host me conecto con otra IP sin importar donde este o del encaminamiento. Ahora el problema esta en que mi datagrama IP se encapsula por una trama MAC y por consiguiente, necesita trabajar con direcciones MAC. Entonces ARP *mappea direcciones ip **logicas** a direcciones MAC **fisicas***. 
 Para esto El host debe conocer la direccion IP a la que se quiere conectar de alguna forma u otra. Luego, a partir de la mascara de subred, la capa ip en el host determina si esta conectado en la misma red o debe ir al gateaway en el router para ir a otra red. En el caso en que esten en la misma red, NO HACE FALTA EL ROUTER, se puede manejar todo con direcciones MAC.
 
-##### Funcionamiento 
+##### Funcionamiento (1:51:00)
 Envia un request/broadcast en su propia red preguntando a todos los hosts quien tiene la direccion IP buscada. El host correspondiente responde que es su IP y cual es su MAC mediante un *unicast*. Entonces el host original guarda en su *cache ARP* la direccion MAC asociada a esa direccion IP. Esto dura un tiempo breve porque las direcciones IP son dinamicas.
 Al ser un vecino de red es una *entrega directa*
 Si esta fuera de mi red, SE LO ENTREGO AL ROUTER. Para identificarlo busco la *default gateway*. Es la IP local del router para que lo pueda identificar y mandarle trafico para que vaya a internet.

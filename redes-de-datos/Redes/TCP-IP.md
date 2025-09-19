@@ -73,7 +73,7 @@ Entonces IP realiza fragmentacion y reensamblado de los paquetes ip para que ent
 ![[Pasted image 20250905201904.png]]
 
 ###### Fragmentacion
-Trato de meter la mayor cantidad de datos posibles por trama de capa 2. Se que el header ocupa 20 bytes y meto 600 de datos para completar la trama de capa 2. El valor de *desplazamiento de fragmentado* en el datagrama IP indica que parte de los datos lleva cada fragmento. Pero como no es tan grande como para cubrir el largo maximo, se maneja de a multiplos de 8. Es decir, que el numero que aparezca en el desplazamiento debe multiplicarse por 8 y asi se obtiene donde esta. En el ejemplo, el fragmento 2 llevaria un offset de 75 ya que multiplicado por 8 da los 600 bytes de offset.
+Trato de meter la mayor cantidad de datos posibles por trama de capa 2. Se que el header ocupa 20 bytes y meto 600 de datos para completar la trama de capa 2. El valor de *desplazamiento de fragmentado* en el datagrama IP indica que parte de los datos lleva cada fragmento. Pero como no es tan grande como para cubrir el largo maximo, se maneja de a multiplos de 8. Esto se debe a que tengo 13 bits de offset y me faltan 3 para llegar a los 16 y 8 = 2^3 . Es decir, que el numero que aparezca en el desplazamiento debe multiplicarse por 8 y asi se obtiene donde esta. En el ejemplo, el fragmento 2 llevaria un offset de 75 ya que multiplicado por 8 da los 600 bytes de offset.
 
 Los nuevos paquetes replican de la cabezera original aquello que no cambia, en especial el **identificador, direccion origen y direccion destino**(para identificar al datagrama en su totalidad). Entonces se puede reensamblar con facilidad.
 Una vez creados los n datagramas IP, se envian por la red hasta el router destino.
@@ -97,7 +97,7 @@ Entonces la direccion de ip de cada dispositivo queda
 identificador de red.identificadorred.identificadorred.dispositivo
 
 ###### Mascara de subred
-Me indica que parte de la direccion de un dispositivo es direccion de red y que parte es dispositivo por ejemplo:
+Me indica que parte de la direccion de un dispositivo es direccion de red y que parte es host. Un 0 indica host y un 1 indica red. Solo la conoce el dispositivo para saber cual es su red y cuales estan en su red.Por ejemplo:
 - IP: `192.168.1.10`
     
 - Máscara: `255.255.255.0` (o `/24`)
@@ -105,13 +105,19 @@ Me indica que parte de la direccion de un dispositivo es direccion de red y que 
 - Red: `192.168.1.0`
     
 - Hosts válidos: `192.168.1.1 – 192.168.1.254`
+	- Esto se debe a que 00000000 identifica a la red y 11111111 es el broadcast
 Se combina con la direccion ip para identificar dispositivos en una LAN para ip. Sirve para identificar a la red. Entonces sirve para mandar broadcasts. 
 
 #### Clasificacion de direcciones IP
 Es clasificar las direcciones segun que tan grande es la red a la que se le asigna
-- A -> direcciones de red para redes enormes. 
-	- subnetmask -> 255.0.0.0 -> 2^24 hosts por red
+- A -> direcciones de red para redes enormes. Son pocas redes
+	- subnetmask -> 255.0.0.0 /8 -> 2^24 hosts por red
 	- Son pocas redes
+- B -> direcciones para redes mas medianas
+	- SM -> 255.255.0.0 /16
+- C -> direcciones para redes medianas/pequeñas
+	- SM -> 255.255.255.0 /24
+- 
 ![[Pasted image 20250905205958.png]]
 Ahora Muchas direcciones se piden para uso privado, es decir no se usarian en internet. Por eso no se le asignan a nadie y quedan de uso privado como por ejemplo:
 - 192.168.0.0
@@ -120,13 +126,18 @@ Ahora Muchas direcciones se piden para uso privado, es decir no se usarian en in
 Son bloques libres de usar pero NO SON UNICAS Y SE REPITEN EN MUCHAS REDES. La subnet mask en cada una varia pero sirve para usar en privado.
 Por eso es que en lans tengo IP privada 192.168.0.x con subnet mask 255.255.255.0, indicando que soy el host *x* dentro de mi LAN.
 - La mascara entonces indica que en mi lan, TODAS LAS DIRECCIONES SON DE LA FORMA 192.168.0.x.
+#### Comunicacion dentro de una LAN
+Al tener la mascara de subred y su ipV4, los dispositivos pueden conocer quienes son sus vecinos de LAN. Esto es importante ya que ahora, si tengo que mandar un mensaje a una IP que esta en mi red, no voy a usar el router. Sino que en cambio, voy a preguntar quien tiene la IP que busco mediante un Broadcast y pido que me den su MAC. Una vez la obtengo me la guardo en un cache y la uso siempre para esa LAN. 
 ###### Eliminacion de capas
 Se deja de utilizar el esquema de clases y ahora existe el esquema classless, con notacion CIDR. La cantidad de 1s en la mascara de subred sale de los limites de 8, 16, etc. Ahora mascara de longitud arbitraria
 - 255.248.0.0 -> 11111111.11111000.00000000.00000000
 ##### Prefijo y longitud de prefijo
-ante un prefijo
+ante un prefijo (cantidad de bits que identifican la red)
 255.248.0.0 puedo poner longitud como /13
 o 255.255.255.0 puedo poner /24
+
+#### NAT
+*network address translation*. Se refiere a NAT y sirve para traducir IPs privadas a publicas, que es la que tiene mi router.
 
 
 #### Entonces, conexion a internet??
