@@ -1,6 +1,7 @@
 Prof Federico Koval
 4 parciales -> 2 de teoria y 2 de practica
 Bibliografia -> stallings, castro y fusario.
+DOCSIS -> cablemodem
 ___
 # Normas
 Son basicamente las recomendaciones para aplicar/usar determinadas tecnologicas
