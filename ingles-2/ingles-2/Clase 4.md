@@ -35,7 +35,7 @@ Se encuentran los movimientos
 - Metodologia
 - Vacio -> solo si el objetivo llena al vacio
 #### Escribir en conclusion
-La contribucion o aportes al trabajo. Las futuras lineas de investigacion
+La contribucion o aportes al trabajo. Incluye marcadores de subjetividad de porque es importante. Las futuras lineas de investigacion
 
 
 

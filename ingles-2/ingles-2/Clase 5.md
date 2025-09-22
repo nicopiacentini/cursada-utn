@@ -98,3 +98,19 @@ Conclusion -> debe volver al objetivo. En las conclusiones es como que se *resue
 PARA LA CLASE QUE VIENE
 - tp individual
 - practica de examen HECHA!
+
+
+### Investigacion
+Primaria -> es directa, sobre el objeto de estudio
+Secundaria -> indirecta, sobre la literatura que habla del estudio. NO NECESITA REVISION ETICA.
+### Literature Review 
+Es un resumen de alto nivel acerca de la literatura que habla de lo que estoy investigando. Es una sintesis general de lo que se hizo en el area, quien la hizo, muestra que hicieron estudios pasados acerca del topico e identifica gaps o tensiones/incongruencias acerca de lo que se investigo.
+
+### Systematic Literature review
+ Se seleccionan datos y tipos de informacion a incluir como archivos, journals, capitulos de libros, etc. Luego se determinan criterios y scope de la review para ver con que datos se quedan y que datos se van. Despues se realiza una lectura detallada para identificar temas e informacion relevantes. Luego se usa una guia de codigos para ver que se incluye y que no en el articulo final. Por ultimo se interpreta lo que se encontro y se lleva a la pregunta original. Se determina si hya contrtadicciones, gaps, recomendaciones, mejores practicas, etc.
+
+## MARCADORES DE SUBJETIVIDAD PARA:
+ - relevancia (key, important, essential, etc)
+ - justificiacion
+ - Interpretar hallazgos
+ - conclusion -> implicancias

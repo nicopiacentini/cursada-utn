@@ -1,4 +1,4 @@
-Metodologia -> procesidimietnos tipicos, palabras clave, bases de datos, motores de busqeda, cantidad de textos usados en primer instancia.
+Metodologia -> procesidimietnos tipicos, palabras clave, bases de datos, motores de busqeda, cantidad de textos usados en primer instancia. Es un paso a paso replicable.
 Inroduccion -> NO SE PONE, NO ES UN MOVIMIENTO RETORICO, hay otros dentro de ese.
 GAP -> falta de estudio/conocimiento/contoversia. Tiene que servir como justificacion para llevar a cabo mi trabajo. Es como que tiene que justificar el objetivo.
 Contextualizacion -> TIEMPO PRESENTE. Cuenta como esta ahora el contexto.

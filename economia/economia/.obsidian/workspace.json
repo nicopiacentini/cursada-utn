@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inventarios.md",
+                "file": "Costos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Inventarios"
+              "title": "Costos"
             }
           }
         ]
@@ -171,6 +171,7 @@
   },
   "active": "16644befa698ef8a",
   "lastOpenFiles": [
+    "Clase 1 Economia.md",
     "Costos.md",
     "Inventarios.md",
     "Pasted image 20250825210522.png",
@@ -178,7 +179,6 @@
     "Pasted image 20250825204517.png",
     "Pasted image 20250825202957.png",
     "Pasted image 20250825202220.png",
-    "Clase 1 Economia.md",
     "Pasted image 20250820181428.png",
     "Pasted image 20250820174004.png",
     "Pasted image 20250818204102.png",
