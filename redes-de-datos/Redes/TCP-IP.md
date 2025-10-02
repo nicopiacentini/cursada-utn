@@ -93,8 +93,6 @@ Es unica en internet. tiene 32 bits de longitud. Son 4 bytes separados por "." c
 Dentro de una red:
 - Cada dispositivo tiene identificador de host (unico en la red)
 - Todos comparten el identificador de la red
-Entonces la direccion de ip de cada dispositivo queda
-identificador de red.identificadorred.identificadorred.dispositivo
 
 ###### Mascara de subred
 Me indica que parte de la direccion de un dispositivo es direccion de red y que parte es host. Un 0 indica host y un 1 indica red. Solo la conoce el dispositivo para saber cual es su red y cuales estan en su red.Por ejemplo:
@@ -117,7 +115,7 @@ Es clasificar las direcciones segun que tan grande es la red a la que se le asig
 	- SM -> 255.255.0.0 /16
 - C -> direcciones para redes medianas/pequeñas
 	- SM -> 255.255.255.0 /24
-- 
+- D -> sirve para hacer multicast
 ![[Pasted image 20250905205958.png]]
 Ahora Muchas direcciones se piden para uso privado, es decir no se usarian en internet. Por eso no se le asignan a nadie y quedan de uso privado como por ejemplo:
 - 192.168.0.0

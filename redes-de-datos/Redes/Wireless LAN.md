@@ -5,7 +5,7 @@ Es el estandar de LAN para wireless
 Permiten acceder al sistema de distribucion sin cables. Pertenecen al modo Con estructura
 ![[Pasted image 20250829190849.png]]
 BSS es el basic service set con un solo AP y ESS el extendido, con mas de un AP. 
-Provee servicios de integracion -> la comunicacion entre terminales de trabajo es desde y hacia access points. Entonces toda comunicacion pasa por ahi.
+Provee servicios de integracion -> la comunicacion entre terminales de trabajo es desde y hacia access points. Entonces toda comunicacion pasa por ahi. 
 ##### Ad Hoc
 Conecta 2 computadoras con wireless, una hace de access point
 
@@ -27,15 +27,14 @@ Se utiliza el aire (division de tiempo) para transmitir una señal. Se debe sete
 ![[Pasted image 20250829191329.png]]
 #### Bandas no licenciadas
 Son bandas de uso libre y se interfieren entre si. Es la que suelen usarse en las casas para no tener que pedir permiso al enacom.
-
 ###### 2.4GHz
 En argentina hay 13 canales en esta banda. El 1, 6 y 11 no se solapan, entonces si necesito cubrir un espacio con muchos dispositivos pongo varios access point operando en esos canales. Entonces puedo tener hasta 3 canales sin solapamiento. Esta tambien se usa en bluetooth. Los canales suelen tener un ancho de 20Mhz. La cantidad de canales depende del pais.
-
+Los canales se solapan
 ##### 5GHz
 A mayor frecuencia, se atenua mas que la 2.4GHz. Pero tiene muchos mas canales
 ![[Pasted image 20250829191751.png]]
 Estos canales no se solapan. Es mas rapido que 2.4GHz. Pero tienen mas atenuacion
-- Existen canales de 20MHz que no se solapan y pueden agruparse en canales mas grandes de 40MHz, 80MHz o hasta 160MHz
+- Existen canales de 20MHz **que no se solapan** y pueden agruparse en canales mas grandes de 40MHz, 80MHz o hasta 160MHz
 
 ### Problema del nodo oculto
 Las estaciones no se escuchan entre si pero si escuchan al access point. Como en ocaciones no se escuchan entre si **no saben cuando esta transmitiendo la otra**. Por ende transmiten y terminan interfiriendose entre si. Esto ocurre cuando hay algo entre ambas ET. 
@@ -86,7 +85,6 @@ Es un protocolo de capa 2 e incluye funciones/servicios de capa 2
 ![[Pasted image 20250829195901.png]]
 - Duration -> tiempo necesario para transmitir
 - Frame body -> datos
-- Address 1
 #### Frame Control
 Las tramas pueden ser:
 - Management(administrativas, DATOS NO) -> Peticion/confirmacion asociacion (un dispositivo se vincula a la red), autenticacion del dispositivo, beacon. Son transmitidas por el AP
@@ -133,11 +131,12 @@ Ethernet en Wireless -> Algunas capturas de paquetes muestran el trafico wireles
 
 ##### Beacon parte administrativa
 El beacon contiene estos campos como informacion
--  TIM
-Traffic information matrix. Informa a las ET asociadas si tiene guardadas tramas para el AP. Estos TIM se envian dentro de los beacon
-- SSID
-Se encuentra dentro del TIM es el nombre del AP
+-  TIM -> Traffic information matrix. Informa a las ET asociadas si tiene guardadas tramas para el AP. Estos TIM se envian dentro de los beacon
+- SSID -> Se encuentra dentro del TIM es el nombre del AP
 - Velocidades soportadas -> se dan en condiciones optimas(estan en el beacon/version del 802.11). Son escalonadas! Al depender de la modulacion, transmito a la velocidad maxima posible y si el enlace se debilita, cambio la modulacion por una mas robusta pero mas lenta. Ergo las velocidades de transmision discretas.
+- Inicio de Pcf
+Se transmite cada 10min.
+
 
 
 

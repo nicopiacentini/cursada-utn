@@ -1,8 +1,11 @@
 ### Cableado estructurado
 Es un tipo de LAN donde hay cableado vertical con rj45 y cableado vertical.
 ## Ethernet
-Patente perteneciente a DIX. Luego se adhiere al estándar del Comité IEEE 802.3. Opera en un modelo de comunicación "peer-to-peer" porque el control esta distribuido -> todos los miembros de la red LAN son iguales y tienen el mismo nivel de acceso. 
-Utiliza el método de acceso CSMA/CD, que significa "Carrier-Sense Multiple Access / Collision Detection". Es un mecanismo de control de acceso al medio y cada estacio busca su oportunidad de acceso al medio. Cada miembro de la LAN usa multiplexacion por division de tiempo. Generalmente, funciona en modo "half-duplex" (uno habla a la vez y se van alternando).
+Patente perteneciente a DIX. Luego se adhiere al estándar del Comité IEEE 802.3. 
+Opera en un modelo de comunicación "peer-to-peer" porque el control esta distribuido -> todos los miembros de la red LAN son iguales y tienen el mismo nivel de acceso. 
+
+==Utiliza el método de acceso CSMA/CD, que significa "Carrier-Sense Multiple Access / Collision Detection"==. Es un mecanismo de control de acceso al medio y cada estacio ==busca su oportunidad de acceso al medio.==
+Cada miembro de la LAN usa multiplexacion por division de tiempo. Generalmente, funciona en modo "half-duplex" (uno habla a la vez y se van alternando).
 
 Se maneja con una conexion punto-multipunto -> una estacion de trabajo puede comunicarse con varias. Cada estacion transmite en banda base y modula en su propia frecuencia. 
 
@@ -10,8 +13,12 @@ Se maneja con una conexion punto-multipunto -> una estacion de trabajo puede com
 
 #### Capa enlace
 Aca se encuentran las capas MAC y LLC. 
-- LLC -> Logical link control. Permite la conexion multiprotocolo entre dispositivo conectado por cable con dispositivo conectado inalambrico por ejemplo. Basicamente conecta con la capa red y protocolos mac
-- MAC -> Medium access control. Es la que controla el acceso al medio y puede ser por CSMA/CD, wireless o token ring. Dice quien entra al medio cuando transmite y como.
+- **LLC** -> Logical link control. Permite la conexion multiprotocolo entre dispositivo conectado por cable con dispositivo conectado inalambrico por ejemplo. Basicamente conecta con la capa red y protocolos mac
+	 | DSAP (1) | SSAP (1) | Control (1) | Datos... |
+		DSAP (Destination Service Access Point) → Identifica el protocolo de capa superior destino.
+		SSAP (Source Service Access Point) → Identifica el origen.
+		Control → Define el modo de operación (normalmente 0x03 = "Unnumbered Information" para datos).
+- **MAC** -> Medium access control. Es la que controla el acceso al medio y puede ser por CSMA/CD, wireless o token ring. Dice quien entra al medio cuando transmite y como. Hace una deteccion de errores.
 	- Direccion MAC -> forma de identificar dispositivos
 #### Topologia
 ###### Modo Intercalacion (ahora)
@@ -23,8 +30,9 @@ Ahora con el avance del utp:
 Aparece el UTP con topologia estrella que funciona como bus gracias a un hub.
 
 ### Trama 802.3 o Ethernet 2
-Al ser punto-multipunto, es decir, el mensaje puede estar dirigido a una sola estacion de trabajo(unicast) o a toda estacion de trabajo(broadcast). Las tramas se envian a todas las estaciones de trabajo y cada una tiene una lista de direcciones interesantes. Dentro de ellas esta el broadcast y su propia direccion entre otras. La idea esta en que solo recibe y usa aquellas tramas que tienen direccion destino entre esta lista. Si la estacion encuentra el utp libre, envia la siguiente trama (contenedor de bits)
+Al ser ====punto-multipunto====, es decir, el mensaje puede estar dirigido a una sola estacion de trabajo(**unicast**) o a toda estacion de trabajo(**broadcast**). Las tramas se envian a todas las estaciones de trabajo y cada una tiene una lista de **direcciones interesantes**. Dentro de ellas esta el broadcast y su propia direccion entre otras. La idea esta en que recibe todas y procesa aquellas tramas que tienen direccion destino entre esta lista. Si la estacion encuentra el utp libre, envia la siguiente trama (contenedor de bits)
 Una trama 802.3 tiene varios campos:
+![[Pasted image 20250922165944.png]]
 
 - **Preámbulo:** 7 bytes, con el patrón binario `10101010`. Hace que todas las estaciones se sincronicen. Todo el mundo debe escuchar en manchester `10101010`
     
@@ -49,7 +57,8 @@ Una trama 802.3 tiene varios campos:
 
 La longitud mínima de una trama es de 64 bytes, y la máxima es de 1518 bytes (sin incluir el preámbulo ni el SFD). Las direcciones de 48 bits se componen de un OUI (Organizationally Unique Identifier) de 3 bytes y un DUI (Device Unique Identifier) de 3 bytes. Existen direcciones especiales como la de
 
-_broadcast (a todos)_ (`0xffff.ffff.ffff`) y _multicast (a muchos)_ (`0x0000.5e00.0000` a `0x0000.5eff.ffff`). 
+_broadcast (a todos)_ (`0xffff.ffff.ffff`) y _multicast (a muchos)_ 01:00:5E:00:00:00  hasta  01:00:5E:7F:FF:FF). 
+La idea de multicast es que las ET se pongan como direccion interesante a una de las multicast para pertenecer al grupo
 
 #### Diferencia Ethernet 2 vs 802.3 + LLC
 **Ethernet II y IEEE 802.3** son variantes de la capa de enlace (subcapa MAC). La diferencia principal está en el campo que sigue a las direcciones MAC: en **Ethernet II** es un **campo Tipo**, que identifica directamente el protocolo de capa 3 (por ejemplo, IPv4 o ARP), mientras que en **IEEE 802.3** es un **campo Longitud**, por lo que se necesita la subcapa **LLC (802.2)** para indicar el protocolo. Esto hace que 802.3 tenga un pequeño overhead adicional y, en algunos casos, use la extensión **SNAP** para volver a soportar identificadores similares al campo Tipo de Ethernet II. En la práctica, **Ethernet II es el formato dominante en Internet** por su simplicidad y eficiencia, mientras que 802.3 quedó relegado a entornos locales o académicos. Ethernet 2 no conoce padding pero 802.3 si.
