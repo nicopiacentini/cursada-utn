@@ -98,3 +98,4 @@ export function alojamientosErrorHandler(err,req,res,next){
 	res.status(500).json({error: "algo salio mal..."})
 }
 ```
+Es recomendable que se abstraigan si se repiten constantemente.

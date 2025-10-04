@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Persistencia y ODM.md",
+                "file": "React.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Persistencia y ODM"
+              "title": "React"
             }
           }
         ]
@@ -171,8 +171,12 @@
   },
   "active": "e20f0e1ce83af8c9",
   "lastOpenFiles": [
-    "Testing y DocumentacionPractica.md",
+    "HTML y CSS.md",
+    "Pasted image 20251004091740.png",
+    "React.md",
+    "Clase practica 5.md",
     "Persistencia y ODM.md",
+    "Testing y DocumentacionPractica.md",
     "Clase 4 - Teoria Frontend + Testing.md",
     "Docker.md",
     "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
@@ -206,10 +210,6 @@
     "practica/node_modules/zod/README.md",
     "practica/node_modules/wrappy/README.md",
     "practica/node_modules/type-is/README.md",
-    "practica/node_modules/type-is/HISTORY.md",
-    "practica/node_modules/unpipe/README.md",
-    "practica/node_modules/vary/README.md",
-    "practica/node_modules/unpipe/HISTORY.md",
-    "practica/node_modules/toidentifier/README.md"
+    "practica/node_modules/type-is/HISTORY.md"
   ]
 }

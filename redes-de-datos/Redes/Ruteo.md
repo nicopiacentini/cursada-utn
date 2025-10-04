@@ -42,15 +42,15 @@ Protocolo de routeo. Es una aplicacion que corre en los routers y se encarga de 
 Es Classless -> cada router informa que parte de red conoce, no la red classfull entera.
 Lo que hace es tomar el contenido de su tabla de routeo y lo manda a todas las interfaces que conoce. 
 Como de cada ip que conoce tambien conoce su red, subnettea las redes classful para indicar que red classless conoce. Esto implica que si no anuncia en Rip una subnet de classfull, no la anuncia.
-Una vez que recibe informacion nueva compara con su tabla:
+Una vez que recibe informacion nueva ==compara== con su tabla:
 - Si hay algo nuevo lo escribe
 - Si hay algo repetido compara y sobreescribe si es mejor y deja si es peor.
 Ante cambios en la topologia automaticamente los router recalculan cuales son las mejores rutas y encuentran el mejor destino.
 
 #### Caracreristicas
-- Split horizon -> lo que  le informa un router a otro no vuelve, es decir, se considera que el primero ya sabe por haberlo contado originalmente. 
+- ==Split horizon== -> lo que  le informa un router a otro no vuelve, es decir, se considera que el primero ya sabe por haberlo contado originalmente. 
 - Tiene un limite de 16 saltos como maximo (la metrica)
-- Rip Timers -> cada 30 segundos en cada interfaz donde se activa RIP se escupe el mensaje con tabla de routeo para que los demas aprendan. La confiabilidad se basa en recibir del vecino la actualizacion de la tabla de routeo. Si deja de escucharlo, debo rearmar mi tabla de routeo e informarlo. Si pasados 180 segundos no escucho la actualizacion, la marco como inalcanzable. Cada 2 minutos el garbage collector borra entradas de la tabla que estan inalcanzables
+- ==Rip Timers== -> cada 30 segundos en cada interfaz donde se activa RIP se escupe el mensaje con tabla de routeo para que los demas aprendan. La confiabilidad se basa en recibir del vecino la actualizacion de la tabla de routeo. Si deja de escucharlo, debo rearmar mi tabla de routeo e informarlo. Si pasados 180 segundos no escucho la actualizacion, la marco como inalcanzable. Cada 2 minutos el garbage collector borra entradas de la tabla que estan inalcanzables
 - Por esto ultimo tarda mucho la informacion en transmitirse y tiene muy malos tiempos de convergencia.
 ##### Tabla RIP
 `Dir IP que conoce` `next hop` `cantidadDeSaltos/Metric` `interfaz de salida`
@@ -60,8 +60,8 @@ Se elige aquel que tenga la menor cantidad de saltos.
 ## OSPF
 Open (abierto) shortest path first. Usa el algoritmo de Dijktsra para encontrar el camino mas rapido. Crea un grafo indicando todos los nodos que conoce.
 ### Caracteristicas
-Como es _link state_ se fija que ancho de banda tiene un canal para elegir caminos. Ademas, Realiza Flooding, es decir, avisa a todos los miembros de la red de los cambios en vez de solo a los que estan al lado. Converge mas rapido e intercambia menos informacion que RIP. Esto se debe a que tiene un *keepAlive* para indicar que sigue vivo y un mensaje que manda cuando cambia la topologia. Tiene balanceo de carga y hace flooding, es decir, cuando tiene un cambio automaticamente le avisa a demas routers que automaticamente se enteran entre si.
-Es jerarquico y se maneja con areas:
+Como es ==_link state_== se fija que ancho de banda tiene un canal para elegir caminos. Ademas, Realiza ==Flooding==, es decir, avisa a todos los miembros de la red de los cambios en vez de solo a los que estan al lado. Converge mas rapido e intercambia menos informacion que RIP. Esto se debe a que tiene un ==*keepAlive*== para indicar que sigue vivo y un mensaje que manda ==cuando cambia la topologia==. Tiene ==balanceo de carga== y hace flooding, es decir, cuando tiene un cambio automaticamente le avisa a demas routers que automaticamente se enteran entre si.
+Es ==jerarquico== y se maneja con areas:
 ##### Area
 Los routers en una misma se comunican entre si y eligen a uno para salir del area. Este debe tener la mayor capacidad. Al salir de mi sistema autonomo y tener que hablar con muchos partners debo usar otro protocolo exterior como el (BGTP)
 #### Ventajas 

@@ -1,0 +1,26 @@
+body, html {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-direction: column;
+  background-color: aliceblue;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Barlow', sans-serif;
+}
+
+header {
+  background-color: aliceblue;
+  position: fixed;
+  display: flex;
+  width: 98%;
+  height: 35px;
+  flex-direction: row; /*nos dice la direccion del flex si fila o columna*/
+  border-bottom: 1px solid rgb(50,127,181);
+  padding: 15px;
+}
+
+header img{
+    width: 100px;
+    height: auto;
+}
