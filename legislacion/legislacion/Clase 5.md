@@ -1,8 +1,8 @@
 # Obligaciones
-Es un vinculo juridico entre un **deudor** que va a recibir o exije un bien o servicio y un **acreedor** que va a responder a dicho bien o servicio. Esta determinado por el Art724 y Art 725.
+Es un vinculo juridico entre un **deudor** que va a recibir o exije un bien o servicio y un **acreedor** que va a responder a dicho bien o servicio. Esta determinado por el Art724 y Art 725. Es la obligacion de dar, hacer o no hacer.
 ### Elementos
 - Sujeto -> personas vinculadas a la relacion juridica, deudor y acreedor
-- Objeto -> el hecho o servicio que el acreedor presta
+- Objeto -> el hecho o servicio que el deudor debe satisfacer a favor del acreedor
 -  Causa -> razon por la cual se efectua este intercambio.
 ### Fuentes de obligaciones
 - La ley -> por ejemplo, por relaciones de familia.
@@ -14,10 +14,10 @@ Es un vinculo juridico entre un **deudor** que va a recibir o exije un bien o se
 ### Clasificacion de las obligaciones
 #### Por naturaleza del vinculo obligacional
 - Civiles -> exigibles en tribunales por exigencia del acto
-- Morales -> de conciencia o naturalidad
+- Morales -> de conciencia o naturalidad, no repetible
 #### Por naturaleza de la prestacion --
-- Dar ->  Entregar un objeto por ejemplo
-- Hacer -> de exigir el servicio por parte del deudor
+- Dar ->  Son obligaciones de dar cosas ciertas, inciertas, cantidades de cosas o sumas de dinero
+- Hacer -> de prestar el servicio o realizacion de un hecho por parte del deudor
 - No hacer -> basicamente obligacion de no hacer algo
 #### Por el sujeto --
 - Singular -> Hay un deudor y un acreedor
@@ -25,14 +25,14 @@ Es un vinculo juridico entre un **deudor** que va a recibir o exije un bien o se
 	- Solidarias -> Pasa cuando el objeto es indivisible y el deudor exige a uno solo de los deudores por todos.
 	- Simplemente mancomunadas -> cuando el objeto de obligacion esta delimitadas en el negocio. El objeto se puede fraccionar y termina en que un deudor debe tanto y otro deudor debe otro tanto.
 #### Por modalidad
-- Puras -> instantaneas
-- modales -> cumplimiento sujeto a condicion, plazo o cargo
+- Puras -> instantaneas, no depende de ninguna condicion
+- modales -> sujeto a cumplimiento sujeto a condicion, plazo o cargo
 #### Por tiempo de cumplimiento
 - Inmediata -> se cumplen en un solo acto
 - Ejecucion diferida -> Es el pago o prestacion a una fecha posterior. Por ejemplo, pago a 30 dias o pago y el pedido me llega luego
 - Ejecucion permanente
 	- Continuada -> Perdura en el tiempo continuo
-	- Periodica ->
+	- Periodica
 #### Por la independencia
 - Principales -> existen por si solas
 - Accesorias -> viven de una principal y si se extingue la principal, se extingue la accesoria

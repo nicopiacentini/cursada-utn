@@ -4,18 +4,18 @@ Art 1882 CCyCN.
 Es un poder juridico -> facultad reconocida y protegida por la ley. Solo la ley puede crearlos, modificarlos o extinguirlos. Se ejerce directamente sobre la cosa. Concede persecucion (reclamar si me lo sacan). 
 #### Comparacion con derechos personales
 El derecho real crea un vinculo real entre  una persona y una cosa, sin depender de un intermediario. El derecho personal establece un vinculo entre personas, donde una es acreedor y el otro es deudor.
-- El derecho real es oponible a todos -> todos deben respetarla
+- El derecho real es oponible a todos -> todos deben respetarla. 
 - El derecho personal es relativo -> solo debe respetarla los que participaron en el
 - El objeto en el deerecho real es una cosa
 - El objeto en el derecho personal es una prestacion.
 ### Cosas
 Son bienes materiales suceptibles de valor economico. Esto implica que tenga existencia fisica y que tenga un valor por usarse, intercambiarse o aprovercharse. Tiene la siguiente clasificacion segun quien puede tener derechos sobre ellas:
 ##### Bienes del dominio publico del estado
-Destinado al uso de todos. Nadie puede apropiarse de ellos.
+Destinado al uso de todos. Nadie puede apropiarse de ellos. Inajenables, imprescriptibles e inembargables
 ##### Bienes del dominio privado del estado
 Pertenece al estado y solo puede ser administrado por el estado
 ##### Bienes de los particulares
-Son aquellos sobre los cuales los individuos pueden ejercer derechos reales plenos
+Son aquellos sobre los cuales los individuos pueden ejercer derechos reales plenos. Son los que no son estatales
 #### Clasificacion de cosas
 - Muebles e inmuebles
 	- Mueble -> una cosa transladable

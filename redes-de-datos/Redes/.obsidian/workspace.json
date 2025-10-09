@@ -4,21 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "5b4bf851abf7ee3c",
+        "id": "99277b0f5311da26",
         "type": "tabs",
         "children": [
           {
-            "id": "b8caa917ccd242d3",
+            "id": "0f42a0c07ae5afd9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "Cisco Codigos.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled 2.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "Cisco Codigos"
+              "icon": "lucide-table",
+              "title": "Untitled 2"
             }
           }
         ]
@@ -169,8 +168,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b8caa917ccd242d3",
+  "active": "0f42a0c07ae5afd9",
   "lastOpenFiles": [
+    "Cisco Codigos.md",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "Untitled.base",
     "IP 2 - subnetting + arp.md",
     "Ruteo.md",
     "TCP-IP.md",
@@ -183,7 +186,6 @@
     "Pasted image 20250829190849.png",
     "Pasted image 20250822201415.png",
     "Pasted image 20250814200250.png",
-    "Cisco Codigos.md",
     "Telnet y SSH.md",
     "Untitled",
     "Pasted image 20250919204838.png",

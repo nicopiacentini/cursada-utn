@@ -3,12 +3,17 @@ Es una **fuente** de obligaciones.
 Principio autonomia de la voluntad -> Las partes ponen las clausulas segun su necesidad 
 Es un derecho patrimonial.
 ##### Elementos
-- Sujetos
-- objetos
+- Consentimiento -> Es el acuerdo de dos declaraciones de voluntad, que parten de los sujetos (partes), que deben ser capaces para poder consensuar respecto de ese contrato y se dirigen a un fin común (integración); es el acucrdo de voluntades.
+	- Sujetos -> partes interesadas
+- objetos -> son los hechos, cosas o servicios sobre los que recae la prestacion que se va a dar, hacer o no hacer algo.
 - Causa -> materia contractual. Finalidad economica que buscaron las partes
-- Forma
+- Forma -> como se exterioriza la voluntad de las partes. A veces la ley exige para determinados contratos una forma especifica.
 ##### Caracteristicas:
 - Libertad de contratacion -> las partes son libres de celebrarlo y determinar el contenido
+- Es vinculante
+- Es en buena fe
+- Caracter de las normas legales
+- Derecho de propiedad
 
 #### Extension de los contratos
 - Modo normal -> cumplimiento de las obligaciones emergentes del contrato
@@ -27,7 +32,7 @@ Es un derecho patrimonial.
 - Formales
 - No formales
 - Conmutativos -> las ventajas o perdidas son conocidas de antemano
-- aleatorios -> las ventajas o perdidas son conocidas de antemano
+- aleatorios -> las ventajas o perdidas no son conocidas de antemano
 - Principales -> existen por si solos
 - accesorios -> dependen de otro
 - De ejecucion inmediata
