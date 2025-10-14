@@ -1,7 +1,7 @@
 # Modelo async de JS
 Es el modelo asíncrono de JS. Entrada/salida (llamar scio externo, base de datos) no bloqueante. Existe *un solo hilo de ejecucion* para manejar multiples operaciones a la vez. Los programas lineales pueden volverse mas dificiles de representar.
 ### Event Loop de JS
-Existe el **call stack** que es el lugar donde se apilan las operaciones y llamadas sincrónicas de operaciones. Sin embargo, pueden aparecer operaciones de entrada/salida que node va a enviar a una **task queue** donde se ejecuta esa tarea por su parte. Luego, al finalizar, se manda al **callback queue** donde vemos el resultado de mi operacion de entrada/salida. Ahora hasta que no se vacíe el **call stack**, no se ejecuta el callback queue.
+Existe el **call stack** que es el lugar donde se apilan las operaciones y llamadas sincrónicas (en el unico hilo) de operaciones. Lo que es sincronico ocurre inmediatamente. Sin embargo, pueden aparecer operaciones de entrada/salida que bloqueen el hilo y node envia a una **task queue** donde se ejecuta esa tarea por su parte. Luego, al finalizar, se manda al **callback queue** donde vemos el resultado de mi operacion de entrada/salida. Ahora hasta que no se vacíe el **call stack**, no se ejecuta el callback queue.
 ## Async en JS
 #### Callbacks
 Funciones que se pasan a tareas asincronas
@@ -38,8 +38,10 @@ tareaAsincrona()
 		console.log("esto se ejecuta siempre")
 	})
 ```
+El resolve pone el valor de la promesa en *fulfilled* y el reject en *rejected*. La idea es que una promesa en fullfiled ejecuta los callback con then y una promesa en rejected ejecuta los catch.
 #### Funciones asincronas
 El `await` espera a la finalizacion de otra cosa para seguir ejecutando. El async indica que el resultado de la funcion es una *promise* y se puede tratar como tal.
+Ademas, todo lo que este dentro de la funcion se ejecuta instantaneamente, no como promesa.
 ```js
 async function obtenerUsuarios(pagina){
 	let data;
