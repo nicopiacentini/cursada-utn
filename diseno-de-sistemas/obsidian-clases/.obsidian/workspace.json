@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cac222c152ca93c2",
+        "id": "b0252c40fd24615f",
         "type": "tabs",
         "children": [
           {
-            "id": "25a5e3feda8e00fa",
+            "id": "395849a41de054c8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dds/Persistencia Y ORM.md",
+                "file": "UX y diseño UI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Persistencia Y ORM"
+              "title": "UX y diseño UI"
             }
           }
         ]
@@ -169,17 +169,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "25a5e3feda8e00fa",
+  "active": "395849a41de054c8",
   "lastOpenFiles": [
+    "Arquitectura Parte 2.md",
+    "UX y diseño UI.md",
+    "Pasted image 20250704091518.png",
+    "dds/Introduccion a la arquitectura.md",
+    "dds/Practica-ORM-Hybernate-Java.md",
+    "dds/Persistencia.md",
+    "dds/Persistencia Y ORM.md",
+    "Untitled.md",
     "Pasted image 20250822112520.png",
     "Pasted image 20250822112221.png",
     "Pasted image 20250822112201.png",
-    "Untitled.md",
     "Metaprogramacion en GODOT.md",
-    "Arquitectura Parte 2.md",
-    "Pasted image 20250704091518.png",
     "dds/Patrones De diseño.md",
-    "dds/Introduccion a la arquitectura.md",
     "Diagrama de secuencia y componentes.md",
     "dds/APIs Rest en Java.md"
   ]

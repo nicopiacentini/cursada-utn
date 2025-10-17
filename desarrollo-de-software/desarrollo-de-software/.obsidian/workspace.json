@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f10968fb38f1138a",
+        "id": "47f958e58d8cad2a",
         "type": "tabs",
         "children": [
           {
-            "id": "e20f0e1ce83af8c9",
+            "id": "ce3964a03ddfd01d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clase practica 5.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Clase practica 5"
+              "title": "New tab"
             }
           }
         ]
@@ -169,21 +165,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e20f0e1ce83af8c9",
+  "active": "ce3964a03ddfd01d",
   "lastOpenFiles": [
+    "Pasted image 20250826135504.png",
+    "Pasted image 20251004091740.png",
+    "Pasted image 20250823093012.png",
+    "Pasted image 20250823092039.png",
+    "Clase teorica 2.md",
+    "Clase Teorica 1 - Introduccion.md",
+    "Clase Practica 1.md",
+    "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
+    "Biblioteca VS Framework.md",
+    "Cualidades de diseño.md",
+    "Curl - tutorial.md",
+    "Docker.md",
+    "Arquitectura - Introduccion.md",
+    "Accesibilidad, UX, UI y Usabilidad.md",
+    "Clase practica 5.md",
     "React.md",
     "HTML y CSS.md",
-    "Pasted image 20251004091740.png",
-    "Clase practica 5.md",
     "Persistencia y ODM.md",
     "Testing y DocumentacionPractica.md",
     "Clase 4 - Teoria Frontend + Testing.md",
-    "Docker.md",
-    "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
     "Clase practica 2 - npm y GitHub avanzado.md",
     "Clase Teorica 3.md",
-    "Clase teorica 2.md",
-    "Cualidades de diseño.md",
     "Patrones de integracion.md",
     "Patrones Arquitectonicos fisicos.md",
     "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
@@ -192,9 +197,6 @@
     "Intro al desarrollo.md",
     "Orquestacion de casos de uso.md",
     "Pasted image 20250906102510.png",
-    "Pasted image 20250826135504.png",
-    "Pasted image 20250823093012.png",
-    "Pasted image 20250823092039.png",
     "practica/node_modules/zod/src/v4/core/tests/locales/tr.test.ts",
     "practica/node_modules/zod/src/v4/core/tests/locales/ru.test.ts",
     "practica/node_modules/zod/src/v4/core/tests/locales/en.test.ts",
@@ -204,12 +206,6 @@
     "practica/node_modules/zod/src/v4/mini/tests/recursive-types.test.ts",
     "practica/node_modules/zod/src/v4/mini/tests/prototypes.test.ts",
     "practica/node_modules/zod/src/v4/mini/tests/number.test.ts",
-    "practica/node_modules/zod/src/v4/mini/tests/error.test.ts",
-    "practica/node_modules/http-errors/node_modules/statuses/README.md",
-    "practica/node_modules/http-errors/node_modules/statuses/HISTORY.md",
-    "practica/node_modules/zod/README.md",
-    "practica/node_modules/wrappy/README.md",
-    "practica/node_modules/type-is/README.md",
-    "practica/node_modules/type-is/HISTORY.md"
+    "practica/node_modules/zod/src/v4/mini/tests/error.test.ts"
   ]
 }

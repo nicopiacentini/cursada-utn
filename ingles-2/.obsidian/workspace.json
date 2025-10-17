@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1e2bdae464468a99",
+        "id": "feb1466710b581c5",
         "type": "tabs",
         "children": [
           {
-            "id": "8b8cfeb12b9a8509",
+            "id": "a85ab99b728baa44",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -153,6 +153,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -161,6 +162,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8b8cfeb12b9a8509",
+  "active": "e863210bd497911f",
   "lastOpenFiles": []
 }
