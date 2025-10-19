@@ -11,10 +11,14 @@
             "id": "ce3964a03ddfd01d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Clase practica - Hooks + renderizado.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Clase practica - Hooks + renderizado"
             }
           }
         ]
@@ -167,6 +171,7 @@
   },
   "active": "ce3964a03ddfd01d",
   "lastOpenFiles": [
+    "Clase practica - Hooks + renderizado.md",
     "Pasted image 20250826135504.png",
     "Pasted image 20251004091740.png",
     "Pasted image 20250823093012.png",

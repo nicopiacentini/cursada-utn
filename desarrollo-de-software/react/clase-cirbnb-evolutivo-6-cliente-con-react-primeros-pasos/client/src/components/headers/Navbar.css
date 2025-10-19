@@ -1,0 +1,20 @@
+.navbar-bg{
+    background-color: var(--primary-purple);
+    font-size: 1.5rem;
+    height: 8rem;
+    padding: 1rem 1rem;
+}
+
+.navbar{
+    color: var(--primary-white);
+    margin: 0 2rem;
+}
+
+.menu-icon{
+    color: var(--primary-white);
+}
+
+.cart-count{
+    margin: 0 0 0 1rem;
+    color: var(--primary-white)
+}

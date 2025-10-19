@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Contabilidad Nacional.md",
+                "file": "Costos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Contabilidad Nacional"
+              "title": "Costos"
             }
           }
         ],
@@ -186,8 +186,10 @@
   },
   "active": "29a1ae86d1aa3cd7",
   "lastOpenFiles": [
-    "Clase 1 Economia.md",
+    "Inventarios.md",
+    "Pasted image 20250818200054.png",
     "Contabilidad Nacional.md",
+    "Clase 1 Economia.md",
     "Precios.md",
     "Welcome.md",
     "Untitled 2.base",
@@ -197,7 +199,6 @@
     "Untitled 1.base",
     "Untitled.base",
     "Costos.md",
-    "Inventarios.md",
     "Pasted image 20250825210522.png",
     "Pasted image 20250825205936.png",
     "Pasted image 20250825204517.png",
@@ -206,7 +207,6 @@
     "Pasted image 20250820181428.png",
     "Pasted image 20250820174004.png",
     "Pasted image 20250818204102.png",
-    "Pasted image 20250818201553.png",
-    "Pasted image 20250818201333.png"
+    "Pasted image 20250818201553.png"
   ]
 }
