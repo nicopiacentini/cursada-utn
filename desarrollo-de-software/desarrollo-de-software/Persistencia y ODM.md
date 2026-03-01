@@ -112,10 +112,11 @@ Existe un Id que me lleva a otra coleccion con lo que preciso. Guardo solo el Ob
 - Existe independencia entre colecciones
 - Consulto datos por separado
 #### Tabla resultado
-|                 | **Embeido**                                                                                                                                    | **Referencia**                                                                                      |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **personas**    | ```js<br>{<br>  "_id": 1,<br>  "nombre": "Lucía",<br>  "direccion": {<br>    "calle": "Calle Paunero",<br>    "numero": 123<br>  }<br>}<br>``` | ```js<br>{<br>  "_id": 1,<br>  "nombre": "Lucía",<br>  "direccion_id": ObjectId("X")<br>}<br>```    |
-| **direcciones** |                                                                                                                                                | ```js<br>{<br>  "_id": ObjectId("X"),<br>  "calle": "Calle Paunero",<br>  "numero": 123<br>}<br>``` |
+|                 | **Embeido**                                                                                               | **Referencia**                                                                                              |
+| --------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **personas**    | ```json {  "_id": 1, "nombre": "Lucía",  "direccion": {   "calle": "Calle Paunero",    "numero": 123}}``` | ```json {  "_id": 1,  <br>"nombre": "Lucía",<br>"direccion_id": ObjectId("X")}```                           |
+| **direcciones** |                                                                                                           | ```js<br><br>{<br>  "_id": ObjectId("X"),<br>  "calle": "Calle Paunero",<br>  "numero": 123<br>}<br><br>``` |
+|                 |                                                                                                           |                                                                                                             |
 ## Mongoose
 Es el ODM en JS de mongo. Mappea objetos de JS a documentos de mongo. Usa una interfaz *orientada a objetos* para interactuar con la base. Valida, estructura y manipula datos con facilidad.
 Se suele utilizar porque:

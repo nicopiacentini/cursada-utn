@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "47f958e58d8cad2a",
+        "id": "745202cef8d46ca9",
         "type": "tabs",
         "children": [
           {
-            "id": "ce3964a03ddfd01d",
+            "id": "c1e1807346bfe3bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clase practica - Hooks + renderizado.md",
+                "file": "Clase practica React final.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clase practica - Hooks + renderizado"
+              "title": "Clase practica React final"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -169,38 +169,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce3964a03ddfd01d",
+  "active": "c1e1807346bfe3bd",
   "lastOpenFiles": [
+    "Clase 14 - UX.md",
+    "Clase 10.md",
+    "Clase practica - Integracion frontend y backend.md",
+    "Sesiones y usuarios.md",
     "Clase practica - Hooks + renderizado.md",
+    "Clase react.md",
+    "Clase practica React final.md",
+    "HTML y CSS.md",
+    "React.md",
+    "Persistencia y ODM.md",
+    "MongoDB.md",
+    "Testing y DocumentacionPractica.md",
+    "Clase 4 - Teoria Frontend + Testing.md",
+    "Accesibilidad, UX, UI y Usabilidad.md",
+    "Clase practica 5.md",
+    "Orquestacion de casos de uso.md",
+    "Arquitectura - Introduccion.md",
+    "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
+    "MVC Web con Expressjs.md",
+    "Clase practica 2 - npm y GitHub avanzado.md",
+    "Clase Teorica 3.md",
+    "Clase teorica 2.md",
+    "Docker.md",
+    "Intro al desarrollo.md",
+    "Patrones Arquitectonicos fisicos.md",
+    "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
+    "Pasted image 20250823092039.png",
+    "Pasted image 20251108092705.png",
     "Pasted image 20250826135504.png",
     "Pasted image 20251004091740.png",
     "Pasted image 20250823093012.png",
-    "Pasted image 20250823092039.png",
-    "Clase teorica 2.md",
-    "Clase Teorica 1 - Introduccion.md",
-    "Clase Practica 1.md",
-    "Clase Practica 3 - HTTP - REST - Consumo - Desarrollo.md",
-    "Biblioteca VS Framework.md",
-    "Cualidades de diseño.md",
-    "Curl - tutorial.md",
-    "Docker.md",
-    "Arquitectura - Introduccion.md",
-    "Accesibilidad, UX, UI y Usabilidad.md",
-    "Clase practica 5.md",
-    "React.md",
-    "HTML y CSS.md",
-    "Persistencia y ODM.md",
-    "Testing y DocumentacionPractica.md",
-    "Clase 4 - Teoria Frontend + Testing.md",
-    "Clase practica 2 - npm y GitHub avanzado.md",
-    "Clase Teorica 3.md",
-    "Patrones de integracion.md",
-    "Patrones Arquitectonicos fisicos.md",
-    "Patrones de arquitectura logica (Estilos Arquitectonicos).md",
-    "MVC Web con Expressjs.md",
-    "MongoDB.md",
-    "Intro al desarrollo.md",
-    "Orquestacion de casos de uso.md",
     "Pasted image 20250906102510.png",
     "practica/node_modules/zod/src/v4/core/tests/locales/tr.test.ts",
     "practica/node_modules/zod/src/v4/core/tests/locales/ru.test.ts",

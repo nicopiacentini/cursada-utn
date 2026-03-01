@@ -68,6 +68,8 @@ La informacion se esta creando.
 Cifrar informacion y poder manipularla sin descifrarla.
 ### Criptografia vs Criptoanalisis
 
+
+
 ##### Criptoanalisis
 Busca vulnerabilidades y desarrolla ataques a la criptografia
 

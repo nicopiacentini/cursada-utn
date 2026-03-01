@@ -58,7 +58,7 @@ Son las ramas de dividir el derecho en publico y privado
 De aca surge el derecho. El lugar de donde se nutre el derecho.
 Son los distintos modos de creacion o expresion del derecho positivo
 
-Fuente Material: ...
+Fuente Material: 
 Fuentes formales:
 - La ley
 - La costumbre

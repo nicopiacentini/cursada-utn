@@ -21,7 +21,7 @@ Sirve para hacer parrafos y titulos dentro de el
 ##### href
 Sirve para poner links con determinados nombres
 ```html
-<a href="">Este es un link</a>
+<a href="http://google.com">Este es un link</a>
 ```
 Las etiquetas tienen ciertos atributos modificables. Aca por ejemplo tengo que poner en href la url de donde quiera ir.
 ##### html

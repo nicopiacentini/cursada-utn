@@ -202,4 +202,111 @@ El pagaré **no será válido como tal**, si no cumple con los requisitos antes 
 ## Las sociedades
 Son personas juridicas con un objetivo determinado. Son suceptibles a derechos tal como las personas. Necesita de *la necesidad de agruparse* y *la necesidad de clarificar responsabilidades*
 Existen distintos tipos y calificaciones segun su objetivo.
-Tiene un contrato social que indican derechos y obligaciones de los socios.
+Tiene un contrato social que indican derechos y obligaciones de los socios. 
+#### Clasificacion de como se divide el capital
+- Por partes de interes: (S colectiva, capital e industria o comandita simple)
+- Por cuotas: Es solo la SRL.
+- Por Acciones: Son como titulos de propiedad de la sociedad
+#### Organos societarios
+Quien dirige y compone a la sociedad. Actuan y se encargan de que funcione todo bien:
+- Administracion: Ejecuta las decisiones del organo del gobierno y representa la sociedad ante terceros. Puede estar a cargo de una persona o de muchas. Puede ser indistinta(si puede actuar uno solo) o conjunto. Tambien puede ser colegiada o no. Puede estar compuesta por los socios o por terceros.
+- Gobierno: Esta integrado por socios o accionistas. Es el que expresa la voluntad de los socios. Las decisiones se toman por votacion y ganan las mayorias.
+- Fizcalizacion: Se encarga de que los administradores actuen bajo la ley y la norma. Puede ser indirecta mediante la creacion ude un organo permanente o directa
+- Registro publico de comercio: Lo que hace es brindar publicidad, registros de informacion, cosa que da informacion extra a las personas y brinda fiscalizacion externa sobre las sociedades.
+## Tipos societarios
+### Sociedad Colectiva
+#### Caracteristicas
+- Personalidad juridica: se la considera como una persona juridica con derechos y obligaciones
+- Responsabiliad de los socios: es ilimitada, subsidiaria y solidaria. Cada socio es responsable de su parte
+- Contrato constitutivo: Es el contrato pactado en la sociedad
+#### Capital social
+#### Nombre
+- Denominacion social
+- Razon social
+#### Administracion, gobierno y fiscalizacion
+Segun descripto anteriormente en los organos societarios
+### Sociedad en comandita simple
+#### Caracteristicas
+- Personalidad juridica: se la considera como una persona juridica con derechos y obligaciones
+- Responsabiliad de los socios: Socios comanditados (administradores con responsabilidad ilimitada y solidaria con las deudas de la sociedad) y comanditarios (tienen un limite en el aporte y no pueden tomar desiciones)
+- Contrato constitutivo: Es el contrato pactado en la sociedad
+#### Capital social
+#### Nombre
+- Denominacion social
+- Razon social
+#### Administracion, gobierno y fiscalizacion
+Segun descripto anteriormente en los organos societarios
+### Sociedad de capital de industria
+Es similar con las demas pero la responsabilidad de los socios cambia:
+- Socios capitalistas: Son los que aportan dinero, bienes o recursos financieros a la empresa
+- Socios industriales: aportan trabajo, conocimientos tecnicos y/o habilidades
+### Sociedad de responsabilidad limitada
+#### Caracteristicas
+- Personalidad juridica: se la considera como una persona juridica con derechos y obligaciones
+- Responsabiliad de los socios: es ilimitada al monto de las cuotas
+- Limite maximo de 50 socios
+- Tiene contrato constitutivo
+#### Regimen de publicidad
+Es un coso que se publica para novedades de la sociedad
+#### Capital social
+Son las cuotas que aportan los socios. Estan hechas en aportes de dinero o aportes en especie
+#### Nombre
+- Denominacion social
+- Razon social
+#### Administracion, gobierno y fiscalizacion
+Segun descripto anteriormente en los organos societarios
+- Administracion: los gerentes pueden o no ser socios 
+- Gobierno: reunion de socios o asamblea. La forma de deliberacion de socios es por contrato social o por mayoria.
+### Sociedad Anonima
+#### Caracteristicas
+- Personalidad juridica: se la considera como una persona juridica con derechos y obligaciones
+- Responsabiliad de los socios: a traves de las acciones
+#### Constitucion
+- Por acto unico: Todos son fundadores
+- Por suscripcion publica: se inscribe en el registro publico de comercio
+#### Capital social
+Esta compuesto por acciones que estan compuestas por
+Aportes en capital
+Aportes en dinero
+#### Nombre
+- Denominacion social
+- Razon social
+#### Administracion, gobierno y fiscalizacion
+Segun descripto anteriormente en los organos societarios
+- Administracion: los gerentes pueden o no ser socios 
+- Gobierno: reunion de socios o asamblea. La forma de deliberacion de socios es por contrato social o por mayoria.
+#### Acciones
+- Acciones al portador (no vigentes)
+- Acciones normativas
+- Acciones endosables y no endosables
+- Acciones escriturales
+- Acciones ordinarias
+- Acciones privilegiadas
+- Acciones preferidas
+### Sociedad Anonima
+#### Caracteristicas
+- Personalidad juridica: se la considera como una persona juridica con derechos y obligaciones
+- Responsabiliad de los socios: es ilimitada al monto de las cuotas
+- Limite maximo de 50 socios
+- Tiene contrato constitutivo
+#### Regimen de publicidad
+Es un coso que se publica para novedades de la sociedad
+#### Capital social
+Son las cuotas que aportan los socios. Estan hechas en aportes de dinero o aportes en especie
+#### Nombre
+Tiene que tener su nombre + S.A.
+#### Administracion, gobierno y fiscalizacion
+Segun descripto anteriormente en los organos societarios
+- Administracion: Es el directorio
+- Gobierno: Asamblea de accionistas. Puede ser la ordinaria (resuelve balance, estado de resultados, ganancias ,etc), extraordinarias (todo lo que no sea de la ordinaria, es decir, rescate de amortizaciones, etc) o especiales
+  Se llaman a la orden del dia, asamblea unanime, quorum o mayorias
+- Representacion: Es el presidente del directorio
+
+#### Libros societarios
+Registran movimientos importantes
+- libro de actas
+- Libro de deposito de acciones y asistencia a asambleas
+- Registro de acciones
+#### Funcion economica y situacion actual
+- Sociedades anonimas cerradas: Acciones no cotizan en bolsa y no pueden ser compradas por el publico
+- Sociedades anonimas abiertas: Acciones cotizan en bolsa y pueden ser compradas por el publico.

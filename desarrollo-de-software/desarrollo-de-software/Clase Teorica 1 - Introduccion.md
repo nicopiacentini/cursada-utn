@@ -196,6 +196,21 @@ Aca ante cada peticion, el servidor quizas en vez de mandar un html, manda un ar
 
 
 ## Redefinicion de Monolitico VS Distribuido
+```plantuml
+node "computadoraCliente"{
+	component "navegador"
+}
+
+node "serverNode"{
+	component "server"
+}
+
+database DB
+
+"navegador" -> "server"
+"server" -> DB
+```
+
 Monolitico puede tener conexion o red con el cliente y con la base de datos. Entonces queda:
 - Monolitico -> El Backend corre en una computadora, que se conecta con una base de datos y envia cosas al cliente. Las unicas 2 conexiones son obvias y por eso entra en monolitico. Aca ante cada peticion, el servidor quizas en vez de mandar un html, manda un archivo mas liviano, como un json/xml/etc. Ahora el javascript que corre desde el lado del cliente, recibe el json y genera el html.
 - Frontend -> realiza validacion, y exposicion de objetos, html, css, etc. Muestra videos, fotos y dibuja la interfaz grafica. Registra las interacciones y se ejecuta en el cliente
