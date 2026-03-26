@@ -1,4 +1,4 @@
-
+ 
 ##### Funcion Periódica
 Es aquella que cumple con la condicion de que $f(x) = f(x + T)$ donde T es un numero real llamado periodo. En corto, la funcion cumple un ciclo cada $T$ y vuelve a su estado original. 
 Tambien llamamos **semiperiodo** a $L = T/2$ y esto es importante para el desarrollo de la serie trigonometrica de Fourier.
@@ -372,3 +372,17 @@ Tener en cuenta que se eligieron los extremos de integración entre $(-L, L)$, p
         
     
     Estos son los **límites laterales**. O sea que cualquier valor de la serie se calcula haciendo el promedio de los límites laterales. Aunque las funciones periódicas (señales) pueden tener discontinuidades, la serie es siempre continua y se puede calcular su valor para cada elemento del dominio.
+#### Simetria de media onda
+Existe simetria de media onda $<=> f(t) = - f(t+L)$
+Garantiza que las armonicas Pares se anulen. Para verlo graficamente, desplazo medio periodo y espejo mi funcion y de ahi se puede ver.
+a_2k es nulo
+
+
+#### Paridad
+- Si la funcion original es par:
+	- bn = 0
+	- Serie de cosenos
+- Si la funcion original es impar
+	- an = 0
+	- a0 = 0
+	- Serie de senos
