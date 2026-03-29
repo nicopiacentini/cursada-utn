@@ -14,6 +14,12 @@ Se plantea metodo de lógica inductiva para predecir el futuro o aproximarlo. Si
 4. Realizar experimentos para validar la hipótesis
 A partir de la repetición se crean nuevas teorías que la experimentación rectifica, modifica o avala. La experimentación es cara y por ende se utiliza la simulación como sustituto.
 ## La Simulación
+#### Caracteristicas estructurales:
+- **Elementos**: Son los componentes fundamentales. Son la representacion simplificada de alguan caracteristica de la realidad del objeto de estudio
+- **Relaciones entre los elementos o redes de comunicacion**: basicamente, los *elementos* estan interrelacionados tal como lo estan los objetos que representan en la realidad
+- **Limites**: El sistema tiene limites que acotan al trozo de realidad que quieren estudiar.
+	- Elementos endogenos: Se quedan dentro del limite y su comportamiento esta infulido por el modelo
+	- Elementos exogenos: no son modificados por el modelo pero si modifican elemendos endogoenos
 #### Que no es simulacion
 No es una recreacion ya que la simulacion es la prediccion de un acontecimiento.
 #### Definicion
@@ -25,25 +31,35 @@ Como ataco un problema
 Entonces realizo una simulacion: 
 La simulación es una herramienta que permite construir **modelos** representativos de un sistema real y con el objetivo de tomar desiciones en la vida real. Estos modelos llevan un cierto nivel de abstracción.
 
+###### Por que esta buena?
+1. Es una herramiente matematicamente chequeada para predecir el futuro
+2. No uso la realidad y por ende es menos costoso y menos riesgoso
+3. Puedo contrastar el modelo con distintos escenarios o alterantivas para elegir la que me acerque mas a mi objetivo
 ##### Definicion formal
 Segun Curchman
 X simla a Y si y solo si:
-a. X e Y son sistemas formales
-b. Y es el sistema real
-c. X es una aproximacion del modelo real
-d. Las reglas de validez en X no estan exentas de error
-Y ademas:
+	a. X e Y son sistemas formales
+	b. Y es el sistema real
+	c. X es una aproximacion del modelo real
+	d. Las reglas de validez en X no estan exentas de error
+	Y ademas:
 La simulacion de un **sistema** (que no se puede manipular por costos o practicidad) es la operacion de un **modelo** (representacion del sistema) que puede estudiarse y sujetarse a manipulaciones para inferir propiedeades concernientes al  comportamiento del sistema real.
 Osea puedo manipular el modelo sin tocar el sistema.
 
 El sistema actual -> Modelo fisico
 Modelo sobre sistema -> Modelo matematico
 
-#### Realismo vs simplicidad
+#### Propiedades de los modelos
+###### Formalismo
+El nivel de formalismo o presicion aumenta desde lo linguistico a lo matematico. 
+Es decir, menos formal es a palabra y mas formal es matematico
+###### Presicion vs exactitud
+Un modelo mas preciso no siempre es mas util que uno menos preciso porque quizas es mas simple. Mucha precision puede llefvar a excesivas inexactitudes
+###### El mejor modelo es el mas util
+Debo identificar adecuadamente elementos cruciales y definirlos correctamente
+###### **Realismo vs simplicidad**
 Lo mas simple en lo mas realista posible o lo mas realista en lo mas simple posible.
-###### Por que esta buena?
-1. Es una herramiente matematicamente chequeada para predecir el futuro
-2. 
+
 ### Simulacion y toma de decisiones
 El objetivo es *obtener información decisoria para mejorar la toma de decisiones*.
 ```mermaid
@@ -132,16 +148,49 @@ Las desiciones de la realidad se toman sobre info predictiva basada en el compor
 
 #### Mecanismo del flujo de tiempo
 A lo largo del tiempo se producen eventos en el modelo que identificamos como *ei*. El avanze del tiempo se puede dar por incrementos variables de evento a evento o por incrementos constantes de tiempo
+##### Incrementos variables
+Tiene una **tabla de eventos futuros** que determina instantes de prodximos eventos, tipos de eventos aa ocurrir, instantes de proximos eventos no condicionados al evento actual, y un vector de estado con variables relativas a la simulacion. El paso a a paso es:
+1. Fijacion de condiciones iniciales del modelo
+2. Determinacion de instante de proximo evento
+3. avanze de tiempo a proximo evento 
+4. Determinacion de tipo de evento
+5. Actualizacion del estado
+6. Determinacion de instantes de futuros eventos condicionados ala actual
+##### Incrementos constantes
+###### Definicion de evento
+**Evento** -> Es un hecho o acontecimiento que se produce en el sistema y tiene la capacidad de alterar al menos una de las variables de estado del sistema.
+Los eventos se indican previo a todo.
+
+La distancia de tiempo entre eventos $\Delta t$.
+1. **Configuración Inicial:** Se definen las condiciones de inicio del modelo (variables, valores base y el tiempo inicial).
+    
+2. **Avance del Tiempo:** El reloj de la simulación avanza un intervalo fijo llamado **$\Delta T$** (por ejemplo, avanza 1 segundo o 1 minuto).
+    
+3. **Procesamiento de Eventos Propios:** Se analizan y ejecutan los eventos que ocurren naturalmente dentro de este nuevo intervalo de tiempo.
+    
+4.  **Procesamiento de Eventos Programados:** Se revisan los eventos que venían "comprometidos" de pasos anteriores (según la **Tabla de Eventos**) y que deben ejecutarse justo en este momento.
+    
+5. **Actualización del Estado:** Con toda la información de los pasos anteriores, se actualiza el **Vector de Estado** del modelo (es decir, cambian los valores de las variables del sistema).
+    
+6. **Programación Futura:** Se registran los nuevos eventos que se acaban de generar y que ocurrirán en intervalos de tiempo futuros, guardándolos en la **Tabla de Eventos**.
+    
+7. **Control de Ciclo:**
+    
+    - **NO:** Si la simulación aún no termina, el flujo regresa al **Paso 2** para avanzar otro $\Delta T$.
+        
+    - **SI:** Si se cumplió el tiempo total o la condición de corte, pasa al siguiente paso.
+        
+8. **Cierre y Resultados:** Se realizan los cálculos finales, se imprimen los resultados obtenidos y el proceso se detiene (**PARAR**).
 ### Clasificacion de modelos de simulacion
 ##### Deterministicos
-Los datos son valores fijos y no funciones de densidad de probabilidad
+Los datos son valores fijos y no funciones de densidad de probabilidad. Estos modelos pueden ser resueltos analiticamente
 ##### Estocásticos
-Los datos son funciones de probabilidad
+Los datos son funciones de probabilidad. Estos son los que participan en las simulacion
 
 O
 
 ##### Estaticos
-Los datos no varian a trabes del tiempo es estagtico
+Los datos no varian a trabes del tiempo. El tiempo no cambia y se considera estatico
 ##### Dinamicos
 Son las iteraciones y datos que varian a traves del tiempo
 
@@ -151,24 +200,21 @@ Modelos Estocasticos y dinamicos
 ### Analisis previo
 ##### Metodologia de avance de tiempo
 1. Evento a evento
-2. $\delta T$ Constante
+2. $\Delta T$ Constante
 ##### Clasificacion de variables
-- Exogenas -> me las da el modelo y no las puedo cambiar
-	- Datos o exogenas no controlables
-	- De control -> son las posibles alternativas
-- Endogenas 
+- Exogenas -> me las da el modelo y no las puedo cambiar. Son independientes de la entrada del modelo y son predeterminadas y proporcionadas independientemente del sistema a modelar. Actuan sobre el sistema pero no se ven modificadas por el.
+	- Datos o exogenas no controlables. Me los da la realidad y no se pueden modificar. Generalmente son funcioness de densidad de probabilidad.
+	- De control -> son las posibles alternativas, es decir, suceptibles de manipulacion o control.
+- Endogenas
 	- De resultados -> son los resultados o salida de sistema 
-	- De estados -> Muestra como viene el sistema o el estado actual sin ver los resultados. Se modifica cuando ocurren determinados evento
-	- s
+	- De estados -> Muestra como viene el sistema o el estado actual sin ver los resultados. Es como una foto del sistema en un determinado momento. Se modifica cuando ocurren determinados evento
 
-##### Definicion de evento
-**Evento** -> Es un hecho o acontecimiento que se produce en el sistema y tiene la capacidad de alterar al menos una de las variables de estado del sistema.
-Los eventos se indican previo a todo.
+
 ###### Tabla de eventos futuros
 Son variables que contienen el momento o instante en la que ocurre un cierto evento
 Evento | Evento F no condicionado | Evento futuro condicionado | Concicion
 ##### Tabla de eventos Independientes
-Es una clasificacion y se usa con Delta constante
+Es una clasificacion y se usa con Delta constante. La Tabla de Eventos Independientes (T.E.I.) permite enumerar los diferentes eventos que tiene un modelo y como se concatenan a lo largo del tiempo. Los eventos podrán ser condicionados y no condicionados, esto indica que algunos siempre ocurren  y otros sólo ocurrirán si se cumplen ciertas condiciones. Las condiciones surgen de los valores que adoptan las variables de estados entre otros
 Evento | Evento F no condicionado | Evento futuro condicionado |
 > Ver nombres de eventos
 Evento futuro no condicionado -> Se genera como consecuencia del evento actual. Se analiza como consecuencia de datos que brinda el modelo, es decir, a partir de ese eento ubicar en el tiempo la ocurrencia del otro

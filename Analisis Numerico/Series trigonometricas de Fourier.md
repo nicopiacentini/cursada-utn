@@ -354,7 +354,7 @@ Tener en cuenta que se eligieron los extremos de integración entre $(-L, L)$, p
     
     $$\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = 0$$
     
-    > [!INFO] Espectros Discretos
+    >  Espectros Discretos
     > 
     > Estos valores $a_n$ y $b_n$ de la serie se denominan **espectros discretos**. Son valores discretos ya que $n$ es natural ($n \in \mathbb{N}$).
     
@@ -374,7 +374,7 @@ Tener en cuenta que se eligieron los extremos de integración entre $(-L, L)$, p
     Estos son los **límites laterales**. O sea que cualquier valor de la serie se calcula haciendo el promedio de los límites laterales. Aunque las funciones periódicas (señales) pueden tener discontinuidades, la serie es siempre continua y se puede calcular su valor para cada elemento del dominio.
 #### Simetria de media onda
 Existe simetria de media onda $<=> f(t) = - f(t+L)$
-Garantiza que las armonicas Pares se anulen. Para verlo graficamente, desplazo medio periodo y espejo mi funcion y de ahi se puede ver.
+Garantiza que las armonicas o coeficientes Pares $a_0, a_{2k}$ y $b_{2k}$ se anulen. Para verlo graficamente, desplazo medio periodo y espejo mi funcion y de ahi se puede ver.
 a_2k es nulo
 
 
@@ -386,3 +386,7 @@ a_2k es nulo
 	- an = 0
 	- a0 = 0
 	- Serie de senos
+#### Solucion a falta de paridad
+En ocaciones, algunas funciones son pares o impares si las corro o muevo tal que:
+$$f(t) = g(t) + n ~~~~~ => ~~~~~ Sf(t) = Sg(t) + n$$
+Para forzar la **imparidad** puedo hacer $n = a_0/2$ tal que quede mitad de area de cada lado.
