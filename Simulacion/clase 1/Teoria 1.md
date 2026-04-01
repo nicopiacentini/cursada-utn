@@ -149,13 +149,14 @@ Las desiciones de la realidad se toman sobre info predictiva basada en el compor
 #### Mecanismo del flujo de tiempo
 A lo largo del tiempo se producen eventos en el modelo que identificamos como *ei*. El avanze del tiempo se puede dar por incrementos variables de evento a evento o por incrementos constantes de tiempo
 ##### Incrementos variables
-Tiene una **tabla de eventos futuros** que determina instantes de prodximos eventos, tipos de eventos aa ocurrir, instantes de proximos eventos no condicionados al evento actual, y un vector de estado con variables relativas a la simulacion. El paso a a paso es:
+Tiene una **tabla de eventos Independientes** que determina instantes de prodximos eventos, tipos de eventos a ocurrir, instantes de proximos eventos no condicionados al evento actual, y un vector de estado con variables relativas a la simulacion. El paso a a paso es:
 1. Fijacion de condiciones iniciales del modelo
 2. Determinacion de instante de proximo evento
 3. avanze de tiempo a proximo evento 
 4. Determinacion de tipo de evento
 5. Actualizacion del estado
 6. Determinacion de instantes de futuros eventos condicionados ala actual
+##### Tabla de eventos independientes
 ##### Incrementos constantes
 ###### Definicion de evento
 **Evento** -> Es un hecho o acontecimiento que se produce en el sistema y tiene la capacidad de alterar al menos una de las variables de estado del sistema.
@@ -210,23 +211,71 @@ Modelos Estocasticos y dinamicos
 	- De estados -> Muestra como viene el sistema o el estado actual sin ver los resultados. Es como una foto del sistema en un determinado momento. Se modifica cuando ocurren determinados evento
 
 
-###### Tabla de eventos futuros
+###### Tabla de eventos independientes
 Son variables que contienen el momento o instante en la que ocurre un cierto evento
-Evento | Evento F no condicionado | Evento futuro condicionado | Concicion
-##### Tabla de eventos Independientes
-Es una clasificacion y se usa con Delta constante. La Tabla de Eventos Independientes (T.E.I.) permite enumerar los diferentes eventos que tiene un modelo y como se concatenan a lo largo del tiempo. Los eventos podrán ser condicionados y no condicionados, esto indica que algunos siempre ocurren  y otros sólo ocurrirán si se cumplen ciertas condiciones. Las condiciones surgen de los valores que adoptan las variables de estados entre otros
+<table style="border-collapse: collapse; width: 100%; text-align: center;">
+  <thead>
+    <tr>
+      <th style="padding: 8px; border: 1px solid #999;">EVENTO</th>
+      <th style="padding: 8px; border: 1px solid #999;">EFNC</th>
+      <th style="padding: 8px; border: 1px solid #999;">EFC</th>
+      <th style="padding: 8px; border: 1px solid #999;">Condición/es</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #999;">llegada</td>
+      <td style="padding: 8px; border: 1px solid #999;">llegada</td>
+      <td style="padding: 8px; border: 1px solid #999;">salida</td>
+      <td style="padding: 8px; border: 1px solid #999;">Ns = 1</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #999;">salida</td>
+      <td style="padding: 8px; border: 1px solid #999;">-----</td>
+      <td style="padding: 8px; border: 1px solid #999;">salida</td>
+      <td style="padding: 8px; border: 1px solid #999;">Ns ≥ 1</td>
+    </tr>
+  </tbody>
+</table>
+
+- El evento futuro no condicionado tiene que ser igual al evento o nada
+- El evento futuro condicionado como dice la palabra esta condicionado a que se cumpla la condicion.
+##### Tabla de eventos Futuros
+Es una clasificacion y se usa con Delta constante. La Tabla de Eventos Independientes (T.E.F.) permite enumerar los diferentes eventos que tiene un modelo y como se concatenan a lo largo del tiempo. Los eventos podrán ser condicionados y no condicionados, esto indica que algunos siempre ocurren  y otros sólo ocurrirán si se cumplen ciertas condiciones. Las condiciones surgen de los valores que adoptan las variables de estados entre otros
 Evento | Evento F no condicionado | Evento futuro condicionado |
-> Ver nombres de eventos
-Evento futuro no condicionado -> Se genera como consecuencia del evento actual. Se analiza como consecuencia de datos que brinda el modelo, es decir, a partir de ese eento ubicar en el tiempo la ocurrencia del otro
-Evento futuro condicionado -> Es la consecuencia del evento actual. 
+- Evento futuro no condicionado -> Se genera como consecuencia del evento actual. Se analiza como consecuencia de datos que brinda el modelo, es decir, a partir de ese evento ubicar en el tiempo la ocurrencia del otro
+- Evento futuro condicionado -> Es la consecuencia del evento actual. 
+
+<table style="border-collapse: collapse; width: 100%; text-align: center;">
+  <thead>
+    <tr>
+      <th style="padding: 8px; border: 1px solid #999;">EVENTO</th>
+      <th style="padding: 8px; border: 1px solid #999;">EFNC</th>
+      <th style="padding: 8px; border: 1px solid #999;">EFC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #999;">llegada</td>
+      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima llegada</td>
+      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima salida</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #999;">salida</td>
+      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima llegada</td>
+      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima salida</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ### Sistemas discretos y continuos
 #### Sistemas discretos
-
-O
+Avance del tiempo discretamente y puede ser:
+- Evento a evento con eventos concatenadores
+- Intervalos constantes donde entre intervalos ocurren eventos
 #### Sistemas Continuos
-
+Es una simulacion dinamica.
 ## Ejemplo COTO
 ### Analisis previo
 ##### Clasificacion de variables
