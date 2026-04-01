@@ -246,27 +246,6 @@ Evento | Evento F no condicionado | Evento futuro condicionado |
 - Evento futuro no condicionado -> Se genera como consecuencia del evento actual. Se analiza como consecuencia de datos que brinda el modelo, es decir, a partir de ese evento ubicar en el tiempo la ocurrencia del otro
 - Evento futuro condicionado -> Es la consecuencia del evento actual. 
 
-<table style="border-collapse: collapse; width: 100%; text-align: center;">
-  <thead>
-    <tr>
-      <th style="padding: 8px; border: 1px solid #999;">EVENTO</th>
-      <th style="padding: 8px; border: 1px solid #999;">EFNC</th>
-      <th style="padding: 8px; border: 1px solid #999;">EFC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #999;">llegada</td>
-      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima llegada</td>
-      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima salida</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #999;">salida</td>
-      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima llegada</td>
-      <td style="padding: 8px; border: 1px solid #999;">Tiempo proxima salida</td>
-    </tr>
-  </tbody>
-</table>
 
 
 ### Sistemas discretos y continuos
