@@ -25,7 +25,7 @@ Para poder aplicar esta metodología es necesario al menos un **dato** que encad
 | ------ | ----- | --- | ----- |
 |        |       |     |       |
 
-### Reglas
+##### Reglas
 
 1. La TEI tiene:
    - 3 columnas: "Evento", "Evento Futuro NO Condicionado" y "Evento Futuro Condicionado".
@@ -36,13 +36,26 @@ Para poder aplicar esta metodología es necesario al menos un **dato** que encad
 
 3. En la columna **EFNOC** sólo se puede escribir el mismo evento que en "EVENTO".
    - Si en "EVENTO" está el evento "A", en "EFNOC" puede haber "A" o "-".
+> [!IMPORTANT]
+> Esto es asi debido a que la unica manera de unir dos eventos independientes distintos es a traves de una condicion
+
+Entonces a lo sumo el evento produce a si mismo o nada
+
 
 - La única forma de unir eventos independientes es mediante una **condición**.  
 - Un evento puede generar un **evento futuro condicionado**.
 
 ### Reglas de la columna "Condición"
 
-1. Se pueden escribir valores fijos o constantes (como **variables de control**).
+1. Se pueden escribir valores fijos o constantes (como **variables de control** porque durante la corrida no se modifica). Puedo escribir **variables de control** o **variable de estado**. Tambien pueden aparecer variables de tiempo o relacionadas con el tiempo.
 2. Las variables que aparecen (exceptuando las de control) deben ser **de estado**.
    - Eventualmente pueden aparecer variables relacionadas con el tiempo.
    - Si aparece "x", entonces debe ser de estado sí o sí (salvo que sea de control o relacionada con el tiempo).
+# Analisis cuadro Metodologia EaE
+1. **Fijacion de condiciones iniciales del modelo**: Analisis previo, tablas, variables endogenas y exogenas, inicializaciones en 0.
+2. **Determinacion de instante de un proximo evento**: Revisar la tabla de eventos futuros y buscar el menor horiario que aparece
+3. **Avance de tiempo hasta ocurrencia de proximo evento**
+4. **Determinacion del tipo de evenot que ocurre en este instante**
+5. **Determinacion de los instantes en que ocurren eventos futuros no condicionados concecuencia del evento actual**
+6. **Actualizar el vector de estado**: Pensar y analizar en los resultados
+7. **Determinacion de instantes en que ocurren eventos futuros condicionados en consecuencia del evento actual**
