@@ -262,10 +262,10 @@ a_n \int_{-L}^{L} \cos^2\left(\frac{n\pi}{L}x\right)\,dx
 =
 a_n L
 $$
-
-$$
-a_n = \frac{1}{L} \int_{-L}^{L} f(x)\cos(n\omega_0 x)\,dx
-$$
+>[!SUMMARY] Calculo de $a_n$
+>$$
+>a_n = \frac{1}{L} \int_{-L}^{L} f(x)\cos(n\omega_0 x)\,dx
+>$$
 3. Calculo de $b_n$
 Para calcular $b_n$, vamos a multiplicar la expresión inicial por un término $\operatorname{sen}(m\omega_0x)$ con $m$ natural ($m \in \mathbb{N}$).
 
