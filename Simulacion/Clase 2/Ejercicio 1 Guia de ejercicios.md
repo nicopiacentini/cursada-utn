@@ -41,3 +41,14 @@ Esta implicito porque es una unica simulacion
 #### TEF
 - TPLL -> Tiempo proxima llegada
 - TPS -> Tiempo proxima salida
+## Correccion
+1. Arreglar 
+	1. PS = EC + AT 
+	2. SPS = SE + STA 
+	3. -> STA = SPS - STA
+	4. PEC = (STS - STA) / CLL
+	
+2. STA = STA + TA en cada iteracion, luego de generar cada TA 
+No agregar cosas al pedo en el analisis previo.
+No repetir llegada si causa mas de un evento, repetir el evento en futuro condicionado y las condiciones.
+Cuando escala el modelo, se recomienda trabajar con subrutinas
