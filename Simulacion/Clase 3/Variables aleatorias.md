@@ -35,9 +35,16 @@ Tambien conocidos como numeros aleatorios uniformes, son los valores que **toma*
 #### Problema de transformacion
 Nuestro metodo o funcion de numeros aleatorios de una maquina o calculadora genera numeros entre $[0..1]$. Sin embargo, la *f.d.p* puede aceptar valor en el dominio que este definida $[a..b]$, que puede ser mas grande o mas chico que el intervalo $[0..1]$.
 Entonces tenemos que efectuar una transformacion a partir de los *numeros aleatorios* para obtener de manera equiprobable los valores que acepta la *f.d.p.*
-#### Primer estrategia
-Si digo que mi computadora puede generar numeros aleatorios equiprobables $\tau$ (supongo numero generico). Luego puedo asignar $F(X) = \tau$, donde $F(X)$ es la funcion de densidad acumulada de $f(x)$, entonces debe existir $F^{-1}(\tau) = x$ para asi con cada $\tau$ obtener el $x$ correspondiente.
-Y como estos $x$ están surgiendo de la $F(x)$, al partir de valores equiprobables de $F(x)$ se obtendrán valores de $x$ que responden a la función de densidad de probabilidad $f(x)$ dada originalmente.
+#### Primer estrategia - Metodo de inversa
+Si digo que mi computadora puede generar numeros aleatorios equiprobables $\tau$ (supongo numero generico). Luego puedo asignar $F(X) = \tau$, donde $F(X)$ es la funcion de densidad acumulada de $f(x)$. Entonces debe existir $F^{-1}(\tau) = x$ para asi con cada $\tau$ obtener el $x$ correspondiente. 
+La idea es sencilla. Ahora cada numero $\tau$ metido en esa funcion me devuelve un posible valor de la $f(x)$. Pero no me lo devuelve de forma aleatoria sino que lo devuelve segun la funcion de densidad de probabilidad original. 
+##### Paso a paso
+Calculo la funcion de probabilidad acumulada
+1. $F(x) = \int_{a}^{x}{f(u) du}$
+Asigno la funcion de probabilidad acumulada a un random $R$ que genere antes
+2. $F(x) = R$
+Obtengo $x$ en funcion de dicho random. Se que x es un valor que da o puede dar mi $f(x)$
+3. $x = F^{-1}(R)$
 #### Metodo de rechazo
 *Sea una función de densidad de probabilidad $f(x)$ definida en un intervalo [a, b], acotada y M un valor igual o mayor que le máximo de $f(x)$. Generamos dos valores aleatorios uniformes $\tau_1$ y $\tau_2$ que servirán para definir la absisa $x_1 = a + (b-a) \tau_1$ y la ordenada $y1 = M \tau_2$.* 
 
