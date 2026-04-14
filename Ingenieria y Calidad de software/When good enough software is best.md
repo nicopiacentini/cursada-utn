@@ -15,3 +15,9 @@ En ciertas ocaciones, el cliente desea su producto a un determinado tiempo que e
 
 #### La cuenta del proyecto
 Cada vez que se realize un proyecto, hay que calcular *costos, tiempos de entrega, staff, funcionalidades y calidad en todo su aspecto*. Naturalmente, el cliente debe elegir el nivel de estos pero al mismo tiempo debe saber que no se puede maximizar todo. Debe tener en cuenta **trade-offs** y tomar desiciones. Por ende, **los criterios de exito de un proyecto** estan determinados p.or alcanzar *usar una cantidad X de staff, entregar en Y unidades de tiempo, costar Z pesos, entregar P niveles de funcionalidad y Q cantidad de bugs por funcionalidad*. Normalmente los clientes lo van a rechazar. Por ende es crucial mostrar las consecuencias de acercarse a los parametros que exige, que provoca que bajen otros parametros
+
+>[!DEFINITION] MVP
+>Es el minimum value product o producto minimo que cumple con los requisitos especificos.
+>Ocurre mucho que si es el unico producto en cumplir los requisitos, por mas malo que sea, copa el mercado por *ser el unico*. Entonces es el minimo necesario para copar el mercado.
+
+
