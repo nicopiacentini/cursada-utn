@@ -10,40 +10,7 @@ Una serie trigonométrica de Fourier permite desarrollar en serie de senos y cos
 $$f(x) = x^2 \quad \text{para } -2 < x < 2$$
 
 $$f(x) = f(x + 4) \implies T = 4$$
-2 - Representacion grafica
 
-```latex
-\documentclass[tikz,border=5pt]{standalone}
-
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-
-\begin{document}
-
-\begin{tikzpicture}
-\begin{axis}[
-    axis lines = middle,
-    xlabel = $x$,
-    ylabel = {$f(x)$},
-    ymin=0, ymax=4.5,
-    xmin=-10.5, xmax=10.5,
-    samples=100,
-    grid = major,
-    width=14cm, height=6cm,
-    ytick={2, 4},
-    xtick={-8, -6, -4, -2, 0, 2, 4, 6, 8},
-]
-    \addplot [
-        very thick,
-        blue,
-        domain=-10:10,
-        samples=401,
-    ] {((mod(x+2,4) - 2)^2)};
-\end{axis}
-\end{tikzpicture}
-
-\end{document}
-```
 3 - Calculo del area:
 $$\int_{-2}^{2} x^2 \, dx = \left[ \frac{x^3}{3} \right]_{-2}^{2} = \frac{8}{3} - \left( -\frac{8}{3} \right) = \frac{16}{3} \approx 5.33$$
 #### Definicion
