@@ -89,6 +89,7 @@ Un **SLA (Service Level Agreement)**, o _Acuerdo de Nivel de Servicio_, es un co
 | Puede ser almacenado y transportarse                                              | No puede almacenarse ni transportarse                                              |
 | Si la empresa fabricante tiene un diseño, si es distribuidora, en cambio no.      | Su proceso clave es el diseño                                                      |
 | Su relacion es indirecta con el consumidor                                        | Su relacion es directa con el consumidor                                           |
+|                                                                                   | Es un beneficio para el usuario final                                              |
 #### Caso del software
 Es un producto ya que sos dueño pero es intangible como un servicio. De todas formas es un producto.
 
