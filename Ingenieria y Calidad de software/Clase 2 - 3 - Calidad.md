@@ -146,6 +146,8 @@ Es un modelo de desarrollo y evaluacion de sw y que sea siempre previsible. Si m
 - No es una metodologia -> Nos dice que hacer pero no como hacerlo ni quien debe hacerlo
 - Cubre pracitas de planificacion ingenieria y gestion de desarrollo
 Existen 2 representaciones de niveles de CMMI
+>[!NOTE]
+>Cada Area/parte tiene una serie de PA o project activities. Dichos PA tienen *corroboration rules* que indican si cumplo a un nivel para una practica. Cada PA tiene una serie de niveles que son alcanzados mediante SG o specific goals compuestos de multiples SP. De esta forma si se cumple con todos los SG de un mismo nivel para toda la PA se llega al nivel especifico de SCAMPII 
 #### Por etapas - Niveles de madurez
 Da certificacion
 - Nivel 1: Inicial. Impredecible y reactivo. No existe un procedimiento, sale al voleo
