@@ -14,6 +14,8 @@ Una organizacion participa o lleva a cabo multiples proyectos que la construyen 
 
 Divido a la empresa en capas y tener vision estrategica integral de las partes de la empresa
 ***En corto, analizo la empresa por partes y trato de alinear dichas partes con el objetivo***
+
+Arquitectura es el framework de la empresa. La estrategia empresarial esta dentro de la arquitectura y debe trabajar en un sentido que inidque la estrategia
 ### Capas de la Arquitectura empresarial
 Estos pilares son la vision estrategica que tiene el **area de sistemas** para analizar a la empresa. Es decir, *se interpreta que la empresa puede verse de esta forma desde el punto de vista de sistemas*. Estos pilares NO tienen orden.
 La estrategia empresarial define y esta compuesta por:
@@ -37,7 +39,7 @@ Siempre se piensa desde el beneficio del negocio y el alcance del proyecto, no d
 La Arquitectura empresarial da los lineamientos en los que se debe basar para definirlo correctamente
 #### Beneficios de la arquitectura empresarial
 - Mejora la toma de decisiones y el rendimiento general -> Me da un contexto para tomar la decision
-- Reduce costos operativos -> de retrabajo e indesicion
+- Reduce costos operativos -> de retrabajo e indesicion. Mas se reducen mientras mas avanzada este la arquitectura.
 - Aumenta la agilidad -> Pienso antes de tomar una decision con informacion que ya tengo y como avanzo con mi objetivo y como se alinea con la organizacion. Es mas rapido y ahorra retrabajo
 - Facilita la comunicacion entre areas -> ya se de antemano como avanzo con mi objetivo y como mi proyecto se alinea con la organizacion
 ### Actores o roles de la arquitectura empresarial
@@ -54,11 +56,11 @@ Arquitecto -> tiene mas enfoque funcional (de lo que sabe hacer)
     
     - _Ejemplo:_ Elige usar una arquitectura de microservicios en la nube, decide qué base de datos usar para el historial de transacciones y cómo se conectará la app con los bancos.
         
-- **Arquitecto de Seguridad:** Verifica que las nuevas arquitecturas diseñadas cumplan con la política de seguridad de la organización.
+- **Arquitecto de Seguridad/infraestructura/tecnología:** Verifica que las nuevas arquitecturas diseñadas cumplan con la política de seguridad de la organización.
     
     - _Ejemplo:_ Audita que la app de pagos tenga encriptación de extremo a extremo, que los datos de las tarjetas estén anonimizados y que cumpla con normativas como PCI DSS (estándar de seguridad de tarjetas).
         
-- **Gerente de Riesgos:** Responsable de evaluar exposición al riesgo y el cumplimiento normativo. Planifica para ver si se pueden cumplir determinadas cuestiones según el riesgo.
+- **Gerente de Riesgos-Arquitectura de aplicaciones:** Responsable de evaluar exposición al riesgo y el cumplimiento normativo. Planifica para ver si se pueden cumplir determinadas cuestiones según el riesgo.
     
     - _Ejemplo:_ Analiza qué pasa si el servidor de pagos se cae durante el Black Friday o si hay una brecha de seguridad. Calcula si la empresa puede tolerar financieramente esa pérdida o si hay que contratar un seguro o redundancia extra.
         
@@ -70,7 +72,7 @@ Arquitecto -> tiene mas enfoque funcional (de lo que sabe hacer)
     
     - _Ejemplo:_ Observa que el proceso actual de "aprobación de reembolsos" es lento y manual; propone automatizarlo con un bot que valide si el reembolso cumple las reglas, ahorrando 10 horas de trabajo humano por día.
 Todos estos roles-puestos pueden ser gerentes/analistas(ve desde el negocio y sus conocimientos y funcion de negocio)/arquitectos(ve de forma sistemica las piezas del proyecto) segun lo que quiera la empresa. Estos roles trabajan de forma interdisciplinaria. Mientras que el **Arquitecto Empresarial** mira la "foto grande" de la empresa, el **Arquitecto de Soluciones** baja eso a tierra con tecnología, y el **Analista de Negocio** se asegura de que el proceso diario sea eficiente.
-#### Estrategia empresarial en l apractica de la Arquitectura empresarial
+#### Estrategia empresarial en la practica de la Arquitectura empresarial
 >[!DEFINITION]
 >Es la combinacion de decisiones tomadas y acciones llevadas a cabo por la empresa para alcanzar los objetivos empresariales y asegurar una posicion competitiva en el mercado. Siempre se suele pensar a mediano/largo plazo.
 - Modelo de negocio -> como funciona la empresa, como gana dinero y como alcanza sus objetivos
@@ -113,6 +115,6 @@ Identifica la situación de la empresa: Fortalezas y oportunidades a aporvechar 
 Se apoya en procedimientos operativos funcionales, en un plan de adquisiciones y asignación de recursos y en métricas como medidas de control.
 #### Mision vision y valores
 Se definen al comienzo pero pueden cambiar.
-- **Misión**: Es el proposito de la empresa. Da los objetivos y funciones de la organización
-- **Visión**: Es la meta a largo plazo de la empresa. Da objetivos a corto y largo plazo. Soporta decisiones directivas.
+- **Misión**: Es el proposito de la empresa. Da los objetivos y funciones de la organización.  Que haces en tu dia a dia y como actuas dia a dia. No debo incluir el **como**, solo el **que** quiero lograr
+- **Visión**: Es la meta a largo plazo de la empresa. Da objetivos a corto y largo plazo. Soporta decisiones directivas.Tiene que ser mas generico y aspiracional. Generalmente no se alcanza
 - **Valores**: Principios de acción para todos los niveles de la empresa. Guian toma de desiciones a la diaria.
