@@ -35,3 +35,10 @@ flowchart TD
     Cond3 -- Sí --> CarrH2[CARR+]
     CarrH2 --> B2((B))
 ```
+### Tips clase
+- TC solo si puedo generar TA ni bien llega el cliente al sistema
+- TC y Ns se juntan en un sistema que no es de colas. Es mas complejo
+- Si el arrepentimiento va en tiempo -> TC. Si va en personas -> Ns
+- Ej 12 tiene 3 eventos
+- En TC NO se usa hace vaciamiento
+- 
