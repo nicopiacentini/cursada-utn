@@ -48,7 +48,8 @@ Un Proceso es mas de alto nivel mientras que un procedimiento es como se va a ha
 - Suscripcion -> Descarga gratuita y luego pagos extra para cosas extra
 ## Arquitecto de negocio
 #### Rol
-ES crucial para garantizar que una organizacion alcanze sus  objetivos estrategicos y optimize su funcionamiento. Lo hace de la siguiente forma
+ES crucial para garantizar que una organizacion alcanze sus  objetivos estrategicos y optimize su funcionamiento. 
+##### Ejes de trabajo del arquitecto de negocio
 1. Estrategia y objetivos: Entiende la estrategia y objetigos de la empresa alineando metas y procesos con vision estrategia
 2. modelado organizacional: Diseña, desarrolla y mantiene modelos que representan estructura y funcionamiento de la organizacion
 3. Brechas y capacidades: Identifica brechase enrtre situacion actual y metas estrategicas evaluando capacidades tecnologias y recursos
@@ -71,7 +72,7 @@ ES crucial para garantizar que una organizacion alcanze sus  objetivos estrategi
 - Garantiza interoperabilidad del sistema
 - Crea resiliencia organizacional
 
-### Model canvas o modelo de negocio
+# Model canvas o modelo de negocio
 Es una herramienta estrategica de negocios que permite construir de forma muy visual un modelo de negocios competitivo e innovador. 
 #### Elementos
 1. Segmentos de cliente y propuesta de valor
