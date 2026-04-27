@@ -37,9 +37,9 @@ Mientras mas aumento los costos de **prevencion** *mayor* es el nivel de calidad
 	- Pruebas unitarias, de integracion, Analisis estatico de codigo, revisiones de codigo
 3.  **Existe el nivel optimo de calidad**
 	 - Escribir demasiadas pruebas o sobreingenieria realientiza el desarrollo innecesariamente.
-	 - Escribir pocas rpuebas conduce sistemas inestables
+	 - Escribir pocas pruebas conduce sistemas inestables
 #### Iceberg de no calidad
-Existen sintomas visibles de calidad que son creados o generados por sintomas invisibles de calidad. Es decir, el sintoma visible es consecuencia del sintoma invisible de falta de calidad.
+Existen sintomas visibles de calidad que son creados o generados por sintomas invisibles de calidad. Es decir, el sintoma visible es consecuencia del sintoma invisible de falta de calidad. Refiere a la calidad externa del producto siendo consecuencia de calidad interna.
 #### Piramide de calidad
 Similar a la piramide de mazlow, hay aspectos de calidad que son mucho mas importantes que otros. Por ejemplo, cumplir requisitos por sobre interfaz linda. La piramide va asi:
 					1. Disfrutable
@@ -55,12 +55,12 @@ La calidad puede ser percibida desde 5 perspectivas, con mayor o menor grado de
 - **vision de manufactura**: La calidad es conformidad con especificacion. *Si establezco correctamente los requerimientos y los sigo correctamente entonces mi producto es de buena calidad*. Es cumplir con los requerimientos. Suele comparar respecto a un requerimiento de la manufactura, por ejemplo, el peso de los archivos de un sistema que no supere tal cantidad. No existe cumplir un requisito mejor que otro, la comparación esta en cumpliro o **no**.
 - **vision de producto**: La calidad esta vinculada a las caracteristicas inherentes del producto. 
 - **vision basada en valor**: La calidad depende de la cantidad de dinero que el usuario este dispuesto a pagar por el producto
-### Calidad del producto
+# Calidad del producto
 Tenemos un modelo de calidad de producto y metricas que determinan si se cumple tal idea de calidad.
 ## Iso 25000
 Esta compuesto por areas y subareas. Es un sistema que te acompaña a ver todo el software y determina metricas sobre cada area
 ### Adecuacion funcional
-El software proporciona funciones que satisface las necesidades. *El software hace lo que dice y hace lo que sse le pide*. SubAtributos
+El software proporciona funciones que satisface las necesidades. *El software hace lo que dice y hace lo que se le pide*. SubAtributos
 - Completitud funcional: Grado/porcentaje de covertura de funciones/tareas del sistema
 - Correccion funcional: Capacidad del sistema de producir resultados correctos/incorrectos ssegun un nivel de precisión requerido
 - Pertinencia funcional: Es mas pertinente o especifico requerido a cada subfuncion/tarea del sistema. Es la especificidad al detalle en cada funcion que tenga el sistema y no tenga cosas al pedo.
@@ -119,6 +119,8 @@ El cacho de sw se puede mover entre entornos facilmente o efectivamente (entre s
 - Capacidad de ser reemplazado
 ## Tradeoffs entre recursos
 Hay manga corta / nunca se puede tener todo y debo priorizar atributos sobre otros. Entonces debo elegir que atributo es mas importante que otro.
+- **Utilizacion de recursos** vs **Tolerancia al fallo**
+- **Proteccion frente errores de usuario** vs **Comportamiento temporal**
 # Calidad de proceso
 Voy a ver como construyo el producto, no el producto en si.
 >[!DEFINITION]
@@ -145,6 +147,7 @@ Es un modelo de desarrollo y evaluacion de sw y que sea siempre previsible. Si m
 - No es un proceso para desarrollar sw
 - No es una metodologia -> Nos dice que hacer pero no como hacerlo ni quien debe hacerlo
 - Cubre pracitas de planificacion ingenieria y gestion de desarrollo
+Determina la madurez de un proceso y organiza el esfuerzo para mejorarlo. 
 Existen 2 representaciones de niveles de CMMI
 >[!NOTE]
 >Cada Area/parte tiene una serie de PA o project activities. Dichos PA tienen *corroboration rules* que indican si cumplo a un nivel para una practica. Cada PA tiene una serie de niveles que son alcanzados mediante SG o specific goals compuestos de multiples SP. De esta forma si se cumple con todos los SG de un mismo nivel para toda la PA se llega al nivel especifico de SCAMPII 
