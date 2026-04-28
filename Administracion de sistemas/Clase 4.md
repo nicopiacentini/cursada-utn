@@ -7,7 +7,7 @@ Es el *que hacemos y que pasos hacemos*. Tiene actividades y roles y acciones. P
 ##### Documentacion
 Es muy importante tenerlos documentados y actualizados. De esta forma existe un standard para toda la organizacion y es una garantia de calidad. Los cambios en procesos se revisan en la documentacion para evitar discrepancias/problemas.
 ##### Clasificacion para negocio
-- Procesos administrativos
+- Procesos administrativos -> RRHH, pedir licencias
 - Procesos de gestión
 - Procesos productivos
 - Procesos comerciales

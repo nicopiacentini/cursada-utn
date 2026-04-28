@@ -1,6 +1,6 @@
 # Arquitectura empresarial
 >[!DEFINITION]
->Es una practica que tiene como objetivo alinear la estrategia y el modelo operativo de una organiziacion, describiendo como debe organizarse y funcionar para lograr sus objetivos
+>Es una practica que tiene como objetivo alinear(definir) la estrategia y el modelo operativo de una organiziacion, describiendo como debe organizarse y funcionar para lograr sus objetivos
 
 Alinear la estrategia con el modelo operativo implica interrelacionar si se quiere la parte administrativa (alto nivel) con laparte operativa o de **procesos** de la empresa
 
@@ -29,6 +29,10 @@ Define como o que aplicaciones se usan e interrelacionan en la organizacion (no 
 Habla de que infraestructura, computadoras, ambientes, versiones de sw y sw de base (azure o google) que tiene en la organizacion. Son las especificaciones. Deben ser revisadas para ver si una nueva aplicacion es compatible.
 Estos pilares son **puestos de trabajo**
 
+Las columnas o bases no necesariamente incluyen al puesto de trabajo o persona o especialista, sino que incluyen la idea en la estrategia empresarial en mayor o menor medida. Por ejemplo, en una organizacion pequeña dice que su arquitectura de aplicaciones se resume en utilizar un excel para guardar el librio diario.
+
+Los procesos son cross-columnas de la arquitectura. No existe la idea de un proceos que no se integre con las areas. Ahora los procesos los deciden las areas que pueden ser una o varias. Lo importante es que el proceso se ve influenciado por los pilares de la arquitectura. Puede ser tambien que cada pilar defina algun proceso
+
 #### Estrategia empresarial
 Los 4 pilares hacen a la estrategia empresarial. Ninguna es independiente de la otra. 
 Si decimos que la estrategia empresarial se encarga de tomar desiciones para cumplir con el objetivo de la organizacion ¿Como se relaciona con estos pilares? La respuesta es sencilla, ya que cada desicion que tome la estrategia empresarial debe consultar la factibilidad a cada uno de estos pilares. Al mismo tiempo, cada movimiento o cambio en estos pilares debe coincidir o alinearse con la estrategia empresarial. 
@@ -44,6 +48,8 @@ La Arquitectura empresarial da los lineamientos en los que se debe basar para de
 - Facilita la comunicacion entre areas -> ya se de antemano como avanzo con mi objetivo y como mi proyecto se alinea con la organizacion
 ### Actores o roles de la arquitectura empresarial
 Arquitecto -> tiene mas enfoque funcional (de lo que sabe hacer)
+Al mismo tiempo definen procedimientos y actúan/toman decisiones en cada proceso.
+Las desiciones que toman son respecto a como en el procedimiento toman la desicion o definen el criterio para tomarla
 - **Arquitecto Empresarial:** Brinda servicios de arquitectura que transforman el modelo operativo para alinearlo con la estrategia.
     
     - _Ejemplo:_ Decide que la empresa debe pasar de vender solo en tiendas físicas a un modelo omnicanal, reestructurando toda la organización para que los equipos físicos y digitales trabajen juntos.
@@ -118,3 +124,4 @@ Se definen al comienzo pero pueden cambiar.
 - **Misión**: Es el proposito de la empresa. Da los objetivos y funciones de la organización.  Que haces en tu dia a dia y como actuas dia a dia. No debo incluir el **como**, solo el **que** quiero lograr
 - **Visión**: Es la meta a largo plazo de la empresa. Da objetivos a corto y largo plazo. Soporta decisiones directivas.Tiene que ser mas generico y aspiracional. Generalmente no se alcanza
 - **Valores**: Principios de acción para todos los niveles de la empresa. Guian toma de desiciones a la diaria.
+# La oficina de procesos define los procesos
