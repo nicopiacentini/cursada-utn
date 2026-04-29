@@ -79,6 +79,9 @@ Cada dimensión adopta uno de tres roles en cualquier proyecto dado:
 
 **Regla crítica:** No todas las dimensiones pueden ser motores simultáneamente, ni todas pueden ser restricciones. Las prioridades relativas deben negociarse explícitamente entre el equipo de proyecto, los clientes y la gerencia antes de que comience el trabajo.
 
+>[!IMPORTANT]
+>Puedo establecer que tan importante es una determinada parte del proyecto segun la dimension que tenga
+
 ### El Diagrama de Flexibilidad (Diagrama de Kiviat)
 
 Un diagrama de Kiviat (radar o araña) proporciona una representación visual de las cinco dimensiones, donde la posición de cada punto en su eje refleja el grado de flexibilidad disponible. Las dimensiones graficadas más cerca del centro tienen menor flexibilidad (motores o restricciones); las graficadas más lejos tienen mayor flexibilidad (grados de libertad). La forma del polígono resultante ofrece un perfil visual inmediato de la estructura del proyecto:
@@ -94,6 +97,11 @@ Esta herramienta facilita la negociación explícita y documentada de las expect
 Cuando el alcance, los requisitos o las condiciones externas cambian a mitad del proyecto, el modelo de cinco dimensiones proporciona una base estructurada para la renegociación. Toda adición no planificada debe compensarse en algún lugar: postergación de funcionalidades, extensión del cronograma, recursos adicionales o reducción de calidad. El resultado importante no es una respuesta específica, sino la _conversación_ que obliga a las partes interesadas a confrontar los compromisos reales en lugar de absorber los cambios silenciosamente a expensas de la calidad o la sostenibilidad del equipo.
 
 Una cultura en la que las personas son incapaces o reacias a decir no — o a discutir los problemas abiertamente — quedará sistemáticamente por debajo de las expectativas. La negociación explícita, documentada mediante herramientas como el diagrama de flexibilidad, reemplaza los supuestos implícitos por compromisos compartidos.
+
+>[!NOTE]
+>La importancia de esta division recae en saber como renegociar en caso de que cambien las circumstancias
+
+
 
 ---
 
