@@ -1,10 +1,11 @@
 ## 1. Dato, Información y Conocimiento
 
-| Concepto         | Definición                                                                                                                                                                                                                                                                               |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Dato**         | Es la mínima unidad semántica. Por sí solo no tiene relevancia ni significado para las personas y, si no se procesa, aporta poco valor a la organización. Es la representación formal de un hecho. **No tiene contexto**.                                                                |
-| **Información**  | Es un conjunto de datos procesados y con significado. Resulta útil para tomar decisiones porque comunica conocimiento a alguien.                                                                                                                                                         |
-| **Conocimiento** | En una persona es una mezcla de experiencias, valores e información. En la empresa aparece en documentos, procesos, prácticas y sistemas de información. **Es la aplicacion de la informacion**. Hasta que no aplico la informacion no obtengo experiencias para formar el conocimiento. |
+| Concepto         | Definición                                                                                                                                                                                                                                                                                                            |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Dato**         | Es la mínima unidad semántica. Por sí solo no tiene relevancia ni significado para las personas y, si no se procesa, aporta poco valor a la organización. Es la representación formal de un hecho. **No tiene contexto**.                                                                                             |
+| **Información**  | Es un conjunto de datos procesados y con significado. Resulta útil para tomar decisiones porque comunica conocimiento a alguien.                                                                                                                                                                                      |
+| **Conocimiento** | En una persona es una mezcla de experiencias, valores e información. En la empresa aparece en documentos, procesos, prácticas y sistemas de información. **Es la aplicacion de la informacion**. Hasta que no aplico la informacion no obtengo experiencias para formar el conocimiento. Puede ser tácito o implícito |
+|                  |                                                                                                                                                                                                                                                                                                                       |
 
 ### ¿Para qué sirven los datos?
 
@@ -21,7 +22,7 @@
 
  Es mas facil trabajar con los datos si los obtengo de la misma forma. Ayuda a que se guarden de una forma especifica y no con un id en un lado y con otro id en otro.
 
-Requiere tres elementos fundamentales:
+Requiere tres **elementos fundamentales**:
 
 | Elemento        | Rol                             |
 | --------------- | ------------------------------- |
@@ -53,13 +54,13 @@ Basicamente ayuda a consolidar integrar información.
 *Como guardo los datos segun la informacion que quiero extraer/obtener*. Establece el modelo de datos para tambien integrarse/relacionarse con otros sistemas
 #### Importancia de la informacion para la empresa
 Es clave para el negocio. La información es un elemento fundamental para elbueb  funcionamiento de cualquier organización., ya que puede influir directamente en el éxito o fracaso del negocio.
-- Relevante
-- Actualizada
-- Acceso rapido
-- Economico respecto a la funcion que quiero obtener
-- De calidad
+- Relevante -> para quien deba tomar la desicion
+- Actualizada -> al momento o contexto de la toma de desicion. (que sea info relativa a la desicion)
+- Acceso rapido -> para la persona que la ocupe
+- Economico respecto a la funcion que quiero obtener -> No debe ser caro/ni tomar mucho tiempo acceder a la información
+- De calidad -> Que mantenga la integridad y no haya sido alterada/corrupta
 - Objetiva
-- Completa
+- Completa -> Al ver la informacion no tengo que tener dudas
 
 
 ---
