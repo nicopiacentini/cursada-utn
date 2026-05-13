@@ -28,6 +28,8 @@ En cambio si me dan valores fijos tipo, valor de un hotel por dia (donde es fijo
 Necesito un dato DADO EN DENSIDADES.
 ## Ejemplo Stock
 A medida que pasa el tiempo, el pedido/stock que tengo baja por las ventas. Entonces antes de llegar a stock 0, en el stockMinimo/PuntoReposicion, decido llamar al proveedor que me trae la mercaderia. Esta llega mas tarde de cuando me quedo sin stock y tengo **ventas perdidas**
+>[!IMPORTANT] Caso stock invierte metodologia
+>Primero atiendo los metodos comprometidos antes que los propios para tener stock para atender.
 #### Costos
 1. Almacenamiento. Cobra $\alpha$$ por cada unidad de stock almacenada por cada unidad de tiempo almacenada
 2. Costo de emision de pedido. No es gratis llamar al proveedor a cada rato, independientemente de la cantidad de unidades que traiga. En este caso cobra $\alpha_2$$

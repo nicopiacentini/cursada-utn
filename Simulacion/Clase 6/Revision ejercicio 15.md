@@ -1,0 +1,11 @@
+- Si no me alcanza el stock para vender:
+	- Atraso ATR = FLL - T
+	- Ventas no entregadas VNE = VD - ST
+- Hago un case con la cantidad de dias de atraso
+	- Si ATR < 2 -> VA = VNE VP = 0
+	- Si va 3 a 5 -> VA = VNE * 0,6 VP = VNE * 0,4
+	- ...
+- CVP = CVP + VP *4
+- CVA = CVA + VA * ATR * 3
+- VAC = VAC + VA
+### CASOS STOCK
