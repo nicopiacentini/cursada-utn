@@ -269,7 +269,7 @@ Es un tablero con las siguientes columnas:
 
 - Visualización del trabajo
 - Método basado en tarjetas
-- Mejora continua
+- Mejora continuaz
 Cada tarea esta definida y no debe investigarse. Las tareas estan ordenadas por prioridad
 ## WIP (Work In Progress)
 

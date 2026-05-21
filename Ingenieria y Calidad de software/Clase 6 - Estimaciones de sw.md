@@ -111,7 +111,7 @@ ESTIMAR → MEDIR → REGISTRAR → COMPARAR → ANALIZAR → CALIBRAR → VOLVE
 ### Métodos de Estimación
 
 #### No Paramétricos (Rudimentarios / Caseros)
-No dan tamaño, sino que dan fechas-horas
+No dan tamaño, sino que dan fechas-horas-esfuerzo
 
 ##### Juicio Experto
 
@@ -155,7 +155,7 @@ Historias: Suma de tareas que se necesitan para cumplir con dicho requerimiento
 ---
 
 #### Paramétricos (Sofisticados)
-Llevan uno o mas parametros. NO son mejores que los otros sino que tienen otro enfoque.
+Llevan uno o mas parametros. NO son mejores que los otros sino que tienen otro enfoque. Devuelven tamaño del proyecto.
 
 ##### Function Points (FP)
 
@@ -223,15 +223,15 @@ NOP = OP × (100 − %reutilización) / 100
 
 ### Comparativa de Métodos
 
-|Método|Tipo|Requiere historia|Momento de uso|Participantes|
-|---|---|---|---|---|
-|Juicio Experto|No paramétrico|No|Etapas tempranas|1 experto|
-|PERT / Clark|No paramétrico|No|Etapas tempranas|1 experto|
-|Wideband Delphi|No paramétrico|No|Etapas tempranas|Equipo|
-|Planning Poker|No paramétrico|Recomendable|Sprints / incremental|Equipo|
-|Function Points|Paramétrico|Sí|Con requerimientos definidos|Analistas|
-|Use Case Points|Paramétrico|Sí|Con casos de uso definidos|Analistas|
-|Object Points|Paramétrico|Sí|Proyectos ya conocidos|Analistas|
+| Método          | Tipo           | Requiere historia | Momento de uso               | Participantes |
+| --------------- | -------------- | ----------------- | ---------------------------- | ------------- |
+| Juicio Experto  | No paramétrico | No                | Etapas tempranas             | 1 experto     |
+| PERT / Clark    | No paramétrico | No                | Etapas tempranas             | 1 experto     |
+| Wideband Delphi | No paramétrico | No                | Etapas tempranas             | Equipo        |
+| Planning Poker  | No paramétrico | Recomendable      | Sprints / incremental        | Equipo        |
+| Function Points | Paramétrico    | Sí                | Con requerimientos definidos | Analistas     |
+| Use Case Points | Paramétrico    | Sí                | Con casos de uso definidos   | Analistas     |
+| Object Points   | Paramétrico    | Sí                | Proyectos ya conocidos       | Analistas     |
 
 ---
 

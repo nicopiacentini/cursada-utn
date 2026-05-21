@@ -62,6 +62,8 @@ Se refiere a la gama de herramientas informáticas que están diseñadas para co
 
 Es la logistica de como gestiono los recursos de produccion dentro de mi organización.
 
+MRP
+
 ## Integracion con Software enterprise
 Cada vez que me intente integrar con el sw enterprise o agregar sw a mi organizacion es comun integrarse con el stack del ERP-CRM-SCM para agregar lo que precise.
 

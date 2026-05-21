@@ -58,7 +58,8 @@ Donde $a_n$ y $b_n$ son las integrales conocidas de Fourier. Sin embargo, $C_n$ 
 
 $$C_{n}=\frac{1}{2L}\int_{-L}^{L}f(x)e^{-njw_{0}x}dx$$
 
-> [!NOTE] Espectro Discreto A $C_n$ se lo denomina **espectro discreto**.
+> [!NOTE] Espectro Discreto 
+> A $C_n$ se lo denomina **espectro discreto**.
 
 ### Casos Particulares
 
