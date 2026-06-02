@@ -201,7 +201,7 @@ Las APIs ademas pueden ser tan pequeñas como `stream` en Java y mas grandes tam
 Proporciona servicios de SO, bibliotecas o middleware. Es decir cada biblioteca expone su API para que pueda ser consumida por el usuario de dicha biblioteca.
 ##### Web
 Proporciona servicios entre componentes distribuidos y en general sobre http. Normalmente tenemos cliente servidor donde el servidor expone esta interfaz o API y el cliente la consume. 
-##### Programa
+##### Programa (gRPC)
 Proporciona la posibilidad de ejecucion de codigo entre componentes distribuidos de forma remota.
 #### Tipo de API segun usuario
 - Publica -> para que lo use todo el mundo
@@ -236,13 +236,13 @@ Cuando un sistema se integra otro es un componente del primer sistema consumiend
 component "Componente A"
 component "Componente B"
 ```
-##### Direccion de comunicacion
+##### 1. Direccion de comunicacion
 - A llama a B o B llama a A? quien comienza la comunicacion
 - La comunicacion es bidireccional o unidireccional
-##### Ambiente de despliegue
+##### 2. Ambiente de despliegue
 - Los componentes ejecutan en el mismo nodo
 - Los componentes ejecutan en nodos separados
-##### Consideraciones de sincronismo/asincronismo a la hora de interactuar con demas componentes
+##### 3. Consideraciones de sincronismo/asincronismo a la hora de interactuar con demas componentes
 Cuando me integro con un servicio y hago una peticion, espero la respuesta o sigo ejecutando.
 #### Interface entrante
 Es un contrato que define que datos necesita un componente para funcionar. Dichos datos van a ser provistos por una interface de otro componente.
@@ -254,7 +254,7 @@ component B{
 
 A -> b
 ```
-Para que A se integre conmigo debe cumplir con la interface que exige B para poder funcionar correctamente. A nivel services y API rest, la interface entrante de B debe indicar que input DTOs espera recibir. Tengo que pensar como quiero que el tercero use mi componente
+Para que A se integre conmigo debe cumplir con la interface que exige B para poder funcionar correctamente. A nivel services y API rest, **la interface entrante de B debe indicar que input  DTOs espera recibir**. Tengo que pensar como quiero que el tercero use mi componente
 #### Interface saliente
 ```plantuml
 component B
@@ -265,7 +265,7 @@ component A{
 a -> B
 ```
 Es el contrato que indica que datos necesita el componente al cual nos queremos integrar. En este caso, son los datos que A enviaria a B para realizar una tarea funcionalidad. En este caso "A" consume a "B".
-A nivel API rest, los output DTOs son clave e indican este contrato de envio.
+**A nivel API rest, los output DTOs son clave e indican este contrato de envio.**
 ### Entorno de ejecucion
 Es el contexto donde ejecuta mi componente y contiene el hardware y software sobre donde se ejecuta. En un entorno distribuido los componentes ejecutan en distintos entornos pero en el mismo sistema porque lo administro yo. Los casos que se pueden dar es que mis componentes ejecuten en: 
 - Mismo sistema - mismo entorno -> Es mi propio sistema, nada externo. Todo el mismo nodo
@@ -340,17 +340,18 @@ deactivate client
 
 ```
 ##### Espacio compartido
-Esto solo puede aplicarse en un mismo entorno. El componente B guardara un dato en una porcion de memoria que debera ser revisada cada cierto tiempo por el componente A para ver la respuesta. Me desacoplo de esperar la respuesta del otro componente
+Esto solo puede aplicarse en un **mismo entorno**. El componente B guardara un dato en una porcion de memoria que debera ser revisada cada cierto tiempo por el componente A para ver la respuesta. Me desacoplo de esperar la respuesta del otro componente
 ##### Pasarse como parametro - Push Based
 *Solo a nivel objetos*. El componente A se pasa por parametro a B para que este llame un metodo de A cuando termine
-##### Callbacks - Push Based
+##### Callbacks - Push Based - *Webhook*
 Cuando el componente A consume a B, le pasa por parametro una funcion callback para que ejecute B al finalizar. A nivel arqutiectura web, el callback puede ser "llamar con un POST a http://miApi...". A esto se lo conoce como *WebHook*. En estos casos, la url se pasa en el body de la primer request 
 Estas formas en general dependen de con quien y como me estoy integrando. Si el otro componente esta en otro sistema quizas no puede hacer WebHooks.
 
 ## Cron job/Cron Task
 Son tareas programadas que se ejecutan de manera programada y periodica. Automatiza comandos o scripts en los tiempos del usuario. Originalmente estaban en Unix pero hoy esta para windows tambien.
 Son clave para ejecutar tareas de forma **asincrona**. 
-### Estructura
+Muchos frameworks lo soportan. Pero en caso de que mi componente no este desarrollado con un framework que lo soporte lo tengo que manejar desde el SO.
+### Estructura - 1:49:38
 Se define en una linea dentro de un archivo crontab. Se maneja con esta estructura
 ```
 * * * * * comando  
@@ -362,10 +363,10 @@ Se define en una linea dentro de un archivo crontab. Se maneja con esta estructu
 +------------- Minuto (0 - 59)
 ```
 # Patrones arquitectonicos de "llamado - retorno"
-Son patrones arquitectonicos de mensajería, es decir, para comunicar componentes distribuidos.
+Son patrones **arquitectonicos de mensajería**, es decir, para comunicar componentes distribuidos.
 ## Estilo de solicitud respuesta 
 Esta por encima de patrones arquitectonicos como cliente-servidor o capas. Es una idea o una orientacion pero no habla de disposicion de componentes. Es un estilo de **interaccion** *sincronica* donde un cliente envia una solicitu a un servidor y espera a la respuesa. Esta limitado cuando hablamos de concurrencia o asincronismo, como atender a muchos clientes a la vez o automatizar notificaciones.
-## Patrones de mensajeria
+## Patrones de mensajeria 
 Van a indicar de que forma se comunicaran los componentes de mi ambiente distribuido. Estos patrones se van a reutilizar mas adelante para comunicar, por ejemplo patrones de integracion como soa o microservicios.
 ### Cliente-Servidor
 Es una implementacion concreta de solicitud-respuesta.
@@ -398,23 +399,24 @@ Es similar al event subscriber pero en vez de subscribirse a un emisor, el subsc
 ##### Casos de uso
 - Notificaciones push mobiles -> el telefono no pregunta constantemente sino que le avisan de la notificacion
 - Procesamiento de eventos de usuario -> se envian los eventos a los topics y el sistema actua en funcion de esto
-- Log de auditoria
+- Log de auditoria -> Se publican los eventos del sistema en los topics y otros sistemas los escuchan para loggear.
 - comunicacion de microservicios
 - Arquitecturas reactivas
-#### WebSockets
-Son la forma preferida de comunicacion para implementar un pub/sub. Los **WebSockets** permiten que el navegador establezca una conexión persistente con el backend. Entonces, si algo cambia —como la temperatura de un sensor, una nueva orden en un sistema de trading, o un nuevo mensaje en un chat— el servidor puede **empujar** ese evento al navegador sin que este tenga que preguntar cada 5 segundos.
+#### WebSockets - Implementacion de Pub/Sub
+Son la forma preferida de comunicacion para implementar un pub/sub. Los **WebSockets** permiten que el navegador establezca una conexión **persistente** con el backend. Entonces, si algo cambia —como la temperatura de un sensor, una nueva orden en un sistema de trading, o un nuevo mensaje en un chat— el servidor puede **empujar** ese evento al navegador sin que este tenga que preguntar cada 5 segundos. Entonces **El servidor funciona como el mismo broker**.
 En ese sentido, **WebSocket** es el canal perfecto para transportar eventos en tiempo real y aplicar patrones como **Observer** o **Pub/Sub** entre un backend y un frontend. Elimina el mecanismo de pulleo porque maneja una conexion constante, contrario a http que es request/response. Se suele usar en: 
 - Sistemas de chat
 - Juegos en linea
 - Dashboards en tiempo real
 - Alertas o notificaciones en tiempo real
 En pub/sub se estaria eliminando el topic para pullear los contenidos, directamente se abren websockets con todos. 
-## Broker
-Es un patron que directamente desacopla emisores y receptores utilizando un componente **broker** como intermediario inteligente. Lo que hace es recibir, filtrar, enrutar y distribuir los mensajes que recibe. El pub/sub no tiene la implementacion tecnica sino que solo indica que se requieren topics donde dejar mensajes. El broker es una implementacion tecnica como otras.
+## Broker - Implementacion de pub/sub
+Es un patron que directamente desacopla emisores y receptores utilizando un componente **broker** como intermediario inteligente. Lo que hace es recibir, filtrar, enrutar y distribuir los mensajes que recibe. El pub/sub no tiene la implementacion tecnica sino que solo indica que se requieren topics donde dejar mensajes.
 #### Caracteristicas
 - Broker es el intermediario enre publisher y subscriber
 - Iguala participantes -> todos pueden ser publicadores y subscriptores al mismo tiempo
 - Resuelve problemas de firewall 
+- Tiene servicios de autenticacion.
 
 - Desacoplamiento total -> los publisher y los subscriber ni siquiera se conocen
 - Persistencia -> generalmente el broker tiene persistencia para guardar mensajes a subscribers desconectados
