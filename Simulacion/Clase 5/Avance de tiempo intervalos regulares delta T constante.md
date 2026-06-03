@@ -1,4 +1,4 @@
-Divido el tiempo en intervalos de la misma longitud. 
+'Divido el tiempo en intervalos de la misma longitud. 
 1. Avanzo el tiempo hasta el proximo delta t
 2. Me ocupo de todo lo que ocurrio desde el ultimo avance hasta ahora
 3. Repetir
