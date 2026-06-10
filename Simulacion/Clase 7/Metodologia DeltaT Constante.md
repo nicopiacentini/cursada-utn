@@ -1,4 +1,4 @@
-# El TRUCO
+22# El TRUCO
 
 ---
 
@@ -6,12 +6,17 @@
 
 El **TRUCO** sirve para resolver los ejercicios de metodología **Δt constante**, donde siempre vamos a tener:
 
-|Lo que ocurre|Tipo|
-|---|---|
-|Algo que **entra** al sistema|==EVENTO PROPIO==|
-|Algo que **sale** del sistema|==EVENTO PROPIO==|
-|Algo que **permanece** en el sistema durante toda la simulación|==VARIABLE DE ESTADO==|
-
+| Lo que ocurre                                                   | Tipo                   |
+| --------------------------------------------------------------- | ---------------------- |
+| Algo que **entra** al sistema                                   | ==EVENTO PROPIO==      |
+| Algo que **sale** del sistema                                   | ==EVENTO PROPIO==      |
+| Algo que **permanece** en el sistema durante toda la simulación | ==VARIABLE DE ESTADO== |
+|                                                                 |                        |
+Dichos eventos propios pueden ser:
+- f.d.p
+- Variable de control
+- valor fijo
+- La combinacion de estas
 > [!info] Los eventos propios están influenciados por:
 > 
 > - Valores fijos
@@ -87,7 +92,9 @@ flowchart TD
 ---
 
 ## Notas al margen del diagrama
-
+1. Condiciones iniciales
+2. 
+ 
 ### Paso: Todo lo que ENTRA
 
 > Se genera, calcula y se usa **todo lo que entra al sistema**. En general, se pone una **variable auxiliar**, donde se coloca en ella todo lo que entra al sistema.
@@ -112,7 +119,7 @@ flowchart TD
 
 ---
 
-## Controles
+## Controles - Buen lugar para generar calculos
 
 ### 🔽 CONTROL DE MÍNIMA
 
@@ -120,6 +127,7 @@ flowchart TD
 
 - Si la cantidad de personas resultara temporalmente **negativa**, el CONTROL se asegura que termine quedando en **0**.
 - Si resultara **positiva** (algo coherente), no se hace nada.
+- Puede incluir costos de ventas no realizadas/perdidas/almacenadas
 
 ### 🔼 CONTROL DE MÁXIMA
 
@@ -127,5 +135,6 @@ flowchart TD
 
 - Si la cantidad de agua resultara temporalmente **mayor**, el CONTROL se asegura que termine siendo igual a la **capacidad de la represa**.
 - Si resultara **menor** (algo coherente), no se hace nada.
+- Puede incluir costo por ventas no efectuadas
 
 > [!note] ¿Cuándo aplicar controles? Son aquellos controles donde se consideran los **límites del sistema** o la **coherencia de los valores** de las variables del sistema.
