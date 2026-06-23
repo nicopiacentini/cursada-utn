@@ -19,8 +19,8 @@ Permite transformar los objetivos del proyecto en entregables concretos y luego 
 >[!NOTE] Entregable
 >Es una entrega tangibilizable. Se identifica entre entrega y entrega. Tambien se lo conoce como paquete de trabajo. Debe ser:
 >1. Facilmente programable en una linea de tiempo
->2. Facilmente asignable
->3. Facilmente controlable
+>2. Facilmente asignable -> cosa de paralelizar.
+>3. Facilmente controlable -> monitorear y seguir su avanze. Debe ser trazable. Lo ideal es que el entregable se complete a lo largo de 2 instancias de seguimiento.
 
 Esto me permite distribuir mejor las tareas y paralelizar el trabajo. Tambien son todas las cosas que se van a terminar haciendo.
 Estos objetivos que se definen son secuenciales para un cascada pero para un predictivo puede que se repitan para hacer scrum

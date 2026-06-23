@@ -49,6 +49,9 @@ Mejora la eficiencia del equipo de desarrollo y asegura la adherencia a las prac
 Tiene la idea de que sigue un proceso para llevar adelante a un proyecto. Es un conjunto de fases ordenadas e interconectadas para garantizar el exito de un proyecto. Este ciclo lo sigue el **Project manager**
 ![[Pasted image 20260601201244.png]]
 Todo proyecto tiene como minimo 5 etapas (desde el punto de vista de un proyecto). Debe evaluar como llevar adelante estas faces.
+
+>[!note]
+>Cada KA de proyectos del PMI coincide con el ciclo de vida siguiente
 ### 1. Estructuración o Iniciación
 Se define el proyecto a alto nivel, se identifican necesidades, objetivos y viabilidad.
 
