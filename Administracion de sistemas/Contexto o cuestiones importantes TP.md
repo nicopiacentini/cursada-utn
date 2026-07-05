@@ -207,8 +207,12 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 
 
 ```
-@startwbs
-* Sistema de Turnos Garcia Peluquerias
+`@startwbs
+* Sistema de Taller barber shop
+** Fase 0 Gestion del Proyecto
+*** 0.1 Confeccion del acta de proyecto\n//acta de proyecto confeccionada//
+*** 0.2 Creacion de la matriz de riesgos\n//matriz de riesgos creada//
+*** 0.3 Creacion del WBS\n//WBS creado//
 ** Fase 1 Relevamiento
 *** 1.1 Entrevistas con encargados\n//entrevistas realizadas y registradas//
 *** 1.2 Observacion del flujo actual\n//flujo documentado//
@@ -218,12 +222,15 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 *** 1.6 Validacion con el cliente\n//relevamiento aprobado por el cliente//
 ** Fase 2 Diseno
 *** 2.1 Definicion de requerimientos\n//requerimientos documentados y aprobados//
-*** 2.2 Seleccion de tecnologias\n//stack tecnologico definido//
-*** 2.3 Diseno de arquitectura\n//arquitectura documentada//
-*** 2.4 Diseno de base de datos\n//modelo de datos disenado//
-*** 2.5 Diseno de flujos de usuario\n//flujos diagramados y aprobados//
-*** 2.6 Diseno de mockups\n//mockups validados por el cliente//
-*** 2.7 Validacion del diseno\n//diseno aprobado formalmente//
+*** 2.2 Evaluacion de alternativas de infraestructura\n//evaluacion confeccionada y aprobada//
+*** 2.3 Seleccion de tecnologias\n//stack tecnologico definido//
+*** 2.4 Diseno de arquitectura\n//arquitectura documentada//
+*** 2.5 Diseno de base de datos\n//modelo de datos disenado y validado//
+**** 2.5.1 Evaluacion de alternativas de motores\n de bases de datos confeccionada y aprobada
+**** 2.5.2 Confeccion del diagrama entidad relacion
+*** 2.6 Diseno de flujos de usuario\n//flujos diagramados y aprobados//
+*** 2.7 Diseno de mockups\n//mockups validados por el cliente//
+*** 2.8 Validacion del diseno\n//diseno aprobado formalmente//
 ** Fase 3 Desarrollo
 *** 3.1 Configuracion del entorno\n//entorno operativo y documentado//
 *** 3.2 Modulo de autenticacion\n//modulo desarrollado y probado//
@@ -245,12 +252,13 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 *** 5.2 Manual de administracion\n//manual redactado y entregado//
 *** 5.3 Capacitacion al personal\n//capacitaciones dictadas y asistencia registrada//
 *** 5.4 Soporte post-capacitacion\n//soporte finalizado y conformidad registrada//
-** Fase 6 Implementacion y Cierre
+** Fase 6 Implementacion
 *** 6.1 Despliegue en sucursales\n//sistema desplegado y operativo//
 *** 6.2 Verificacion en entorno real\n//funcionamiento verificado y documentado//
 *** 6.3 Documentacion tecnica final\n//documentacion entregada//
 *** 6.4 Entrega formal al cliente\n//entrega firmada por el cliente//
-*** 6.5 Cierre y acta de conformidad\n//acta de cierre firmada//
-@endwbs
-
-```
+** Fase 7 Cierre del Proyecto
+*** 7.1 Relevamiento de lecciones aprendidas\n//lecciones aprendidas documentadas//
+*** 7.2 Informe de cierre del proyecto\n//informe de cierre redactado//
+*** 7.3 Firma del acta de conformidad\n//acta de cierre firmada//
+@endwbs``
