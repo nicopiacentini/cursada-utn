@@ -425,6 +425,112 @@ Es un patron que directamente desacopla emisores y receptores utilizando un comp
 - QoS -> garantizado con reintentos, entregas garantizadas y control de duplicados
 - Seguridad -> autorizacion, autenticacion, cifrado
 - Monitorizacion
+# Seguridad y Componentes de seguridad
+> Es un aspecto a considerar durante todo el proceso de sistemas. Al igual que calidad no puede *inyectarse* al finalizar el proyecto. Se tiene que pensar desde la arquitectura.
+
+##### Definicion de seguridad de información
+> [!definition] Seguridad de la información
+> La seguridad de la información es el conjunto de procesos, políticas, prácticas y tecnologías orientadas a proteger la confidencialidad, integridad y disponibilidad de la información, ya sea en forma digital o física, frente a accesos no autorizados, alteraciones, pérdidas o destrucción.
+
+#### Cuestiones importantes a la hora de diseñar con seguridad
+- ¿Cómo se gestiona la identidad y los permisos de cada tipo de usuario?
+- ¿Dónde y cómo se guardan las contraseñas? ¿Están hasheadas?
+- ¿Qué pasa si un atacante intenta múltiples accesos seguidos? ¿Hay mecanismos de bloqueo?
+- ¿Se mantiene un historial de cambios y acciones (auditoría)?
+- ¿Qué pasa si un componente falla o es atacado?
+- ¿Qué dependencias de terceros usa el sistema y cómo se actualizan?
+- ¿Dónde se almacenan los datos? ¿Cómo se protegen?
+#### Que pasa si no tomo las medidas pertinentes
+**Vulnerabilidades explotables** Fallas estructurales que los atacantes pueden aprovechar. Ej: inyección SQL, XSS, escalamiento de privilegios.
+
+**Accesos no autorizados** Usuarios que acceden a datos o funciones que no les corresponden. Falta de controles de autenticación/autorización.
+
+**Fuga o pérdida de información sensible** Datos personales, financieros o confidenciales expuestos. Riesgo de sanciones legales (Ley 25.326, GDPR).
+
+**Indisponibilidad del sistema** Ataques de denegación de servicio (DoS/DDoS). Faltan mecanismos de recuperación, redundancia o escalabilidad.
+
+**Dificultad para detectar y responder a incidentes** Sin logs ni trazabilidad: no sabés qué pasó, ni cuándo, ni cómo. Falta de alertas y monitoreo en tiempo real.
+
+**Costos de corrección elevados** Cuesta hasta 100 veces más corregir una falla en producción que en diseño. "La seguridad mal diseñada se paga dos veces: antes y después del ataque."
+
+**Consecuencias legales y reputacionales** Multas, demandas, pérdida de clientes, daño a la marca. Riesgo de que el sistema sea retirado del mercado o descontinuado.
+
+### Triada de seguridad
+- **Confidencialidad**. Proteger la información de accesos no autorizados
+- **Integridad**. Asegurar que la información no se pueda modificar cuando no corresponda
+- **Disponibilidad**. Que la información este disponible cuando la necesite.
+
+### Desarrollo seguro 
+>[!definition] Desarrollo seguro
+>El desarrollo seguro es la práctica de diseñar, codificar, probar y mantener software con el objetivo de minimizar vulnerabilidades y prevenir ataques, aplicando principios de seguridad desde las primeras etapas del ciclo de vida del desarrollo.
+>
+
+##### Caracteristicas
+- **Security by Design:** pensar la seguridad desde la etapa de diseño.
+- **Validación de entradas y salidas en profundidad:** para prevenir inyecciones y errores lógicos. Se refiere a ver validaciones en todas las capas del sistema. Al mismo tiempo, *desconfiar del front y revalidar en el back por si js esta desactivado*
+- **Gestión segura de errores y excepciones:** sin exponer información interna. Basicamente usar un error handler para tirar 500 y no la excepcion como tal.
+- **Uso seguro de criptografía:** evitar algoritmos débiles o mal implementados.
+- **Control de versiones y dependencias:** evitar bibliotecas vulnerables.
+- **Autenticación y autorización robusta:** con políticas de acceso claras.
+- **Auditoría y trazabilidad:** registrar eventos y cambios críticos.
+- **Principio de menor privilegio:** dar solo los accesos necesarios.
+- **Revisión de código y pruebas de seguridad** (estáticas y dinámicas).
+### Mecanismos de seguridad
+Un mecanismo de seguridad informática es una técnica o herramienta que se utiliza para fortalecer la confidencialidad, integridad y/o la disponibilidad de un sistema informático.
+
+Existen muchos y variados mecanismos de seguridad informática. Su selección depende del tipo de sistema, de su función y de los factores de riesgo que lo amenazan.
+
+- **Preventivos:** actúan antes de que un hecho ocurra y su función es detener agentes no deseados.
+- **Detectivos:** actúan antes de que un hecho ocurra y su función es revelar la presencia de agentes no deseados en algún componente del sistema. Se caracterizan por enviar un aviso y registrar la incidencia.
+- **Correctivos:** actúan luego de ocurrido el hecho y su función es corregir las consecuencias.
+#### Hashing vs Cifrado
+| Característica           | Hashing                                                        | Cifrado                                     |
+| ------------------------ | -------------------------------------------------------------- | ------------------------------------------- |
+| Propósito principal      | Verificar integridad                                           | Proteger la confidencialidad de los datos   |
+| Direccionalidad          | Unidireccional (no reversible)                                 | Bidireccional (cifrar y descifrar)          |
+| Resultado                | Valor hash de longitud fija                                    | Texto cifrado, variable según algoritmo     |
+| Uso de claves            | No usa claves (aunque se puede usar salting)                   | Usa claves para cifrar y descifrar          |
+| Ejemplos comunes         | SHA-256, SHA-3, MD5 (obsoleto)                                 | AES, RSA, Blowfish                          |
+| Aplicaciones típicas     | Validación de integridad, almacenamiento seguro de contraseñas | Comunicación segura, almacenamiento cifrado |
+| Seguridad ante reversión | Muy difícil de revertir (diseñado así)                         | Puede ser revertido con la clave correcta   |
+### Autenticacion y autorización
+#### Autenticacion
+Me dice que los usuarios son quien dicen ser validando su identidad. Ocurre antes de la autorización, al iniciar sesion. Esta en 
+- Contraseñas
+- Biometrías 
+- Tokens
+*El resultado es usuario validado o rechazado*
+#### Autorización
+Otorga a usuarios autenticados permiso para acceder (CRUD) a un recurso. Ocurre despues de autenticarse al solicitar recursos. Esta en:
+- Permisos
+- Roles
+- Políticas de acceso
+*El resultado es acceso denegado o concedido a funciones o datos*
+#### JWT
+Jason web token. Transmite informacion segura entre 2 partes mediante un json. Sirve para **autenticar** y **autorizar** a un usuario. Generalmente funciona asi:
+1. El usuario se loggea al servidor
+2. El servidor valida y genera JWT
+3. El JWT se entrega al cliente
+4. El usuario incluye el JWT en requests que realiza
+El token tiene vencimiento para que no me lo roben. La magia esta en que no necesito usuario y contraseña para cada acceso sino que es mas rapido y usable para el usuario. 
+### Modelos de control de acceso
+El control de acceso es un aspecto crítico de la seguridad en cualquier sistema. Garantiza que solo los usuarios autorizados puedan acceder a los recursos y realizar acciones. Basicamente, *Como a los usuarios autenticados les doy las autorizaciones*
+
+
+**RBAC (Control de accesos basado en roles):** las políticas de control de acceso se basan en roles, que son colecciones de permisos. A los usuarios se les asignan roles y sus derechos de acceso se determinan por los permisos sobre recursos específicos.
+
+**ABAC (Control de accesos basado en atributos):** las políticas de control de acceso se basan en los atributos del usuario, recurso, acción y entorno.
+##### Diferencias
+| Característica                | RBAC                                                                                                                      | ABAC                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Política de control de acceso | Basada en roles                                                                                                           | Basada en atributos                                                            |
+| Flexibilidad                  | Limitada, ante mas permisos debo crear un nuevo rol o modificar permiso de todo el rol                                    | Altamente flexible, agrego atributos a usuarios como necesite                  |
+| Complejidad                   | Más simple                                                                                                                | Más complejo                                                                   |
+| Impacto en el rendimiento     | Mínimo                                                                                                                    | Puede ser significativo                                                        |
+| Gestión de acceso             | Gestión de roles                                                                                                          | Gestión de políticas                                                           |
+| Mejor para                    | Estructuras de permisos bien definidas                                                                                    | Control de accesos dinámico y consciente del contexto                          |
+| Ejemplos                      | Rol: Gerente, Permiso: Aprobar y ver gastos. Rol: Administrador, Permiso: Acceder y modificar configuraciones del sistema | Política "Puede acceder al documento si pertenece al departamento de sistemas" |
+# 1:34:30
 # Sesiones, Web stateless y stateful
 ## Sesion
 Identifican a un usuario que intenta acceder a un recurso o ejecutar una funcionalidad de mi sistema. Suele almacenar informacion relativa al usuario mientras esta conectado. No siempre es necesaria, depende de la arquitectura.
@@ -747,3 +853,12 @@ Ver todos y mostrar como se aplican
 Cuando dicen gestionar __ implica que necesito tener dicha entidad en mi modelo 
 
 Aclarar en que momento se hace cada cosa -> morir con la mia
+
+### Sistema central vs sistema distribuido
+En ambos casos debo determinar si me conviene una clase "sistema/instancia" si es central para diferenciar cada unidad
+#### Central
+Es el que tengo que usar porque es mas facil de gestionar, actualizar y desplegar. 
+#### Distribuido
+Si dependo de disponibilidad por conectividad o similares no puedo hacerlo central porque todos tienen un unico putno de failure. Aca tengo que pensar en como voy a hacer para actualizar el sistema y no ir casa por casa. Generalmente incluye la idea de un *centro de actualizacion de software* que es un servidor con la actualizacion a la cual mi dispositivo se debe conectara cada cierto tiempo para preguntar si hay actualizacion y como se hace.
+Del otro lado del dispositivo hay una aplicacion que se conunica con dicho server y aplica la actualizacion. Entonces los atributos de calidad driver de esto son:
+- Disponibilidad
