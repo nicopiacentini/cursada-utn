@@ -530,7 +530,43 @@ El control de acceso es un aspecto crítico de la seguridad en cualquier sistema
 | Gestión de acceso             | Gestión de roles                                                                                                          | Gestión de políticas                                                           |
 | Mejor para                    | Estructuras de permisos bien definidas                                                                                    | Control de accesos dinámico y consciente del contexto                          |
 | Ejemplos                      | Rol: Gerente, Permiso: Aprobar y ver gastos. Rol: Administrador, Permiso: Acceder y modificar configuraciones del sistema | Política "Puede acceder al documento si pertenece al departamento de sistemas" |
-# 1:34:30
+### Componentes arquitectonicos relacionados a la seguridad
+#### SSO
+Mecanismo de autenticación que habilita al usuario a acceder a *multiples sistemas, recursos o aplicaciones* con una única credencial. 
+- El usuario recuerda una sola credencial
+- Reduce contraseñas repetidas
+- Facilita conexion e implementación a nuevas fuentes de datos
+- Aumenta la seguridad, pudiendose conectar con MultiFactorAutentication y políticas centralizadas. 
+Se suele utilizar en un *ecosistema de aplicaciones* para acceder a todo con mismo usuario-contraseña y al mismo tiempo no tener que iniciar sesion en cada lado. 
+##### Funcionamiento
+1. el usuario se autentica en el componente SSO y este le devuelve un *token*
+2. El usuario intenta Se autentica en un servicio/sistema/aplicativo con dicho token
+3. El aplicativo valida el token con el SSO
+4. El usuario usa el sistema porque ya esta validado
+#### IDM
+Es un componente que gestiona las identidades digitales y controla acceso a recursos
+- Reduce riesgos de accesos no autorizados
+- Controla y limita acceso segun identidad, rol o atributos
+Contrario al SSO, se encarga no tanto de autenticacion pero si de autorizacion para acceder a recursos. 
+Tambien centraliza en un lugar la alta/baja y modificacion de identidades o recursos.
+#### WAF
+
+**WAF (Web Application Firewall):** Es un firewall especializado que protege aplicaciones web filtrando, monitoreando y bloqueando tráfico HTTP/S malicioso entre el usuario y la aplicación.
+
+**Funcionamiento:**
+
+El WAF se ubica como intermediario entre los usuarios y el servidor de la aplicación/sitio web. Todas las solicitudes (requests) de los usuarios pasan primero por el WAF, que las evalúa contra un conjunto de reglas (WAF rules) antes de dejarlas continuar:
+
+- Si la solicitud es **válida** (valid request), el WAF la deja pasar hacia el Application/Website server.
+- Si la solicitud es **maliciosa** (malicious request) —por ejemplo, contiene un patrón de inyección SQL, un script XSS, o un intento de CSRF— el WAF la detecta y la bloquea antes de que llegue al servidor.
+
+De esta forma, el servidor solo recibe tráfico ya filtrado y depurado (valid requests), sin exponerse directamente al tráfico crudo de internet.
+
+**Beneficios:**
+
+- Bloquea ataques web comunes, como inyecciones SQL, XSS, CSRF.
+- Aumenta la seguridad de la aplicación sin necesidad de modificar el código.
+- Facilita el monitoreo y visibilidad de accesos, intentos de ataque y patrones de comportamiento.
 # Sesiones, Web stateless y stateful
 ## Sesion
 Identifican a un usuario que intenta acceder a un recurso o ejecutar una funcionalidad de mi sistema. Suele almacenar informacion relativa al usuario mientras esta conectado. No siempre es necesaria, depende de la arquitectura.
