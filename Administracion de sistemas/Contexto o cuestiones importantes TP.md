@@ -207,7 +207,7 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 
 
 ```
-`@startwbs
+@startwbs
 * Sistema de Taller barber shop
 ** Fase 0 Gestion del Proyecto
 *** 0.1 Confeccion del acta de proyecto\n//acta de proyecto confeccionada//
@@ -261,4 +261,49 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 *** 7.1 Relevamiento de lecciones aprendidas\n//lecciones aprendidas documentadas//
 *** 7.2 Informe de cierre del proyecto\n//informe de cierre redactado//
 *** 7.3 Firma del acta de conformidad\n//acta de cierre firmada//
-@endwbs``
+@endwbs
+```
+### 15. Contexto de mi empresa
+### Contexto de NovaSoft Solutions
+
+|Campo|Valor|
+|---|---|
+|Nombre de la empresa|NovaSoft Solutions S.R.L.|
+|Rubro|Desarrollo de software a medida para terceros|
+|Fundación|2018|
+|Sede|Lanús, Buenos Aires, Argentina|
+|Tamaño|Empresa pequeña (8 empleados en total)|
+|Clientes típicos|PYMEs del área metropolitana de Buenos Aires|
+
+**Equipo asignado al proyecto:**
+
+| Rol                      | Nombre             | Perfil                                                                                                    |
+| ------------------------ | ------------------ | --------------------------------------------------------------------------------------------------------- |
+| Project Manager          | Nicolas Piacentini | Responsable de la planificación, seguimiento y comunicación con el cliente.                               |
+| Desarrollador Semisénior | Tomás Villanueva   | 3 años de experiencia. Responsable de la arquitectura del sistema, módulos core y decisiones técnicas.    |
+| Desarrollador Junior     | Valentina Ríos     | 1 año de experiencia. Responsable del desarrollo de módulos secundarios, testing y documentación técnica. |
+
+**Superior al que se presenta este documento:**
+
+|Campo|Valor|
+|---|---|
+|Nombre|Ing. Roberto Sandoval|
+|Cargo|Director de Operaciones, NovaSoft Solutions|
+|Rol en el proyecto|Sponsor interno. Aprueba el inicio del proyecto y supervisa el desempeño del equipo asignado.|
+
+### Roles
+
+| Orden | Rol                                                  | Seniority     | ¿Por qué?                                                                                                                                                 |
+| ----- | ---------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | **Sponsor (Martín García)**                          | Ejecutivo     | Es quien financia el proyecto, toma las decisiones importantes y aprueba los entregables principales.                                                     |
+| 2     | **Project Manager (Nicolás Piacentini)**             | Semi Senior   | Planifica el proyecto, coordina al equipo, administra riesgos, cronograma y comunicación con el cliente. Está presente durante todo el proyecto.          |
+| 3     | **Analista Funcional**                               | Semi Senior   | Se encarga de entrevistar al cliente, entender cómo funciona actualmente la barbería y transformar esas necesidades en requerimientos claros.             |
+| 5     | **Arquitecto de Software**                           | Senior        | Define la arquitectura del sistema, las tecnologías que se utilizarán y la estructura general de la solución.                                             |
+| 6     | **Administrador / Diseñador de Base de Datos (DBA)** | Semi Senior   | Analiza alternativas de motores de bases de datos, diseña el modelo entidad-relación y la estructura física de la base.                                   |
+| 7     | **Diseñador UX/UI**                                  | Semi Senior   | Diseña la experiencia del usuario, los mockups y los flujos de navegación para que el sistema sea intuitivo.                                              |
+| 8     | **Desarrollador Backend**                            | Semi Senior   | Implementa toda la lógica del negocio: autenticación, turnos, agenda, historial, notificaciones y acceso a la base de datos.                              |
+| 10    | **Desarrollador Frontend**                           | Semi Senior   | Desarrolla las pantallas que utilizarán los administradores, barberos y clientes. Integra la interfaz con el backend.                                     |
+| 12    | **QA / Tester**                                      | Semi Senior   | Diseña los casos de prueba, ejecuta pruebas funcionales, registra errores y verifica que las correcciones realmente solucionen los problemas.             |
+| 13    | **DevOps / Especialista en Infraestructura**         | Semi Senior   | Configura los ambientes de desarrollo, testing y producción, realiza el despliegue y verifica que el sistema funcione correctamente en las sucursales.    |
+| 14    | **Especialista en Documentación y Capacitación**     | Junior        | Redacta los manuales técnicos y de usuario, organiza las capacitaciones y brinda soporte durante la adopción del sistema.                                 |
+| 15    | **Cliente / Representante de la Barbería**           | Usuario Clave | Aunque no forme parte del equipo de desarrollo, participa constantemente validando relevamientos, diseños, pruebas piloto y aprobando el producto final.  |
