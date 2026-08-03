@@ -208,59 +208,56 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 
 ```
 @startwbs
-* Sistema de Taller barber shop
+* Implementación de un Sistema Web de Gestión de Turnos para Taller Barber Shop
 ** Fase 0 Gestion del Proyecto
-*** 0.1 Confeccion del acta de proyecto\n//acta de proyecto confeccionada//
-*** 0.2 Creacion de la matriz de riesgos\n//matriz de riesgos creada//
-*** 0.3 Creacion del WBS\n//WBS creado//
+*** 0.1 Acta de proyectos elaboirada
+*** 0.2 Matriz de gestión de riesgos elaborada
+*** 0.3 WBS elaborado
+*** 0.4 Matriz de roles y resopnsabilidades elaborada
+*** 0.5 Matriz de habilidades y competencias elaborada
 ** Fase 1 Relevamiento
-*** 1.1 Entrevistas con encargados\n//entrevistas realizadas y registradas//
-*** 1.2 Observacion del flujo actual\n//flujo documentado//
-*** 1.3 Identificacion de servicios\n//servicios relevados y listados//
-*** 1.4 Relevamiento de horarios\n//horarios y personal documentados//
-*** 1.5 Documentacion de problemas\n//informe de problemas redactado//
-*** 1.6 Validacion con el cliente\n//relevamiento aprobado por el cliente//
-** Fase 2 Diseno
-*** 2.1 Definicion de requerimientos\n//requerimientos documentados y aprobados//
-*** 2.2 Evaluacion de alternativas de infraestructura\n//evaluacion confeccionada y aprobada//
-*** 2.3 Seleccion de tecnologias\n//stack tecnologico definido//
-*** 2.4 Diseno de arquitectura\n//arquitectura documentada//
-*** 2.5 Diseno de base de datos\n//modelo de datos disenado y validado//
-**** 2.5.1 Evaluacion de alternativas de motores\n de bases de datos confeccionada y aprobada
+*** 1.1 Entrevistas con peluqueros y encargados realizadas
+*** 1.2 Flujo de procesos documentado
+*** 1.3 Disponibilidad de peluqueros consultada
+*** 1.4 Requerimientos funcionales y no funcionales documentados
+*** 1.5 Casos de uso elaborados
+*** 1.4 Documentacion es aprobada por cliente
+** Fase 2 Diseño
+*** 2.1 Evaluacion de alternativas de infraestructura realizada
+*** 2.2 Stack tecnologico definido
+*** 2.3 Diagrama de arquitectura confeccionado
+*** 2.4 Modelo de datos confeccionado
+**** 2.5.1 Evaluacion de alternativas de bases de datos realizada
 **** 2.5.2 Confeccion del diagrama entidad relacion
-*** 2.6 Diseno de flujos de usuario\n//flujos diagramados y aprobados//
-*** 2.7 Diseno de mockups\n//mockups validados por el cliente//
-*** 2.8 Validacion del diseno\n//diseno aprobado formalmente//
+*** 2.6 Diseno de flujos de usuario realizado
+*** 2.7 Diseño aprobado por el cliente
 ** Fase 3 Desarrollo
-*** 3.1 Configuracion del entorno\n//entorno operativo y documentado//
-*** 3.2 Modulo de autenticacion\n//modulo desarrollado y probado//
-*** 3.3 Modulo de reserva de turnos\n//modulo desarrollado y probado//
-*** 3.4 Modulo de gestion de agenda\n//modulo desarrollado y probado//
-*** 3.5 Modulo de notificaciones\n//modulo desarrollado y probado//
-*** 3.6 Panel de administracion\n//panel desarrollado y probado//
-*** 3.7 Historial de turnos\n//modulo desarrollado y probado//
-*** 3.8 Pruebas unitarias internas\n//sistema integrado y pruebas superadas//
+*** 3.1 Configuracion del entorno realizado
+*** 3.2 Modulo de reserva de turnos desarrollado y probado
+*** 3.3 Modulo de gestion de agenda desarrollado y probado
+*** 3.4 Modulo de notificaciones desarrollado y probado
+*** 3.5 Panel de administracion desarrollado y probado
+*** 3.6 Historial de turnos desarrollado y probado
+*** 3.7 Pruebas unitarias internas pasadas
 ** Fase 4 Validacion y Testing
-*** 4.1 Definicion de casos de prueba\n//casos de prueba documentados//
-*** 4.2 Pruebas funcionales\n//pruebas ejecutadas y resultados registrados//
-*** 4.3 Prueba piloto en 2 sucursales\n//piloto ejecutado y feedback relevado//
-*** 4.4 Relevamiento de errores\n//errores documentados y priorizados//
-*** 4.5 Correccion de errores\n//errores corregidos y cambios validados//
-*** 4.6 Aprobacion del cliente\n//sistema aprobado y firmado//
+*** 4.1 Casos de prueba definidos
+*** 4.2 Pruebas funcionales realizadas y registradas
+*** 4.3 Prueba piloto en 2 sucursales realizada
+*** 4.4 Relevamiento de errores confeccionado
+*** 4.5 Correccion de errores realizada
+*** 4.6 Sistema aprobado por cliente
 ** Fase 5 Capacitacion
-*** 5.1 Manual de usuario\n//manual redactado y entregado//
-*** 5.2 Manual de administracion\n//manual redactado y entregado//
-*** 5.3 Capacitacion al personal\n//capacitaciones dictadas y asistencia registrada//
-*** 5.4 Soporte post-capacitacion\n//soporte finalizado y conformidad registrada//
+*** 5.1 Manual de usuario redactado y entregado
+*** 5.2 Manual de administracion redactado y entregado
+*** 5.3 Capacitacion al personal realizada
 ** Fase 6 Implementacion
-*** 6.1 Despliegue en sucursales\n//sistema desplegado y operativo//
-*** 6.2 Verificacion en entorno real\n//funcionamiento verificado y documentado//
-*** 6.3 Documentacion tecnica final\n//documentacion entregada//
-*** 6.4 Entrega formal al cliente\n//entrega firmada por el cliente//
+*** 6.1 Despliegue en sucursales realizado
+*** 6.2 Documentacion tecnica final entregada
+*** 6.3 Entrega formal al cliente realizada
 ** Fase 7 Cierre del Proyecto
-*** 7.1 Relevamiento de lecciones aprendidas\n//lecciones aprendidas documentadas//
-*** 7.2 Informe de cierre del proyecto\n//informe de cierre redactado//
-*** 7.3 Firma del acta de conformidad\n//acta de cierre firmada//
+*** 7.1 Lecciones aprendidas documentadas
+*** 7.2 Informe de cierre del proyecto redactado
+*** 7.3 Firma del acta de conformidad realizada
 @endwbs
 ```
 ### 15. Contexto de mi empresa
