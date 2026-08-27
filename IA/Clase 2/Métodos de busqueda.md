@@ -1,14 +1,16 @@
 # Métodos de Búsqueda
 
-> [!abstract] Idea general Un problema se representa como un **espacio de estados** que se recorre aplicando **reglas/operadores**, hasta llegar a un estado solución. Los _métodos de búsqueda_ son las **estrategias de control** usadas para decidir qué regla o estado elegir en cada paso.
+> [!abstract] Idea general 
+> Un problema se representa como un **espacio de estados** que se recorre aplicando **reglas/operadores**, hasta llegar a un estado solución. Los _métodos de búsqueda_ son las **estrategias de control** usadas para decidir qué regla o estado elegir en cada paso.
 
 ## Representación del problema
-
+- Estado -> representacion de informacion que describe al sistema en un momento.
+Lo defino como una serie de estados en los que puede estar
 - **Estado inicial**
 - **Estados intermedios**
 - **Estados finales / solución**
 - **Espacio de estados** + **Operadores (reglas)**: cada regla lleva de un _estado origen (padre)_ a un _estado destino (hijo)_ mediante una acción.
-
+Estos estados pueden ser infinitos
 ### Árbol de ejemplo usado en todo el apunte
 
 ```mermaid
@@ -34,7 +36,8 @@ graph TD
 
 ## Estrategia de control
 
-> [!note] Definición Son las **técnicas genéricas para seleccionar reglas/estados** dentro del proceso de búsqueda.
+> [!note] Definición 
+> Son las **técnicas genéricas para seleccionar reglas/estados** dentro del proceso de búsqueda.
 
 Ciclo básico:
 
@@ -52,7 +55,7 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 
 ## Clasificación general
 
-- **Búsqueda Ciega** (sin información del dominio)
+- **Búsqueda Ciega** (sin información del dominio que diga si un estado es mejor o peor que otro)
     - Primero en Amplitud
     - Primero en Profundidad
     - Generación y Prueba
@@ -70,19 +73,21 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 
 ## Primero en Amplitud (BFS)
 
-- Recorre **nivel por nivel**.
+- Recorre **nivel por nivel**, aplicando todas las reglas posibles.
+- Se recorre **Todo el arbol**, no me freno al encontrar la solucion
 - Usa cola **FIFO**.
 - Si el espacio es finito y hay solución, **la encuentra siempre**.
 - Útil cuando hay **pocos nodos finales cercanos a la raíz**.
 - ⚠️ Consume **mucha memoria**.
 
-> [!example] Recorrido izquierda→derecha `A, B, C, D, E, F, G, H, I, J, K, L, M`
+> [!example] Recorrido izquierda→derecha `A, B, C, D, E, F, G, L, H, I, J, K, L, M, M`
 
 > [!example] Recorrido derecha→izquierda `A, D, C, B, H, L, G, F, E, M, L, K, J, I, M`
 
 ## Primero en Profundidad (DFS)
 
 - Expande **una rama a la vez**.
+- Recorro hasta encontrar la **primer solucion** o **quedarme sin camino**.
 - Usa pila **LIFO**.
 - Poca memoria requerida.
 - Útil cuando hay **muchos nodos solución alejados de la raíz**.
@@ -95,15 +100,23 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 ## Generación y Prueba
 
 - Recorre **todos los nodos** (combina exploración total, tipo fuerza bruta).
+- Explora todas las ramas una a la vez y recorre **Todo el arbol**.
+- Explora cada rama ida y vuelta
 - Permite encontrar **todos los estados solución**.
 - Adecuado para **problemas sencillos**; en problemas complejos puede ser muy costoso en tiempo.
 
 > [!example] Izquierda→derecha `A, B, E, I, E, J, E, B, F, B, A, C, G, K, G, L, M, L, G, C, A, D, L, M, L, D, H`
 
+
 ## Bidireccional
 
 - Combina **dos búsquedas simultáneas**: desde el inicio hacia abajo (top-bottom) y desde el final hacia arriba (bottom-up).
+	- Uno es por profundidad
+	- El otro es amplitud
 - **Al menos una** de las dos debe ser en amplitud.
+- Cada metodo debe tener que ir de izquierda a derecha o derecha a izquierda. 
+- Termino cuando se chocan los caminios.
+- Parto de nodo solucion y desde nodo raiz.
 - Complejidad equivalente a dos búsquedas unidireccionales sobre un grafo de **la mitad de nodos**.
 
 > [!example] Izquierda→derecha Por profundidad: `A → B → E` Por amplitud: `J → E` Resultado: `A, B, E, J`
@@ -120,11 +133,13 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 ---
 
 # 🟢 Búsqueda Heurística (con información del dominio)
-
+Cuento con heuristica que me permite saber como recorrer el arbol mas eficientemente. Mientras mas hijos tenga el arbol, crece el procesamiento exponencialmente.
+- Entonces necesito sacrificar exaustividad mejorando el proceso de busqueda con heuristicas
+- Puedo esperar buenas soluciones pero no siempre puedo encontrar la mejor
 ## Formas de incorporar conocimiento del dominio
 
-1. Con una **función heurística** asociada al estado
-2. Con el **costo de los caminos** aplicables
+1. Con una **función heurística** asociada al estado o nodo
+2. Con el **costo de los caminos** aplicables o peso asociado a las aristas
 
 ### Valores heurísticos del árbol de ejemplo
 
@@ -148,25 +163,33 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 
 ## Escalada Simple
 
-- Se mueve al **primer hijo** cuyo valor heurístico sea **mejor** que el del nodo actual (nunca igual).
+- Se mueve al **primer hijo** cuyo valor heurístico sea **mejor** que el del nodo actual (nunca igual). Segun si voy de derecha izquierda o al reves. Caso contrario sigo con el siguiente hijo que si tenga valor heuristico mayor al actual
 - No hay retroceso.
+- En general el nodo solucion tiene mucho valor heuristico
+- Funciona Como DPF
+- No requiere mucha memoria
+- Pierdo mejores sucesores
+- No tiene retroceso y puedo no **encontrar solucion**
 
 > [!example] Izquierda→derecha Generados: `A, B, E, I, J` — Visitados: `A, B, E, J`
 
 > [!example] Derecha→izquierda Generados: `A, D, H, L` — Visitados: `A, D`
+> Como no puedo avanzar y no tiene retroceso, termina sin solucion
 
 ## Escalada por Máxima Pendiente
 
-- Evalúa **todos los hijos** del nodo actual y elige el **mejor de todos**.
-- No hay retroceso.
+- Genera **todos los hijos** del nodo actual y visita el **mejor de todos**.
+- No hay retroceso. Puede quedarse sin solucion
 
 > [!example] Generados: `A, B, C, D, G, K, L` — Visitados: `A, C, G`
+> Tampoco tiene solucion porque no hay valor despues de G mas grande
 
 ## Primero El Mejor
 
 - Mantiene una **lista de nodos abiertos** ordenada por prioridad (heurística).
 - En cada paso, elige el **mejor nodo abierto**, aunque no sea mejor que el nodo actual.
 - Ante empate, **prioriza el nodo más "viejo"**.
+- No queda sin solucion porque puede ir para atras. Tiene **retroceso**. **Siempre** **encuentra** **solucion**
 
 > [!example] Traza (heurística mayor = mejor)
 > 
@@ -182,19 +205,21 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 ## Beam Search (N=1)
 
 - Similar a Primero El Mejor, pero la **lista de nodos abiertos está limitada** a _N_ elementos (beam width).
-- Con N=1 solo se conserva el mejor candidato en cada paso.
+- Con N=1 solo se conserva el mejor candidato en cada paso. 
+- Puede no tener solucion
 
 > [!example] Traza con N=1
 > 
 > |Paso|Nodo actual|Abiertos|Cerrados|
 > |---|---|---|---|
-> |1|A|C(11), D(10), B(9)|A|
+> |1|A|C(11)|A|
 > |2|C|G(12)|A,C|
-> |3|G|L(10), K(5)|A,C,G|
+> |3|G|L(10)|A,C,G|
 > |4|L|M(99)|A,C,G,L|
 > |5|M ✅|—|A,C,G,L,M|
 
 ## A*
+- El valor de las aristas penaliza el nodo. Si tengo mas valor, disminuye el valor de nodo
 
 > [!important] Fórmula `f' = h + g`
 > 
@@ -202,6 +227,8 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 > - `g`: suma de los costos de los nodos predecesores (costo real acumulado hasta ese nodo)
 > 
 > En A*, se busca el **menor valor de f'** cuando la heurística representa "distancia/costo restante" — es "Primero El Mejor" + costo de las transiciones.
+
+- Se va sumando segun me voy alejando del nodo raiz y los pesos de cada arista
 
 > [!example] Ejemplo 1 (a mayor valor, más deseable)
 > 
@@ -214,6 +241,8 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 > |5|B|E(13), L(8), H(3), K(2), F(1)|A,C,G,D,B|
 > |6|E|J(996), L(8), I(5), H(3), K(2), F(1)|A,C,G,D,B,E|
 > |7|J ✅|L(8), I(5), H(3), K(2), F(1)|A,C,G,D,B,E,J|
+
+En el paso 4 sumo 1 a L porque encontre un camino con menos peso u mayor valor heuristico para L a travez de `A,D,L`.
 
 > [!example] Ejemplo 2
 > 
@@ -230,22 +259,22 @@ Dentro de la estructura de control, ante _reglas aplicables_:
 
 ## Comparación — Búsqueda Ciega
 
-|Método|Recorre por...|Finaliza cuando...|
-|---|---|---|
-|Primero en Amplitud|Niveles|Recorre todo el árbol (genera todos los estados)|
-|Generación y Prueba|Ramas|Recorre todo el árbol (genera todos los estados)|
-|Primero en Profundidad|Ramas|Encuentra el primer Estado Final|
-|Bidireccional|Niveles|Encuentra un estado intermedio común entre Estado Inicial y Estado Final (al menos uno)|
+| Método                 | Recorre por... | Finaliza cuando...                                                                      |
+| ---------------------- | -------------- | --------------------------------------------------------------------------------------- |
+| Primero en Amplitud    | Niveles        | Recorre todo el árbol (genera todos los estados)                                        |
+| Generación y Prueba    | Ramas          | Encuentra el primer estado final                                                        |
+| Primero en Profundidad | Ramas          | Encuentra el primer Estado Final                                                        |
+| Bidireccional          | Niveles        | Encuentra un estado intermedio común entre Estado Inicial y Estado Final (al menos uno) |
 
 ## Comparación — Búsqueda Heurística
 
-|Método|¿Tiene retroceso?|¿Garantiza encontrar Estado Final?|Criterio de selección|Características especiales|
-|---|---|---|---|---|
-|Escalada Simple|No|No|Primer mejor hijo generado por el nodo actual|Solo selecciona hijos con heurística mejor que el padre (nunca igual)|
-|Escalada por Máxima Pendiente|No|No|Mejor de todos los hijos del nodo actual|—|
-|Primero El Mejor|No|No|Mejor nodo abierto|El nodo seleccionado puede no ser mejor que el actual|
-|Beam Search|No|No|Mejor nodo abierto|Primero el Mejor + lista de nodos abiertos limitada|
-|A*|No|No*|Mejor nodo abierto|Primero el Mejor + costo de las transiciones (f' = h + g)|
+| Método                        | ¿Tiene retroceso?                                                      | ¿Garantiza encontrar Estado Final? | Criterio de selección                         | Características especiales                                            |
+| ----------------------------- | ---------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------- | --------------------------------------------------------------------- |
+| Escalada Simple               | No                                                                     | No                                 | Primer mejor hijo generado por el nodo actual | Solo selecciona hijos con heurística mejor que el padre (nunca igual) |
+| Escalada por Máxima Pendiente | No                                                                     | No                                 | Mejor de todos los hijos del nodo actual      | Solo elije hijos con heuristica mejor que padre                       |
+| Primero El Mejor              | Si                                                                     | No                                 | Mejor nodo abierto                            | El nodo seleccionado puede no ser mejor que el actual                 |
+| Beam Search                   | si pero si se queda sin memoria y no puede avanzar no puede retroceder | No                                 | Mejor nodo abierto                            | Primero el Mejor + lista de nodos abiertos limitada                   |
+| A*                            | No                                                                     | No*                                | Mejor nodo abierto                            | Primero el Mejor + costo de las transiciones (f' = h + g)             |
 
 ---
 
