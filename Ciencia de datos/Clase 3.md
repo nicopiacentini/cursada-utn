@@ -2,14 +2,207 @@
 ___
 # Introducción a Ciencia de Datos — Pandas, Numpy y Matplotlib
 
-> [!info] Sobre esta clase Repaso de **Pandas** para manejo de datos, tipos de atributos/features, limpieza y preparación de datos, y visualización con **Matplotlib** y **Seaborn**.
+> [!info] Sobre esta clase 
+> Repaso de **Pandas** para manejo de datos, tipos de atributos/features, limpieza y preparación de datos, y visualización con **Matplotlib** y **Seaborn**.
+
+### Numpy (Numerical Python)
+
+- Es la **biblioteca fundamental** para la computación científica en Python.
+- Proporciona un objeto de matriz multidimensional de alto rendimiento (el **ndarray**).
+- Contiene herramientas para trabajar con matrices y funciones matemáticas complejas.
+- Es la base sobre la cual están construidas otras librerías de datos como Pandas.
+
+**Instalación:**
+
+bash
+
+```bash
+pip install numpy
+```
+
+**Documentación:** [https://numpy.org/doc/](https://numpy.org/doc/)
+
+---
+
+### Ndarray
+
+- A diferencia de las listas tradicionales de Python, los arreglos de NumPy (`ndarray`) deben contener **elementos del mismo tipo** de dato.
+- Son mucho **más rápidos y consumen menos memoria** que las listas.
+- Permiten realizar **operaciones matemáticas sobre arreglos enteros** sin necesidad de usar bucles `for` (Vectorización).
+	- Por ejemplo, sumar 6 a todos los componentes requeriria normalmente un for. Numpy lo hace solo sin el for
+
+python
+
+```python
+import numpy as np
+series = np.array([1, 2, 3, 4])
+print(series)
+# [1 2 3 4]
+```
+
+python
+
+```python
+import numpy as np
+series = np.array([[1, 2, 3], [4, 5, 6]])
+print(series)
+# [[1 2 3]
+#  [4 5 6]]
+```
+
+---
+
+### Funciones de creación de arrays
+
+NumPy incluye funciones para crear arreglos desde cero de forma eficiente:
+
+python
+
+```python
+import numpy as np
+
+# Array de ceros
+ceros = np.zeros(5)
+print(ceros)
+# [0 0 0 0 0]
+
+# Array de unos
+unos = np.ones((2, 3))
+print(unos)
+# [[1 1 1]
+#  [1 1 1]]
+
+# Array de números con un salto dado
+secuencia = np.arange(0, 10, 1)
+print(secuencia)
+# [0 1 2 3 4 5 6 7 8 9]
+
+# Array de números equiespaciados
+secuencia = np.linspace(0, 10, 10)# el ultimo valor dice en cuantos elementos dividir el array
+print(secuencia)
+# [0 1.111 2.222 3.333 4.444 5.555 6.666 7.777 8.888 10]
+```
+
+---
+
+### Atributos de un ndarray
+
+Podemos acceder a atributos importantes de un array de manera amigable:
+
+python
+
+```python
+import numpy as np
+matriz = np.array([[10, 20], [30, 40], [50, 60]])
+print(matriz.ndim)   # 2 -> la cantidad de dimensiones
+print(matriz.shape)  # (3, 2) -> la dimension de mi matriz
+print(matriz.size)   # 6 -> cantidad de valors totales (flatmapeado)
+print(matriz.dtype)  # int64 -> tipo de valores
+```
+
+---
+
+### Indexación
+
+Funciona de manera similar a las listas, con un agregado adicional:
+
+python
+
+```python
+import numpy as np
+arr = np.array([10, 20, 30, 40, 50])
+
+# Indexación simple (índice base 0)
+print(arr[1])  # 20
+
+# Slicing [inicio:fin:paso]
+print(arr[1:4])  # [20 30 40]
+
+# Slicing doble
+arr = np.array([[10, 20], [30, 40]])
+print(arr[1, 1])  # 40
+```
+
+---
+
+### Operaciones matemáticas
+
+Los ndarrays se comportan como _tensores_: las operaciones se aplican **componente a componente**.
+
+python
+
+```python
+import numpy as np
+a = np.array([1, 2, 3])
+b = np.array([10, 20, 30])
+
+print(a + b)   # [11, 22, 33]
+print(a * b)   # [10, 40, 90]
+print(a ** 2)  # [1, 4, 9]
+print(b ** a)  # [10, 400, 27000]
+print(np.dot(a,a.T)) # producto interno
+a @ b # operador vectorial. trata elementos como vectores
+```
+
+---
+
+### Funciones de agregación
+
+NumPy provee métodos integrados para resumir datos rápidamente. Se puede aclarar sobre qué eje (`axis`) aplicar la agregación.
+
+python
+
+```python
+import numpy as np
+datos = np.array([[1, 2], [3, 4]])
+
+print(datos.sum())        # 10
+print(datos.mean())       # 2.5
+print(datos.max())        # 4
+print(datos.sum(axis=0))  # [4 6] -> suma sobre eje 0. El primero con el primero y el segundo con el segundo
+print(datos.sum(axis=1))# [3 7]
+
+np.mean(a)# media
+np.median(a) # mediana #
+np.std(a) #desvio standard
+```
+
+> Existen muchas más operaciones: `min`, `std`, `median`, `cumsum`, etc.
+
+---
+
+### Otras cosas interesantes
+
+**`reshape()`**: cambia la forma (dimensiones) de un arreglo sin alterar sus datos. El nuevo tamaño total de elementos debe coincidir con el original.
+
+python
+
+```python
+arr = np.arange(1, 7)  # [1 2 3 4 5 6]
+matriz = arr.reshape(2, 3)
+print(matriz)
+# [[1 2 3]
+#  [4 5 6]]
+```
+
+**Máscaras booleanas**: permiten quedarse con valores que cumplen cierta condición.
+
+python
+
+```python
+arr = np.array([15, 20, 25, 30, 35])
+mascara = arr > 20
+print(arr[mascara])
+# [25 30 35]
+```
 
 ## 1. Pandas
-
+- Apunta a manejar datasets y tiene herramientas para leer archivos y bases de datos
 **Pandas** se utiliza para el manejo y análisis de datos.
 
 - Facilita trabajar con datos estructurados como **tablas**
 - La estructura principal es el **DataFrame**
+- Se basa en en ndarray de numpy
 - Soporta formatos comunes como CSV, Excel, JSON y bases de datos SQL
 
 ```bash
@@ -22,7 +215,8 @@ pip install pandas
 
 ### 2.1 Series
 
-Estructuras **unidimensionales** que pueden almacenar datos de cualquier tipo. Se pueden crear a partir de cualquier secuencia (por ejemplo, una lista).
+Estructuras **unidimensionales** que pueden almacenar **datos de cualquier tipo**. Se pueden crear a partir de cualquier secuencia (por ejemplo, una lista).
+- Vienen con un indice por defecto
 
 ```python
 import pandas as pd
@@ -46,7 +240,7 @@ dtype: int64
 ### 2.2 DataFrame
 
 Estructuras **bidimensionales** con filas y columnas, donde cada columna puede tener un tipo de dato diferente.
-
+- Se pueden crear a partir de diccionario de listas donde la clave es el nombre de columna y el valor es la lista
 #### A partir de un diccionario de listas
 
 ```python
@@ -135,7 +329,7 @@ df.to_sql('nueva_tabla', con=engine, if_exists='replace', index=False)
 
 ### 3.3 Acceder a los datos
 
-**Por columna** (devuelve una `Series`):
+**Por columna** (devuelve una `Series` porque pedis una columna):
 
 ```python
 print(df['Nombre'])   # también: df.Nombre
@@ -144,7 +338,7 @@ print(df['Nombre'])   # también: df.Nombre
 print(df[['Nombre', 'Edad']])
 ```
 
-**Por fila**, usando el índice posicional con `.iloc[]`:
+**Por fila**, usando el índice posicional con `.iloc[indiceDeFilaEnSeries]`:
 
 ```python
 print(df.iloc[0])
@@ -158,7 +352,7 @@ Se indexa el DataFrame con una **Serie de booleanos**:
 
 ```python
 df_filtrado = df[df['Edad'] > 30]
-
+# el df[edad] > 30 devuelve booleanos entonces solo se queda con aquellos que dan true
 df_filtrado = df[df['Ciudad'].isin(['Córdoba', 'Mendoza'])]
 ```
 
@@ -169,9 +363,14 @@ df_sin_na = df.dropna(subset=['Ciudad'])
 
 # Modifica el DataFrame original sin crear una variable nueva
 df.dropna(subset=['Ciudad'], inplace=True)
-```
 
-> [!info] Sobre `inplace=True` La mayoría de los métodos que modifican un DataFrame aceptan `inplace=True` para aplicar el cambio directamente sobre la variable original.
+
+```
+Dropna puede dar:
+- `NaN`: Not a number. Podes hacer operaciones in que de un error
+- `None`: Tira error y no te deja seguir
+
+> [!info] Sobre `inplace=True` La mayoría de los métodos que modifican un DataFrame aceptan `inplace=True` para aplicar el cambio directamente sobre la variable original. Caso contrario trabajan sobre una copia y devuelven la misma
 
 ### 3.6 Agregar nuevas filas
 
@@ -226,6 +425,7 @@ df['Clasificación'] = df['Edad'].apply(clasificar_edad)
 |`map()`|Series|Aplica una función o diccionario de mapeo|
 
 ### 4.1 `apply()`
+Permite aplicar una funcion a lo largo de un eje del DataFrame, sea fila o columna
 
 ```python
 df = pd.DataFrame({
@@ -237,6 +437,7 @@ df['A'] = df['A'].apply(lambda x: x * 2)
 ```
 
 ### 4.2 `applymap()`
+Aplica una funcino a todo el dataframe, es decir, a cada columna
 
 ```python
 df.applymap(lambda x: x * 2)
@@ -245,6 +446,7 @@ df.applymap(lambda x: x * 2)
 > [!warning] Deprecado en Pandas recientes Desde Pandas 2.1, `applymap()` está deprecado a favor de `df.map()`. Si trabajás con una versión reciente, revisá la documentación antes de usarlo en producción.
 
 ### 4.3 `map()`
+Se usa para `series` y se le aplica un diccionario
 
 ```python
 s = pd.Series([1, 2, 3, 4])
@@ -254,7 +456,7 @@ s.map({1: 'A', 2: 'B', 3: 'C', 4: 'D'})
 
 ## 5. Tablas Pivot con Pandas
 
-Las **tablas pivot** permiten resumir, reorganizar y visualizar datos, observando la relación entre distintas variables. Se crean con `pivot_table()`.
+Las **tablas pivot** permiten resumir, reorganizar y visualizar datos, observando la relación entre distintas variables. Se crean con `pivot_table()`. Permiten usar funciones de agregación como `sum`, `mean`, etc.
 
 ```python
 data = {
@@ -298,14 +500,18 @@ df_puntos = pd.DataFrame({
 df_left = pd.merge(df, df_puntos, on='Nombre', how='left')
 print(df_left)
 ```
-
-> [!note] Valores nulos tras un merge En las filas sin correspondencia, Pandas asigna automáticamente `NaN`. Esto también ocurre al agregar una fila sin especificar valor para alguna columna.
+- El primer argumento es el dataframe de iziquierda
+- El segundo es el de la derecha
+- El `on` es sobre los pivotes o sobre lo que hacemos el join
+- El how especifica el tipo de join
+> [!note] Valores nulos tras un merge 
+> En las filas sin correspondencia, Pandas asigna automáticamente `NaN`. Esto también ocurre al agregar una fila sin especificar valor para alguna columna.
 
 ## 7. Exploración de datos — tipos de atributos/features
 
 ### 7.1 Features categóricas/discretas
 
-Cualitativos, discretos, con operaciones limitadas:
+Cualitativos, son palabras, discretos, con operaciones limitadas:
 
 - **Nominales y binarios**: sin orden (igualdad / desigualdad)
 - **Ordinales**: con orden definido (igualdad, desigualdad, mayor y menor)
@@ -345,14 +551,17 @@ Cuantitativos, continuos o discretos, tratados como números:
 _Ejemplos: Sexo ('F' o 'M') → nominal · Calificación (E, MB, B, R) → ordinal · Temp. en Celsius → numérico._
 
 ## 8. Limpieza y preparación de datos
+A veces los datos no vienen preparados para ser procesados.
 
-> [!quote] Sobre el proceso No es lo más divertido, pero puede llegar a ser **MUY** necesario.
+> [!quote] Sobre el proceso 
+> No es lo más divertido, pero puede llegar a ser **MUY** necesario.
 
 ### 8.1 Valores faltantes
 
 Interfieren en los comportamientos y relaciones que el algoritmo intenta aprender. Muchos algoritmos no pueden trabajar directamente con valores faltantes.
 
-> [!danger] Cuidado con el sesgo al ignorar faltantes En el ejemplo de la clase, al descartar filas con `Gender` faltante, el `%Play Cricket` calculado por género cambia sustancialmente (de 50%/50% a 75%/50%). Ignorar valores faltantes sin analizar su causa puede introducir sesgos en el análisis.
+> [!danger] Cuidado con el sesgo al ignorar faltantes 
+> En el ejemplo de la clase, al descartar filas con `Gender` faltante, el `%Play Cricket` calculado por género cambia sustancialmente (de 50%/50% a 75%/50%). Ignorar valores faltantes sin analizar su causa puede introducir sesgos en el análisis.
 
 #### Estrategias
 
@@ -378,11 +587,13 @@ unDataFrame.drop_duplicates(inplace=True)
 
 ### 8.2 Atributos categóricos
 
-Los algoritmos suelen **preferir atributos numéricos** por los cálculos internos que realizan (distancias, productos matriciales, etc.).
+Los algoritmos suelen **preferir atributos numéricos** por los cálculos internos que realizan (distancias, productos matriciales, etc.). Entonecs tenemos que traducir **categorias a numeros**.
 
 **Label Encoding**: asigna un número entero a cada categoría.
+- Suele ser mejor porque permite **dar un orden**
 
-**One-hot-encoding**: crea una columna binaria por cada categoría.
+**One-hot-encoding**: crea una columna binaria por cada categoría. 
+
 
 |ID|Color|
 |---|---|
@@ -413,6 +624,7 @@ Atributos en **diferentes escalas afectan negativamente** la performance de much
 
 > [!example] Ejemplo del apunte Con Altura (1.47–1.72 m), Peso (45–72 kg) y Sueldo (8.300–105.000 ARS) sin escalar, la distancia euclidiana queda dominada por el Sueldo, distorsionando comparaciones entre registros.
 
+Basicamente agrupa valores sobre una escala que determine yo y "clasifica" los valores en dicha escala
 #### Normalización / Min-Max
 
 Lleva los valores al rango `[0, 1]`.
@@ -430,14 +642,15 @@ df[['Altura', 'Peso']] = scaler.fit_transform(df[['Altura', 'Peso']])
 
 #### Estandarización
 
-Centra los datos en torno a la media, con desviación estándar 1.
+Centra los datos en torno a la media, con desviación estándar 1. Trata los datos como si viniesen de una distribucion gaussiana
 
 $$x_{new} = \dfrac{x - \mu}{\sigma}$$
-
+$\mu$: es la media
+$\sigma$: es la varianza
+Colocas el dato relativo a una gaussiana
 - Rango variable (puede dar problemas en algunos algoritmos que esperan rangos fijos)
 - **Menos susceptible a outliers**
 - Menos interpretable si los datos no siguen una distribución gaussiana
-
 ```python
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
@@ -453,7 +666,8 @@ Encapsular las transformaciones en funciones reutilizables tiene varias ventajas
 - Migrar y utilizarlas en producción
 - Probar varias transformaciones de forma simple
 
-> [!tip] Buenas prácticas En proyectos reales, este tipo de transformaciones suele encapsularse en **Pipelines** de `scikit-learn` (`sklearn.pipeline.Pipeline`), lo que facilita mantener el mismo preprocesamiento entre entrenamiento y producción.
+> [!tip] Buenas prácticas 
+> En proyectos reales, este tipo de transformaciones suele encapsularse en **Pipelines** de `scikit-learn` (`sklearn.pipeline.Pipeline`), lo que facilita mantener el mismo preprocesamiento entre entrenamiento y producción.
 
 ## 9. Visualización de datos
 

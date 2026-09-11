@@ -2,6 +2,8 @@
 
 > Documento de referencia para mantener la consistencia del acta de proyecto a lo largo de todas sus entregas. Ante cualquier duda sobre datos, nombres, decisiones o alcance, este archivo es la fuente de verdad.
 
+Durante 
+
 ---
 
 ## 1. Datos del Cliente
@@ -217,25 +219,24 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 *** 0.5 Matriz de habilidades y competencias elaborada
 *** 0.6 Matriz de interesados elaborada
 *** 0.7 Matriz de comunicaciones elaborada
-*** 0.8 Plan de gestión de calidad (QA/QC) elaborado
+*** 0.8 Bitacora de cambios elaborada
+*** 0.9 Cronograma del proyecto elaborado
 ** Fase 1 Relevamiento
-*** 1.1 Entrevistas con peluqueros y encargados realizadas
+*** 1.1 Entrevistas con peluqueros y encargados realizadas y documentadadas
 *** 1.2 Flujo de procesos documentado
-*** 1.3 Disponibilidad de peluqueros consultada
-*** 1.4 Requisitos del sistema documentados
-*** 1.5 Casos de uso elaborados
-*** 1.6 Acta de aprobación de relevamiento y requisitos elaborada
+*** 1.3 Requisitos del sistema documentados
+*** 1.4 Casos de uso elaborados
+*** 1.5 Acta de aprobación de relevamiento y requisitos elaborada y firmada
 ** Fase 2 Diseño
 *** 2.1 Evaluacion de alternativas de infraestructura tecnologica realizada 
-*** 2.2 Tecnologias de desarrollo seleccionadas
-*** 2.3 Diagrama de arquitectura del sistema confeccionado
-*** 2.4 Evaluacion de alternativas de bases de datos realizada 
-*** 2.5 Diagrama de relaciones entre datos confeccionado
-*** 2.6 Diseño de la experiencia de navegacion del usuario realizado 
-*** 2.7 Normas de programacion y buenas practicas de trabajo en equipo definidas 
-*** 2.8 Distribucion de modulos y estimacion de esfuerzo por desarrollador realizada 
-*** 2.9 Criterios de aceptación de calidad del sistema definidos y acordados con el Cliente
-*** 2.10 Acta de aprobación de diseño elaborada
+*** 2.2 Diagrama de arquitectura del sistema confeccionado
+*** 2.3 Evaluacion de alternativas de bases de datos realizada 
+*** 2.4 Diagrama de relaciones entre datos confeccionado
+*** 2.5 Mockups de interfaz realizados y validados 
+*** 2.6 Normas de programacion y buenas practicas de trabajo en equipo definidas 
+*** 2.7 Distribucion y delimitacion de modulos por dev documentado
+*** 2.8 Criterios de aceptación de calidad del sistema definidos y acordados con el Sponsor 
+*** 2.9 Acta de aprobación de diseño elaborada y firmada
 ** Fase 3 Desarrollo
 *** 3.1 Herramientas y entorno de trabajo del equipo configurados
 *** 3.2 Modulo de reserva de turnos desarrollado
@@ -243,30 +244,25 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 *** 3.4 Modulo de notificaciones desarrollado
 *** 3.5 Panel de administracion desarrollado
 *** 3.6 Historial de turnos desarrollado
-*** 3.7 Casos de prueba funcionales internos definidos
-*** 3.8 Pruebas internas del funcionamiento del sistema pasadas
-*** 3.9 Revision cruzada de codigo entre desarrolladores realizada y registrada
-*** 3.10 Integracion de todos los modulos y validacion en entorno de pruebas realizada
+*** 3.7 Integracion de todos los modulos y validacion en entorno de pruebas realizada
 ** Fase 4 Validacion y Testing
-*** 4.1 Plan de testing definido y validado con el Cliente
-*** 4.2 Casos de prueba no funcionales definidos
-*** 4.3 Pruebas no funcionales realizadas y registradas
-*** 4.4 Prueba piloto realizada y documentada
-**** 4.4.1 Plan de prueba piloto elaborado
-**** 4.4.2 Prueba piloto ejecutada en 2 sucursales
-**** 4.4.3 Informe de resultados de prueba elaborado
-*** 4.5 Relevamiento de errores confeccionado
-*** 4.6 Correccion de errores realizada 
-*** 4.7 Verificacion de cumplimiento de criterios de aceptacion de calidad realizada
-*** 4.8 Acta de aceptación del sistema confeccionada
+*** 4.1 Plan de pruebas elaborado y validado con el Sponsor
+*** 4.2 Casos de prueba definidos y ejecutados
+*** 4.3 Prueba piloto realizada y documentada
+**** 4.3.1 Plan de prueba piloto elaborado
+**** 4.3.2 Prueba piloto ejecutada en 2 sucursales
+**** 4.3.3 Informe de resultados de prueba elaborado
+*** 4.4 Relevamiento de errores confeccionado
+*** 4.5 Correccion de errores realizada 
+*** 4.6 Verificacion de cumplimiento de criterios de aceptacion de calidad realizada
+*** 4.7 Acta de aceptación del sistema elaborada y firmada
 ** Fase 5 Capacitacion
 *** 5.1 Manual de usuario redactado y entregado
 *** 5.2 Manual de administracion redactado y entregado 
 *** 5.3 Capacitacion al personal realizada
-** Fase 6 Implementacion
-*** 6.1 Instalacion y puesta en marcha del sistema en las sucursales realizada
-*** 6.2 Documentacion tecnica final entregada
-*** 6.3 Entrega formal al cliente realizada
+** Fase 6 Despliegue
+*** 6.1 Despliegue de la aplicación en la infraestructura elegida realizado
+*** 6.2 Documentacion tecnica final elaborada y entregada
 ** Fase 7 Cierre del Proyecto
 *** 7.1 Lecciones aprendidas documentadas
 *** 7.2 Informe de cierre del proyecto redactado
@@ -318,3 +314,158 @@ Desarrollar un sistema web de gestión de turnos que, una vez implementado, perm
 | 13    | **DevOps / Especialista en Infraestructura**         | Semi Senior   | Configura los ambientes de desarrollo, testing y producción, realiza el despliegue y verifica que el sistema funcione correctamente en las sucursales.    |
 | 14    | **Especialista en Documentación y Capacitación**     | Junior        | Redacta los manuales técnicos y de usuario, organiza las capacitaciones y brinda soporte durante la adopción del sistema.                                 |
 | 15    | **Cliente / Representante de la Barbería**           | Usuario Clave | Aunque no forme parte del equipo de desarrollo, participa constantemente validando relevamientos, diseños, pruebas piloto y aprobando el producto final.  |
+# Lista completa de Actividades por Entregable con Duración Estimada
+
+_(Duraciones en días hábiles, estimadas para un equipo de 6 personas — PM, Analista Funcional, Líder Técnico, Dev SSR, Dev Jr, Tester)_
+
+## Fase 0 — Gestión del Proyecto
+
+| Entregable                               | Actividad                                       | Duración |
+| ---------------------------------------- | ----------------------------------------------- | -------- |
+| 0.1 Acta de proyecto                     | Redactar acta de proyecto                       | 2 días   |
+| 0.2 Matriz de riesgos                    | Documentar matriz de riesgos                    | 1 día    |
+| 0.3 EDT                                  | Confeccionar diagrama de WBS                    | 2 días   |
+| 0.4 Matriz de roles y responsabilidades  | IDocumentar matriz de roles y responsabilidades | 1 día    |
+| 0.5 Matriz de habilidades y competencias | Documentar matriz de habilidades y competencias | 1 día    |
+| 0.6 Matriz de interesados                | Documentar matriz de interesados                | 1 día    |
+| 0.7 Matriz de comunicaciones             | Documentar matriz de comunicaciones             | 1 día    |
+| 0.8 Bitácora de cambios                  | Diseñar formato/plantilla de la bitácora        | 1 día    |
+| 0.9 Plan de gestión de calidad           | Documentar plan de gestión de calidad           | 2 días   |
+| 0.10 Cronograma del proyecto             | Confeccionar cronograma del proyecto            |          |
+
+
+## Fase 1 — Relevamiento
+
+| Entregable                                | Actividad                             | Duración |
+| ----------------------------------------- | ------------------------------------- | -------- |
+| 1.1 Entrevistas realizadas y documentadas | Coordinar agenda de entrevistas       | 2 días   |
+|                                           | Realizar entrevistas                  | 3 días   |
+|                                           | Documentar resultados de entrevistas  | 2 días   |
+| 1.2 Flujo de procesos documentado         | Relevar flujo de procesos actual      | 2 días   |
+|                                           | Documentar flujo de procesos          | 2 días   |
+| 1.3 Requisitos del sistema documentados   | Identificar requisitos funcionales    | 2 días   |
+|                                           | Identificar requisitos no funcionales | 1 día    |
+|                                           | Documentar requisitos del sistema     | 2 días   |
+| 1.4 Casos de uso elaborados               | Redactar casos de uso                 | 1 día    |
+| 1.5 Acta de aprobación de relevamiento    | Redactar acta de aprobación           | 1 día    |
+|                                           | Obtener firma de aprobación           | 1 día    |
+
+## Fase 2 — Diseño
+
+| Entregable                             | Actividad                                        | Duración |
+| -------------------------------------- | ------------------------------------------------ | -------- |
+| 2.1 Evaluación de infraestructura      | Identificar alternativas de infraestructura      | 1 día    |
+|                                        | Comparar alternativas                            | 1 día    |
+|                                        | Documentar evaluación y selección                | 1 día    |
+| 2.2 Tecnologías seleccionadas          | Identificar alternativas de lenguajes/frameworks | 1 día    |
+|                                        | Comparar alternativas                            | 1 día    |
+|                                        | Documentar selección de tecnologías              | 1 día    |
+| 2.3 Diagrama de arquitectura           | Definir componentes y capas                      | 2 días   |
+|                                        | Confeccionar diagrama de arquitectura            | 1 día    |
+| 2.4 Evaluación de bases de datos       | Identificar alternativas de motores de BD        | 1 día    |
+|                                        | Comparar alternativas                            | 1 día    |
+|                                        | Documentar evaluación y selección                | 1 día    |
+| 2.5 Diagrama de relaciones entre datos | Identificar entidades y atributos                | 1 día    |
+|                                        | Confeccionar diagrama de relaciones              | 1 día    |
+| 2.6 Mockups de interfaz                | Diseñar mockups de pantallas principales         | 3 días   |
+|                                        | Presentar mockups al Sponsor                     | 1 día    |
+|                                        | Ajustar mockups según feedback                   | 2 días   |
+|                                        | Validar mockups con el Sponsor                   | 1 día    |
+| 2.7 Normas de programación             | Definir estándares de codificación               | 1 día    |
+|                                        | Definir buenas prácticas de trabajo en equipo    | 1 día    |
+|                                        | Documentar normas y buenas prácticas             | 1 día    |
+| 2.8 Distribución de módulos            | Identificar módulos a desarrollar                | 1 día    |
+|                                        | Asignar módulos a cada desarrollador             | 1 día    |
+|                                        | Estimar esfuerzo por módulo                      | 1 día    |
+|                                        | Documentar distribución de módulos               | 1 día    |
+| 2.9 Criterios de aceptación de calidad | Definir criterios de aceptación de calidad       | 1 día    |
+|                                        | Presentar criterios al Sponsor                   | 1 día    |
+|                                        | Obtener acuerdo del Sponsor                      | 1 día    |
+| 2.10 Acta de aprobación de diseño      | Redactar acta de aprobación de diseño            | 1 día    |
+|                                        | Presentar documentación de diseño al Sponsor     | 1 día    |
+|                                        | Obtener firma de aprobación                      | 1 día    |
+
+## Fase 3 — Desarrollo
+
+| Entregable                         | Actividad                                             | Duración |
+| ---------------------------------- | ----------------------------------------------------- | -------- |
+| 3.1 Entorno de trabajo configurado | Configurar repositorio y control de versiones         | 1 día    |
+|                                    | Configurar entorno de desarrollo local                | 1 día    |
+| 3.2 Módulo de reserva de turnos    | Desarrollar funcionalidad de reserva de turnos        | 8 días   |
+|                                    | Realizar testing unitario del módulo                  | 2 días   |
+|                                    | Realizar code review del módulo                       | 1 día    |
+| 3.3 Módulo de gestión de agenda    | Desarrollar funcionalidad de gestión de agenda        | 8 días   |
+|                                    | Realizar testing unitario del módulo                  | 2 días   |
+|                                    | Realizar code review del módulo                       | 1 día    |
+| 3.4 Módulo de notificaciones       | Desarrollar funcionalidad de notificaciones           | 5 días   |
+|                                    | Realizar testing unitario del módulo                  | 1 día    |
+|                                    | Realizar code review del módulo                       | 1 día    |
+| 3.5 Panel de administración        | Desarrollar funcionalidad del panel de administración | 6 días   |
+|                                    | Realizar testing unitario del módulo                  | 2 días   |
+|                                    | Realizar code review del módulo                       | 1 día    |
+| 3.6 Historial de turnos            | Desarrollar funcionalidad de historial de turnos      | 4 días   |
+|                                    | Realizar testing unitario del módulo                  | 1 día    |
+|                                    | Realizar code review del módulo                       | 1 día    |
+| 3.7 Integración de módulos         | Integrar todos los módulos desarrollados              | 3 días   |
+|                                    | Realizar test de integración entre módulos            | 3 días   |
+|                                    | Validar funcionamiento del sistema integrado          | 2 días   |
+
+## Fase 4 — Validación y Testing
+
+| Entregable                                 | Actividad                                     | Duración |
+| ------------------------------------------ | --------------------------------------------- | -------- |
+| 4.1 Plan de pruebas                        | Definir alcance y estrategia de testing       | 2 días   |
+|                                            | Redactar plan de pruebas                      | 1 día    |
+|                                            | Obtener validación del Sponsor                | 1 día    |
+| 4.2 Casos de prueba definidos y ejecutados | Definir casos de prueba no funcionales        | 2 días   |
+|                                            | Ejecutar casos de prueba                      | 3 días   |
+|                                            | Registrar resultados de la ejecución          | 1 día    |
+| 4.3.1 Plan de prueba piloto                | Seleccionar sucursales para el piloto         | 1 día    |
+|                                            | Definir duración y criterios de éxito         | 1 día    |
+|                                            | Redactar plan de prueba piloto                | 1 día    |
+| 4.3.2 Prueba piloto ejecutada              | Desplegar el sistema en las sucursales        | 1 día    |
+|                                            | Ejecutar la prueba piloto con usuarios reales | 5 días   |
+|                                            | Registrar incidencias durante la ejecución    | 5 días   |
+| 4.3.3 Informe de resultados de prueba      | Consolidar resultados del piloto              | 1 día    |
+|                                            | Redactar informe de resultados                | 1 día    |
+| 4.4 Relevamiento de errores                | Recopilar errores detectados                  | 1 día    |
+|                                            | Clasificar errores según severidad            | 1 día    |
+|                                            | Documentar relevamiento de errores            | 1 día    |
+| 4.5 Corrección de errores                  | Corregir errores relevados                    | 4 días   |
+|                                            | Re-testear funcionalidades corregidas         | 2 días   |
+| 4.6 Verificación de criterios de calidad   | Verificar cumplimiento de cada criterio       | 2 días   |
+|                                            | Documentar resultado de la verificación       | 1 día    |
+| 4.7 Acta de aceptación del sistema         | Redactar acta de aceptación                   | 1 día    |
+|                                            | Obtener firma de aceptación                   | 1 día    |
+
+## Fase 5 — Capacitación
+
+| Entregable                   | Actividad                                    | Duración |
+| ---------------------------- | -------------------------------------------- | -------- |
+| 5.1 Manual de usuario        | Redactar manual de usuario                   | 3 días   |
+|                              | Entregar manual de usuario al Cliente        | 1 día    |
+| 5.2 Manual de administración | Redactar manual de administración            | 3 días   |
+|                              | Entregar manual de administración al Cliente | 1 día    |
+| 5.3 Capacitación al personal | Coordinar horarios de capacitación           | 2 días   |
+|                              | Dictar capacitación al personal              | 2 días   |
+
+## Fase 6 — Despliegue
+
+| Entregable                        | Actividad                                 | Duración |
+| --------------------------------- | ----------------------------------------- | -------- |
+| 6.1 Despliegue en infraestructura | Configurar infraestructura de producción  | 2 días   |
+|                                   | Desplegar la aplicación en producción     | 1 día    |
+| 6.2 Documentación técnica final   | Redactar documentación técnica final      | 2 días   |
+|                                   | Entregar documentación técnica al Cliente | 1 día    |
+
+## Fase 7 — Cierre del Proyecto
+
+| Entregable               | Actividad                                    | Duración |
+| ------------------------ | -------------------------------------------- | -------- |
+| 7.1 Lecciones aprendidas | Recopilar lecciones aprendidas con el equipo | 1 día    |
+|                          | Documentar lecciones aprendidas              | 1 día    |
+| 7.2 Informe de cierre    | Consolidar información del proyecto          | 1 día    |
+|                          | Redactar informe de cierre                   | 1 día    |
+| 7.3 Acta de conformidad  | Redactar acta de conformidad                 | 1 día    |
+|                          | Obtener firma del acta de conformidad        | 1 día    |
+
