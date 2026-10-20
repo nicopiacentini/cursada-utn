@@ -140,4 +140,8 @@ Tiene que ser un espacio seguro para mirar como se tabaja, aprender.
 		Se conocen como action items. Se suelen elegir un par que dependan del equipo
 5. Cerrar y acordar seguimiento
 		Se registran los accionables, agradece y se da seguimiento en el proximo sprint
- 
+
+### Proxima clase
+Revisar reuniones y tp viejo para hacer una epica y 5 historias de usuario. Tambien revisar puestos y agile en general (product owner, product manager, etc)
+##### Sobre wbs
+Tengo que mantener fase de gestión, adaptar reuniones a agilismo. Lo que tengo por fases lo tengo que convertir en releases y sprints. Tengo que armar un roadmap de releases. 
